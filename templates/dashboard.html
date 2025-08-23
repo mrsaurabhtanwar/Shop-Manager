@@ -17,32 +17,8 @@
   </head>
   <body>
     <div class="app-layout">
-      <aside class="sidebar" id="appSidebar" aria-label="Main navigation">
-        <button class="sidebar-hamburger" id="sidebarHamburger" aria-label="Expand sidebar" title="Expand sidebar">
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="sidebar-inner">
-          <div class="sidebar-brand">ShopMgr</div>
-          <nav class="nav flex-column">
-            <a class="nav-link active" href="{{ url_for('dashboard') }}">
-              <i class="fas fa-chart-line me-2"></i>
-              <span>Dashboard</span>
-            </a>
-            <a class="nav-link" href="{{ url_for('orders') }}">
-              <i class="fas fa-shopping-cart me-2"></i>
-              <span>Orders</span>
-            </a>
-            <a class="nav-link" href="{{ url_for('workers') }}">
-              <i class="fas fa-users me-2"></i>
-              <span>Workers</span>
-            </a>
-            <a class="nav-link" href="{{ url_for('expenses') }}">
-              <i class="fas fa-wallet me-2"></i>
-              <span>Expenses</span>
-            </a>
-          </nav>
-        </div>
-        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation">☰</button>
+      <aside class="sidebar" id="appSidebar" aria-label="Main navigation" style="display:none;">
+        <!-- Left sidebar intentionally hidden on new mobile-first UI -->
       </aside>
 
       <div class="main-wrapper">
@@ -115,6 +91,17 @@
         </div>
       </div>
     </nav>
+
+    <!-- Right-side compact menu toggle -->
+    <button class="right-toggle" id="rightToggle" aria-label="Open quick menu" title="Quick menu">
+      <i class="fas fa-ellipsis-v"></i>
+    </button>
+    <div class="right-menu" id="rightMenu" role="menu" aria-hidden="true">
+      <a href="{{ url_for('orders') }}" role="menuitem"><i class="fas fa-shopping-cart"></i> Orders</a>
+      <a href="{{ url_for('workers') }}" role="menuitem"><i class="fas fa-users"></i> Workers</a>
+      <a href="{{ url_for('expenses') }}" role="menuitem"><i class="fas fa-wallet"></i> Expenses</a>
+      <a href="#" role="menuitem" onclick="openSetup(); return false;"><i class="fas fa-cog"></i> Setup API</a>
+    </div>
 
     <div class="container-fluid dashboard-container" style="margin-top: 80px;">
       <!-- KPI Cards -->
@@ -405,6 +392,33 @@
       if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
         installBtn.style.display = 'none';
       }
+    </script>
+    <script>
+      // Right-side quick menu toggle
+      (function(){
+        const rightToggle = document.getElementById('rightToggle');
+        const rightMenu = document.getElementById('rightMenu');
+        function closeMenu(){
+          rightMenu.classList.remove('open');
+          rightMenu.setAttribute('aria-hidden', 'true');
+        }
+        function openMenu(){
+          rightMenu.classList.add('open');
+          rightMenu.setAttribute('aria-hidden', 'false');
+        }
+        rightToggle && rightToggle.addEventListener('click', function(e){
+          if (rightMenu.classList.contains('open')) closeMenu(); else openMenu();
+        });
+        // Close on outside click
+        document.addEventListener('click', function(e){
+          if (!rightMenu || !rightToggle) return;
+          if (rightMenu.classList.contains('open') && !rightMenu.contains(e.target) && !rightToggle.contains(e.target)){
+            closeMenu();
+          }
+        }, true);
+        // Close on ESC
+        document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeMenu(); });
+      })();
     </script>
   </body>
 </html>

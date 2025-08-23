@@ -853,17 +853,8 @@ body::before {
 /* Sidebar & layout additions appended */
 .app-layout { display: flex; min-height: 100vh; }
 .sidebar { 
-    width: 220px; 
-    background: rgba(255,255,255,0.03); 
-    border-right: 1px solid rgba(255,255,255,0.03); 
-    padding: 1rem; 
-    position: fixed; 
-    left: 0; 
-    top: 0; 
-    bottom: 0; 
-    overflow: auto; 
-    z-index: 1000; 
-    transition: all var(--transition-normal);
+    /* Left sidebar removed for simpler UI - keep hidden but present in DOM */
+    display: none !important;
 }
 
 .sidebar.collapsed { 
@@ -987,9 +978,10 @@ body::before {
 }
 
 .main-wrapper { 
-    margin-left: 220px; 
+    margin-left: 0; 
     flex: 1; 
     transition: margin-left var(--transition-normal);
+    padding: 1rem; /* ensure breathing room */
 }
 
 .sidebar.collapsed + .main-wrapper { 
@@ -999,6 +991,79 @@ body::before {
 /* Ensure circular elements (like doughnut/pie) are not clipped */
 .chart-container .chartjs-render-monitor {
     overflow: visible !important;
+}
+
+/* Global fixes to avoid text cutting and container merging */
+.stat-card, .mini-card, .action-card, .chart-container {
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.stat-card, .mini-card {
+    min-height: 140px;
+}
+
+.kpi-grid, .row {
+    gap: 1rem;
+}
+
+/* Right-side compact menu toggle */
+.right-toggle {
+    position: fixed;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1200;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    border: none;
+    cursor: pointer;
+}
+
+.right-menu {
+    position: fixed;
+    right: 16px;
+    top: calc(50% + 40px);
+    transform: translateY(-50%) scale(0.98);
+    z-index: 1199;
+    background: var(--card-gradient);
+    border-radius: 12px;
+    box-shadow: var(--shadow-xl);
+    padding: 8px;
+    display: none;
+    width: 220px;
+}
+
+.right-menu.open {
+    display: block;
+}
+
+.right-menu a {
+    display: flex;
+    gap: 12px;
+    padding: 10px;
+    align-items: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.right-menu a:hover {
+    background: rgba(255,255,255,0.06);
+}
+
+/* Ensure menu links are large enough on touch devices */
+@media (max-width: 768px) {
+    .right-menu { width: 180px; right: 12px; }
+    .right-toggle { right: 12px; }
 }
 
 /* Make sidebar visible on small screens as a top nav when collapsed */
