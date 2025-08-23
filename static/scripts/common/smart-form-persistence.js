@@ -125,17 +125,18 @@ class SmartFormPersistence {
      */
     async performSmartTest(form, formState) {
         const apiKey = localStorage.getItem('googleSheetsApiKey') || localStorage.getItem('sheetsApiKey');
-        const testKey = `test_${apiKey}_${Date.now() - Date.now() % (5 * 60 * 1000)}`; // 5-minute cache
-        
-        // Check if we recently tested with same API key
-        if (this.testResults.has(testKey)) {
-            const cachedResult = this.testResults.get(testKey);
-            this.showSmartMessage(`✅ Connection OK (cached result)`, 'success');
-            formState.testResult = cachedResult;
-            formState.lastTest = new Date().toISOString();
-            this.updateFormStateIndicator(form.id, formState);
-            return;
-        }
+
+        // Check shared persistent cache first (so switching pages doesn't re-prompt)
+        try {
+            if (window.sessionManager && window.sessionManager.TestCache && window.sessionManager.TestCache.isValid(apiKey)) {
+                const cached = window.sessionManager.TestCache.get();
+                this.showSmartMessage(`✅ Connection OK (cached)`, 'success');
+                formState.testResult = cached.result;
+                formState.lastTest = new Date(cached.ts).toISOString();
+                this.updateFormStateIndicator(form.id, formState);
+                return;
+            }
+        } catch (e) { /* ignore cache errors and continue */ }
 
         try {
             this.showSmartMessage('🔍 Testing connection...', 'info');
@@ -151,7 +152,8 @@ class SmartFormPersistence {
             }
 
             // Cache successful test
-            this.testResults.set(testKey, testResult);
+            this.testResults.set(`local_${Date.now()}`, testResult);
+            try { window.sessionManager && window.sessionManager.TestCache && window.sessionManager.TestCache.set(apiKey, testResult); } catch(e){}
             
             formState.testResult = testResult;
             formState.lastTest = new Date().toISOString();

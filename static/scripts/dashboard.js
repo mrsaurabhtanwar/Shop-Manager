@@ -43,7 +43,15 @@
                 API_KEY = storedKey;
                 loadDashboardData();
             } else {
-                openSetup();
+                // If we have a cached successful test for any API key, avoid forcing the setup modal
+                try {
+                    if (window.sessionManager && window.sessionManager.TestCache && window.sessionManager.TestCache.get() && window.sessionManager.TestCache.isValid()) {
+                        // Use cached result but no API key saved - still open setup lightly (non-blocking)
+                        console.log('Using cached test result, skipping forced setup modal');
+                    } else {
+                        openSetup();
+                    }
+                } catch (e) { openSetup(); }
             }
         });
 
@@ -77,6 +85,7 @@
                 if (response.ok) {
                     API_KEY = apiKey;
                     localStorage.setItem('googleSheetsApiKey', apiKey);
+                    try { window.sessionManager && window.sessionManager.TestCache && window.sessionManager.TestCache.set(apiKey, { success: true, message: 'OK' }); } catch(e){}
                     showStatus('✅ Connection successful! API key saved.', 'success');
                     
                     setTimeout(() => {

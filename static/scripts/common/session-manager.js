@@ -11,6 +11,30 @@ class SessionManager {
         this.init();
     }
 
+    /*
+     * Persistent test cache utility stored in localStorage so different pages
+     * won't prompt the user repeatedly. TTL is 5 minutes by default.
+     */
+    static TestCache = {
+        key: 'sheets_test_cache',
+        ttl: 5 * 60 * 1000,
+        get() {
+            try {
+                return JSON.parse(localStorage.getItem(this.key));
+            } catch (e) { return null; }
+        },
+        set(apiKey, result) {
+            const payload = { apiKey: apiKey || null, result: result || null, ts: Date.now() };
+            localStorage.setItem(this.key, JSON.stringify(payload));
+        },
+        isValid(apiKey) {
+            const cached = this.get();
+            if (!cached || !cached.result) return false;
+            if (apiKey && cached.apiKey && apiKey !== cached.apiKey) return false;
+            return (Date.now() - (cached.ts || 0)) < this.ttl && cached.result.success === true;
+        }
+    };
+
     init() {
         // Auto-save setup
         this.setupAutoSave();

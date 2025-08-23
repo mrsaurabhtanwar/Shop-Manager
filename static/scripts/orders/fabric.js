@@ -553,7 +553,15 @@ async function testConnection() {
         showMessage('Please configure the Google Apps Script URL first.', 'warning');
         return;
     }
-    
+
+    // If cached success exists, use it and avoid re-testing
+    try {
+        if (window.sessionManager && window.sessionManager.TestCache && window.sessionManager.TestCache.isValid()) {
+            showMessage('✅ Connection OK (cached)', 'success');
+            return;
+        }
+    } catch (e) {}
+
     showMessage('Testing connection to Google Sheets...', 'info');
     
     try {
@@ -565,6 +573,7 @@ async function testConnection() {
         if (response.ok) {
             const text = await response.text();
             showMessage('Connection successful! Google Apps Script is working.', 'success');
+            try { window.sessionManager && window.sessionManager.TestCache && window.sessionManager.TestCache.set(null, { success: true, message: 'OK' }); } catch(e){}
         } else {
             throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
