@@ -28,8 +28,6 @@ share/python-wheels/
 MANIFEST
 
 # PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
@@ -85,13 +83,9 @@ ipython_config.py
 .python-version
 
 # pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
+Pipfile.lock
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+# PEP 582
 __pypackages__/
 
 # Celery stuff
@@ -104,14 +98,16 @@ celerybeat.pid
 # Environments
 .env
 .env.local
-.env.development
-.env.production
+.env.development.local
+.env.test.local
+.env.production.local
 .venv
 env/
 venv/
 ENV/
 env.bak/
 venv.bak/
+myven/
 
 # Spyder project settings
 .spyderproject
@@ -131,19 +127,45 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Log files
-*.log
+# Node.js dependencies (if any)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
 logs/
+*.log
 app.log
+error.log
+access.log
 
-# Virtual environments
-myven/
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
 
-# IDE files
+# Coverage directory used by tools like istanbul
+coverage/
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage
+.grunt
+
+# Bower dependency directory
+bower_components
+
+# IDE and editor files
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
+.DS_Store
+Thumbs.db
 
 # OS generated files
 .DS_Store
@@ -154,16 +176,54 @@ myven/
 ehthumbs.db
 Thumbs.db
 
+# Local development files
+local_config.py
+config_local.py
+
 # SSL certificates
+ssl/
 *.pem
 *.key
 *.crt
-ssl/
-
-# Temporary files
-*.tmp
-*.temp
+*.p12
 
 # Backup files
 *.backup
 *.bak
+*.tmp
+*.temp
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Cache files
+.cache/
+*.cache
+
+# Testing
+.pytest_cache/
+test_results/
+
+# Build artifacts
+build/
+dist/
+
+# Deployment files (keep templates but ignore actual files)
+.env.production
+.env.staging
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Generated icons (keep placeholders, ignore generated ones)
+static/icons/icon-*.png
+
+# User uploads
+uploads/
+media/
+
+# Session files
+flask_session/
