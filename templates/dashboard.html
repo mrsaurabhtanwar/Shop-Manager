@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Manager Dashboard - Live Data</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/session-manager.css') }}" />
+  <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+  <meta name="theme-color" content="#0d6efd">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/icon-192.png') }}">
+  </head>
+  <body>
+    <div class="app-layout">
+      <aside class="sidebar" id="appSidebar" aria-label="Main navigation">
+        <button class="sidebar-hamburger" id="sidebarHamburger" aria-label="Expand sidebar" title="Expand sidebar">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="sidebar-inner">
+          <div class="sidebar-brand">ShopMgr</div>
+          <nav class="nav flex-column">
+            <a class="nav-link active" href="{{ url_for('dashboard') }}">
+              <i class="fas fa-chart-line me-2"></i>
+              <span>Dashboard</span>
+            </a>
+            <a class="nav-link" href="{{ url_for('orders') }}">
+              <i class="fas fa-shopping-cart me-2"></i>
+              <span>Orders</span>
+            </a>
+            <a class="nav-link" href="{{ url_for('workers') }}">
+              <i class="fas fa-users me-2"></i>
+              <span>Workers</span>
+            </a>
+            <a class="nav-link" href="{{ url_for('expenses') }}">
+              <i class="fas fa-wallet me-2"></i>
+              <span>Expenses</span>
+            </a>
+          </nav>
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation">☰</button>
+      </aside>
+
+      <div class="main-wrapper">
+    <!-- Setup Modal -->
+    <div id="setupModal" class="setup-modal">
+      <div class="setup-content">
+        <h3><i class="fas fa-cog me-2"></i>Google Sheets API Setup</h3>
+        <p>To connect to your Google Sheets, you need to provide a Google Sheets API key.</p>
+
+        <div class="mb-3">
+          <h5>Steps to get your API key:</h5>
+          <ol>
+            <li>
+              Go to <a href="https://console.developers.google.com/" target="_blank">Google Cloud Console</a>
+            </li>
+            <li>Create a new project or select existing one</li>
+            <li>Enable the "Google Sheets API"</li>
+            <li>Go to "Credentials" and create an API key</li>
+            <li>Make sure your sheets are publicly readable (Share > Anyone with link can view)</li>
+          </ol>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Google Sheets API Key:</label>
+          <input type="text" id="apiKeyInput" class="form-control" placeholder="Enter your Google Sheets API key" />
+        </div>
+
+        <div class="mb-3">
+          <h6>Your Sheet IDs (from your scripts):</h6>
+          <ul>
+            <li>
+              <strong>Combined Orders:</strong> 199mFt3yz1cZQUGcF84pZgNQoxCpOS2gHxFGDD71CZVg
+            </li>
+            <li>
+              <strong>Fabric Orders:</strong> 1tFb4EBzzvdmDNY0bOtyTXAhX1aRqzfq7NzXLhDqYj0o
+            </li>
+            <li>
+              <strong>Tailoring Orders:</strong> 128vwp1tjsej9itNAkQY1Y-5sJsMv3N1TZi5Pl9Wgn6Y
+            </li>
+            <li>
+              <strong>Expenses:</strong> 1QD0FHcJl7og1Fc1_BdQG2BCQq-N7KIr49jw3whzarXc
+            </li>
+            <li>
+              <strong>Workers:</strong> 1msVf01VuWsk1mhSMVrvypq_7ubSVjDKlr8aG-6bqE7Q
+            </li>
+          </ul>
+        </div>
+
+        <div id="connectionStatus"></div>
+
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-secondary" onclick="closeSetup()">Cancel</button>
+          <button class="btn btn-primary" onclick="testConnection()">Test & Save</button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+      <div class="container">
+        <button id="navbarHamburger" class="navbar-hamburger btn btn-link" aria-label="Toggle sidebar" aria-controls="appSidebar" aria-expanded="true">
+          <i class="fas fa-bars fa-lg"></i>
+        </button>
+        <a class="navbar-brand" href="#"><i class="fas fa-chart-line me-2"></i>Shop Manager Dashboard</a>
+        <div>
+          <button id="installBtn" class="install-btn" style="display: none;" onclick="promptInstall()">
+            <i class="fas fa-download me-2"></i>Install App
+          </button>
+          <button class="refresh-btn" onclick="refreshDashboard()"><i class="fas fa-sync-alt me-2"></i>Refresh Data</button>
+          <button class="setup-btn" onclick="openSetup()"><i class="fas fa-cog me-2"></i>Setup API</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid dashboard-container" style="margin-top: 80px;">
+      <!-- KPI Cards -->
+      <div class="kpi-grid">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-rupee-sign"></i>
+          </div>
+          <div class="stat-value" id="totalRevenue">₹0</div>
+          <div class="stat-label">Total Revenue</div>
+          <div class="trend-indicator trend-up" id="revenueTrend">
+            <i class="fas fa-arrow-up"></i> +0% vs last month
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <div class="stat-value" id="totalOrders">0</div>
+          <div class="stat-label">Total Orders</div>
+          <div class="trend-indicator trend-up" id="ordersTrend">
+            <i class="fas fa-arrow-up"></i> +0 this month
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="stat-value" id="totalWorkers">0</div>
+          <div class="stat-label">Active Workers</div>
+          <div class="trend-indicator" id="workersTrend">
+            <i class="fas fa-user-plus"></i> Workers registered
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="stat-value" id="monthlyProfit">₹0</div>
+          <div class="stat-label">Monthly Profit</div>
+          <div class="trend-indicator" id="profitTrend">
+            <i class="fas fa-calculator"></i> Revenue - Expenses
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions (Orders / Workers / Expenses) -->
+      <div class="quick-actions mt-4">
+        <div class="row g-3">
+          <div class="col-12 col-sm-4">
+            <a class="action-card text-center p-3 d-block" href="{{ url_for('orders') }}">
+              <div class="action-icon mb-2"><i class="fas fa-shopping-cart fa-2x"></i></div>
+              <div class="action-label">Orders</div>
+              <div class="action-sub">Create & manage orders</div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-4">
+            <a class="action-card text-center p-3 d-block" href="{{ url_for('workers') }}">
+              <div class="action-icon mb-2"><i class="fas fa-users fa-2x"></i></div>
+              <div class="action-label">Workers</div>
+              <div class="action-sub">Payments & worker list</div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-4">
+            <a class="action-card text-center p-3 d-block" href="{{ url_for('expenses') }}">
+              <div class="action-icon mb-2"><i class="fas fa-wallet fa-2x"></i></div>
+              <div class="action-label">Expenses</div>
+              <div class="action-sub">Track purchases & costs</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary Boxes for Orders / Workers / Expenses -->
+      <div class="row my-4">
+        <div class="col-12 col-md-4">
+          <a class="mini-card d-block text-decoration-none" href="{{ url_for('orders') }}">
+            <div class="mini-icon"><i class="fas fa-shopping-cart"></i></div>
+            <div class="mini-title">Orders</div>
+            <div class="mini-value" id="ordersCardCount">0</div>
+            <div class="mini-sub">View all orders</div>
+          </a>
+        </div>
+        <div class="col-12 col-md-4">
+          <a class="mini-card d-block text-decoration-none" href="{{ url_for('workers') }}">
+            <div class="mini-icon"><i class="fas fa-users"></i></div>
+            <div class="mini-title">Workers</div>
+            <div class="mini-value" id="workersCardCount">0</div>
+            <div class="mini-sub">Manage workers & payments</div>
+          </a>
+        </div>
+        <div class="col-12 col-md-4">
+          <a class="mini-card d-block text-decoration-none" href="{{ url_for('expenses') }}">
+            <div class="mini-icon"><i class="fas fa-wallet"></i></div>
+            <div class="mini-title">Expenses</div>
+            <div class="mini-value" id="expensesCardCount">₹0</div>
+            <div class="mini-sub">Track expenses</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Charts Row 1 -->
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="chart-container">
+            <div class="chart-title">Revenue by Order Type</div>
+            <div class="chart-wrapper">
+              <canvas id="revenueChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="chart-container">
+            <div class="chart-title">Monthly Revenue Trend</div>
+            <div class="chart-wrapper">
+              <canvas id="monthlyChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Row 2 -->
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="chart-container">
+            <div class="chart-title">Payment Status Distribution</div>
+            <div class="chart-wrapper">
+              <canvas id="paymentChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="chart-container">
+            <div class="chart-title">Expense Breakdown</div>
+            <div class="chart-wrapper">
+              <canvas id="expenseChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activities -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="stat-card">
+            <h4 class="mb-4"><i class="fas fa-clock me-2"></i>Recent Activities</h4>
+            <div id="recentActivities" class="loading">
+              <i class="fas fa-spinner"></i>
+              <p>Loading recent activities...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add loading state -->
+    <div class="stat-card loading">
+      <i class="fas fa-spinner"></i>
+      Loading...
+    </div>
+
+    <!-- Add trend indicators -->
+    <div class="trend-indicator trend-up">
+      <i class="fas fa-arrow-up"></i>
+      +15.3%
+    </div>
+    </div> <!-- .main-wrapper -->
+    </div> <!-- .app-layout -->
+    <script src="{{ url_for('static', filename='scripts/common/session-manager.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/dashboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/pwa.js') }}"></script>
+    <script>
+      // Small helper to open setup modal if no API key saved
+      document.addEventListener('DOMContentLoaded', function() {
+        try {
+          const apiKey = localStorage.getItem('sheetsApiKey');
+          if (!apiKey) {
+            setTimeout(openSetup, 800);
+          }
+        } catch (e) {}
+
+        // Sidebar toggle
+        const sidebar = document.getElementById('appSidebar');
+        const toggle = document.getElementById('sidebarToggle');
+        const navbarHamburger = document.getElementById('navbarHamburger');
+        const sidebarHamburger = document.getElementById('sidebarHamburger');
+
+        function toggleSidebar(trigger) {
+          const isCollapsed = sidebar.classList.toggle('collapsed');
+          const expanded = !isCollapsed;
+          // Keep aria-expanded in sync for accessibility
+          toggle && toggle.setAttribute('aria-expanded', expanded);
+          navbarHamburger && navbarHamburger.setAttribute('aria-expanded', expanded);
+          sidebarHamburger && sidebarHamburger.setAttribute('aria-expanded', expanded);
+          // Update aria-label for hamburger button
+          if (sidebarHamburger) {
+            sidebarHamburger.setAttribute('aria-label', expanded ? 'Collapse sidebar' : 'Expand sidebar');
+            sidebarHamburger.title = expanded ? 'Collapse sidebar' : 'Expand sidebar';
+          }
+          // maintain focus outline for keyboard users
+          trigger && trigger.focus();
+          setTimeout(() => window.dispatchEvent(new Event('resize')), 300);
+        }
+
+        // Click handlers
+        toggle && toggle.addEventListener('click', function() { toggleSidebar(this); });
+        navbarHamburger && navbarHamburger.addEventListener('click', function() { toggleSidebar(this); });
+        sidebarHamburger && sidebarHamburger.addEventListener('click', function() { toggleSidebar(this); });
+
+        // Keyboard support: Enter or Space toggles
+        [toggle, navbarHamburger, sidebarHamburger].forEach(el => {
+          if (!el) return;
+          el.setAttribute('tabindex', '0');
+          el.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggleSidebar(el);
+            }
+          });
+        });
+      });
+    </script>
+    
+    <!-- PWA Install Prompt Script -->
+    <script>
+      let deferredPrompt;
+      const installBtn = document.getElementById('installBtn');
+
+      window.addEventListener('beforeinstallprompt', (e) => {
+        // Prevent the mini-infobar from appearing on mobile
+        e.preventDefault();
+        // Stash the event so it can be triggered later
+        deferredPrompt = e;
+        // Show our install button
+        installBtn.style.display = 'inline-block';
+      });
+
+      function promptInstall() {
+        if (deferredPrompt) {
+          // Show the prompt
+          deferredPrompt.prompt();
+          // Wait for the user to respond to the prompt
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the install prompt');
+              // Hide the install button
+              installBtn.style.display = 'none';
+            } else {
+              console.log('User dismissed the install prompt');
+            }
+            deferredPrompt = null;
+          });
+        } else {
+          // Fallback for browsers that don't support PWA install
+          alert('This app can be installed! Look for the install option in your browser menu or address bar.');
+        }
+      }
+
+      // Hide install button if app is already installed
+      window.addEventListener('appinstalled', (evt) => {
+        console.log('PWA was installed');
+        installBtn.style.display = 'none';
+      });
+
+      // Check if app is already installed (for browsers that support this)
+      if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+        installBtn.style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

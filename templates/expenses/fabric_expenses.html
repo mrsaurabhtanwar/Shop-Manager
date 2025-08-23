@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric Expenses</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/expenses/fabric_expenses.css') }}">
+
+</head>
+<body>
+    <div class="container">
+    <a href="/expenses" class="back-link">← Back to Expenses</a>
+    <div id="message" style="display:none; padding:12px; margin:10px 0; border-radius:4px;
+         font-weight:600;
+         "></div>
+        <h1>Fabric Purchase Entry</h1>
+        
+        <form id="fabricForm">
+            <div class="form-group">
+                <label for="supplier">Supplier Name:</label>
+                <input type="text" id="supplier" name="supplier" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="purchaseDate">Purchase Date:</label>
+                    <input type="date" id="purchaseDate" name="purchaseDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fabricBrand">Fabric Brand:</label>
+                    <input type="text" id="fabricBrand" name="fabricBrand" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="fabricType">Fabric Type:</label>
+                <input type="text" id="fabricType" name="fabricType" required>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="quantity">Quantity (meters):</label>
+                    <input type="number" id="quantity" name="quantity" step="0.01" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pricePerMeter">Price per Meter:</label>
+                    <input type="number" id="pricePerMeter" name="pricePerMeter" step="0.01" min="0" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="totalPrice">Total Price:</label>
+                <input type="number" id="totalPrice" name="totalPrice" step="0.01" readonly>
+            </div>
+            
+            <button type="submit">Submit Fabric Purchase</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/expenses/fabric_expenses.js') }}"></script>
+</body>
+</html>

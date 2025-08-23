@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailoring Orders Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/order/tailor.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/session-manager.css') }}">
+</head>
+<body>
+    <!-- Response Messages Container -->
+    <div class="response-container" id="responseContainer"></div>
+
+    <div class="container">
+        <h2>✂️ Tailoring Orders Management</h2>
+
+        <!-- Add New Tailoring Order Form -->
+        <div class="form-section">
+            <form id="tailoring-form" class="order-form" method="POST" action="">
+            <!-- Add these hidden inputs for routing -->
+            <input type="hidden" name="path" value="/orders/tailor">
+            <input type="hidden" name="returnUrl" id="returnUrl" value="">
+                <fieldset>
+                    <legend>Add New Tailoring Order</legend>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="customer_name">Customer Name: <span class="required">*</span></label>
+                            <input type="text" id="customer_name" name="customer_name" required maxlength="100" placeholder="Enter customer name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact_info">Contact Info (phone):</label>
+                            <input type="text" id="contact_info" name="contact_info" maxlength="50" placeholder="Enter phone number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea id="address" name="address" rows="2" maxlength="300" placeholder="Customer address (street, city, landmark)"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customer_type">Customer Type: <span class="required">*</span></label>
+                            <select id="customer_type" name="customer_type" required>
+                                <option value="Regular">Regular</option>
+                                <option value="New">New</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="garment_type_display">Selected Garment Types:</label>
+                            <div id="garment_type_display" class="selected-garments-display">
+                                <span id="no_garments_selected" class="no-garments-text">No garments selected yet. Use the measurement section below to select garments.</span>
+                                <div id="selected_garments_list" class="selected-garments-list" style="display: none;"></div>
+                            </div>
+                            <!-- Hidden input to store the final garment type string -->
+                            <input type="hidden" id="garment_type" name="garment_type" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="order_date">Order Date: <span class="required">*</span></label>
+                            <input type="date" id="order_date" name="order_date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="delivery_date">Delivery Date:</label>
+                            <input type="date" id="delivery_date" name="delivery_date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="delivery_status">Delivery Status:</label>
+                            <select id="delivery_status" name="delivery_status">
+                                <option value="Pending">Pending</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="Delivered">Delivered</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="price">Price: <span class="required">*</span></label>
+                            <input type="number" id="price" name="price" step="0.01" min="0.01" required placeholder="Enter price">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="payment_status">Payment Status:</label>
+                            <select id="payment_status" name="payment_status">
+                                <option value="Unpaid">Unpaid</option>
+                                <option value="Partial">Partial</option>
+                                <option value="Paid">Paid</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="season">Season:</label>
+                            <select id="season" name="season">
+                                <option value="Monsoon">Monsoon</option>
+                                <option value="Summer">Summer</option>
+                                <option value="Winter">Winter</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="session">Session:</label>
+                            <select id="session" name="session">
+                                <option value="">-- Select Session --</option>
+                                <option value="Wedding">Wedding</option>
+                                <option value="Diwali">Diwali</option>
+                                <option value="Holi">Holi</option>
+                                <option value="Eid">Raksha Bandhan</option>
+                                <option value="Karva Chauth">Karva Chauth</option>
+                                <option value="Dussehra">Dussehra</option>
+                                <option value="Casual">Casual</option>
+                                <option value="Office">Office</option>
+                                <option value="Party">Party</option>
+                                <option value="Festival">Festival</option>
+                            </select>
+                       </div>
+                    </div>
+
+                    <!-- Interactive Garment Selection Section -->
+                    <div class="measurements-section">
+                        <h3>🎯 Select Garments & Add Measurements</h3>
+                        <p style="color: #74b9ff; font-size: 14px; margin-bottom: 25px; text-align: center;">
+                            Click on garment types to select and add detailed measurements. Data will be saved to separate sheets.
+                        </p>
+                        
+                        <!-- Garment Selection Grid -->
+                        <div class="garment-selection-container">
+                            
+                            <!-- Shirt Selection -->
+                            <div class="garment-selection-card" id="shirt_card" onclick="openMeasurementPopup('shirt')">
+                                <div class="garment-icon">👔</div>
+                                <h4 class="garment-title">Shirt</h4>
+                                <div class="garment-subtitle">Click to add measurements</div>
+                                <div id="shirt_status" class="garment-status status-not-selected">Not Selected</div>
+                                <!-- Hidden inputs for shirt data -->
+                                <input type="hidden" id="shirt_selected" name="shirt_selected" value="0">
+                                <input type="hidden" id="shirt_quantity" name="shirt_quantity" value="1">
+                                <input type="hidden" id="shirt_fabric_meters" name="shirt_fabric_meters" value="0">
+                                <input type="hidden" id="shirt_chest" name="shirt_chest">
+                                <input type="hidden" id="shirt_shoulder" name="shirt_shoulder">
+                                <input type="hidden" id="shirt_sleeve" name="shirt_sleeve">
+                                <input type="hidden" id="shirt_length" name="shirt_length">
+                                <input type="hidden" id="shirt_neck" name="shirt_neck">
+                                <input type="hidden" id="shirt_bicep" name="shirt_bicep">
+                            </div>
+
+                            <!-- Pant Selection -->
+                            <div class="garment-selection-card" id="pant_card" onclick="openMeasurementPopup('pant')">
+                                <div class="garment-icon">👖</div>
+                                <h4 class="garment-title">Pant</h4>
+                                <div class="garment-subtitle">Click to add measurements</div>
+                                <div id="pant_status" class="garment-status status-not-selected">Not Selected</div>
+                                <!-- Hidden inputs for pant data -->
+                                <input type="hidden" id="pant_selected" name="pant_selected" value="0">
+                                <input type="hidden" id="pant_quantity" name="pant_quantity" value="1">
+                                <input type="hidden" id="pant_fabric_meters" name="pant_fabric_meters" value="0">
+                                <input type="hidden" id="pant_waist" name="pant_waist">
+                                <input type="hidden" id="pant_hip" name="pant_hip">
+                                <input type="hidden" id="pant_inseam" name="pant_inseam">
+                                <input type="hidden" id="pant_outseam" name="pant_outseam">
+                                <input type="hidden" id="pant_thigh" name="pant_thigh">
+                                <input type="hidden" id="pant_knee" name="pant_knee">
+                                <input type="hidden" id="pant_bottom" name="pant_bottom">
+                            </div>
+
+                            <!-- Other Selection -->
+                            <div class="garment-selection-card" id="other_card" onclick="openMeasurementPopup('other')">
+                                <div class="garment-icon">👕</div>
+                                <h4 class="garment-title">Other</h4>
+                                <div class="garment-subtitle">Click to select</div>
+                                <div id="other_status" class="garment-status status-not-selected">Not Selected</div>
+                                <!-- Hidden inputs for other data -->
+                                <input type="hidden" id="other_selected" name="other_selected" value="0">
+                                <input type="hidden" id="other_quantity" name="other_quantity" value="1">
+                                <input type="hidden" id="other_fabric_meters" name="other_fabric_meters" value="0">
+                            </div>
+                        </div>
+
+                        <!-- General Notes -->
+                        <div class="form-group form-grid-full" style="margin-top: 30px;">
+                            <label for="note">Additional Notes:</label>
+                            <textarea id="note" name="note" rows="3" maxlength="500" placeholder="Any special instructions or notes..."></textarea>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 30px; text-align: center;">
+                        <button type="submit" id="submit-btn" class="btn btn-primary">
+                            💾 Save Tailoring Order
+                        </button>
+                        <button type="reset" onclick="clearForm()" class="btn btn-secondary">
+                            🔄 Clear Form
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/common/session-manager.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/common/quick-navigation.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/common/smart-form-persistence.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/orders/tailor.js') }}"></script>
+</body>
+</html>

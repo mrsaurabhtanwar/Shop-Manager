@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker List - Shop Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/workers/worker_list.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="?" class="back-btn">← Back</a>
+            <h1>Worker List</h1>
+            <p>All registered workers</p>
+        </div>
+        
+        <div class="content">
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Search workers by name, phone, or address...">
+            </div>
+            
+            <div class="worker-count" id="workerCount">Loading workers...</div>
+            
+            <div class="loading" id="loading">
+                <div class="loading-spinner"></div>
+                <p>Loading workers...</p>
+            </div>
+            
+            <div class="workers-grid" id="workersGrid"></div>
+            
+            <div class="no-workers" id="noWorkers" style="display: none;">
+                <h3>No workers found</h3>
+                <p>Start by adding your first worker to the system.</p>
+                <a href="?path=workers/add" class="add-worker-btn">Add First Worker</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/common/gas-client.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/workers/worker_list.js') }}"></script>
+</body>
+</html>

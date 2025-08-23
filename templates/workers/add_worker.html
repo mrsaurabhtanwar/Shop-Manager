@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Worker - Shop Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/workers/add_worker.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/session-manager.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="?" class="back-btn">← Back</a>
+            <h1>Add New Worker</h1>
+            <p>Register a new worker in the system</p>
+        </div>
+        
+        <div class="form-container">
+            <div class="message" id="message"></div>
+            <div class="loading" id="loading">
+                <div class="loading-spinner"></div>
+                <p>Adding worker...</p>
+            </div>
+            
+            <form id="addWorkerForm">
+                <div class="form-group">
+                    <label for="name">Worker Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter worker's full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter phone number">
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" placeholder="Enter full address"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">Add Worker</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/common/gas-client.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/common/session-manager.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/workers/add_worker.js') }}"></script>
+    
+    
+</body>
+</html>

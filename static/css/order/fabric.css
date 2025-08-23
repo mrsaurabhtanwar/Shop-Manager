@@ -1,0 +1,448 @@
+/* Fabric Orders Management - Styles */
+/* General page styling */
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h2, h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form layout */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    max-width: 350px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Mobile-friendly select styling */
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6,9 12,15 18,9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-right: 35px;
+}
+
+/* Alerts */
+.alert {
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 6px;
+    font-size: 14px;
+    position: relative;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-success {
+    background-color: #e6f7e9;
+    color: #1f6c2f;
+    border-left: 5px solid #28a745;
+}
+
+.alert-danger {
+    background-color: #fdecea;
+    color: #a71d2a;
+    border-left: 5px solid #dc3545;
+}
+
+.alert-warning {
+    background-color: #fff8e5;
+    color: #856404;
+    border-left: 5px solid #ffc107;
+}
+
+.alert-info {
+    background-color: #e3f2fd;
+    color: #0277bd;
+    border-left: 5px solid #2196f3;
+}
+
+/* Loading spinner */
+.loading {
+    display: none;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Status badges */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-paid {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-unpaid {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.status-partial {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+/* Buttons */
+button[type="submit"],
+button[type="reset"],
+.btn {
+    padding: 10px 18px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+button[type="submit"], .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+button[type="submit"]:hover:not(:disabled), .btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,123,255,0.3);
+}
+
+button[type="submit"]:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+button[type="reset"], .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+button[type="reset"]:hover, .btn-secondary:hover {
+    background-color: #545b62;
+    transform: translateY(-1px);
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Required field indicator */
+.required {
+    color: red;
+}
+
+/* Form sections */
+.form-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #e9ecef;
+}
+
+/* Fabric items section */
+.fabric-item {
+    background-color: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.fabric-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-color: #007bff;
+}
+
+.fabric-item h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #007bff;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
+}
+
+.remove-fabric {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.remove-fabric:hover {
+    background-color: #c82333;
+    transform: scale(1.1);
+}
+
+.fabric-total {
+    font-weight: bold;
+    color: #155724;
+    font-size: 16px;
+    text-align: right;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e6f7e9;
+    border-radius: 4px;
+    border-left: 5px solid #28a745;
+}
+
+.order-total {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(40,167,69,0.3);
+}
+
+.order-total h3 {
+    margin: 0;
+    color: white;
+    font-size: 24px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Add more button styling */
+.add-fabric-btn {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 10px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(40,167,69,0.2);
+}
+
+.add-fabric-btn:hover {
+    background: linear-gradient(45deg, #218838, #1ea080);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(40,167,69,0.3);
+}
+
+/* Form grid for better mobile layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.form-grid-full {
+    grid-column: 1 / -1;
+}
+
+/* Success animation */
+@keyframes successPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.success-animation {
+    animation: successPulse 0.6s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        max-width: 100%;
+    }
+    
+    button[type="submit"],
+    button[type="reset"],
+    .btn {
+        width: 100%;
+        margin-bottom: 8px;
+        margin-right: 0;
+    }
+
+    .fabric-item {
+        padding: 15px;
+    }
+
+    .remove-fabric {
+        position: static;
+        margin-bottom: 10px;
+        width: auto;
+        height: auto;
+        padding: 5px 10px;
+        border-radius: 4px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .order-total h3 {
+        font-size: 20px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .container {
+        box-shadow: none;
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .form-section {
+        background-color: white;
+    }
+    
+    button {
+        display: none;
+    }
+}
+
+/* Dark mode disabled - keeping everything in light mode */
+/* @media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+    }
+    
+    .form-section {
+        background-color: #2d2d2d;
+    }
+    
+    .fabric-item {
+        background-color: #2d2d2d;
+        border-color: #404040;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        background-color: #2d2d2d;
+        border-color: #404040;
+        color: #e0e0e0;
+    }
+} */

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/expenses/expenses.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>💼 Expense Manager</h1>
+        <p class="subtitle">Track and manage your business expenses efficiently</p>
+        
+        <div class="expense-options">
+            <a href="/expenses/fabric" class="expense-card fabric-card">
+                <span class="card-icon">🧵</span>
+                <div class="card-title">Fabric Purchases</div>
+                <div class="card-description">
+                    Record fabric supplier details, quantities, prices, and calculate totals automatically
+                </div>
+            </a>
+            
+            <a href="/expenses/other" class="expense-card other-card">
+                <span class="card-icon">📋</span>
+                <div class="card-title">Other Expenses</div>
+                <div class="card-description">
+                    Track miscellaneous business expenses with notes and categorization
+                </div>
+            </a>
+        </div>
+
+        <div class="stats-section">
+            <h3 style="color: #333; margin-bottom: 20px;">Quick Stats</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalExpenses">0</div>
+                    <div class="stat-label">Total Entries</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="fabricCount">0</div>
+                    <div class="stat-label">Fabric Purchases</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="otherCount">0</div>
+                    <div class="stat-label">Other Expenses</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>💡 Tip: All data is automatically saved to your Google Sheets for easy tracking and analysis</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/expenses/expenses.js') }}"></script>
+</body>
+</html>

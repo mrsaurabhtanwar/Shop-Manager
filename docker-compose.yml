@@ -1,0 +1,42 @@
+# Docker Compose for development and production
+
+version: '3.8'
+
+services:
+  shop-manager:
+    build: .
+    container_name: shop-manager-app
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      - HOST=0.0.0.0
+      - PORT=5000
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Nginx reverse proxy for production
+  nginx:
+    image: nginx:alpine
+    container_name: shop-manager-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - shop-manager
+    restart: unless-stopped
+
+volumes:
+  logs:

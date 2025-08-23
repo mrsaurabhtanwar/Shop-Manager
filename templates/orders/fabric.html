@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric Orders Management</title>
+    <!-- Link to external CSS file -->
+    <!-- TODO: Update the path to your CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/order/fabric.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/session-manager.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Fabric Orders Management</h2>
+
+        <!-- Messages will be displayed here -->
+        <div id="flash-messages"></div>
+
+        <!-- Add New Fabric Order Form -->
+        <div class="form-section">
+            <h3>Add New Fabric Order</h3>
+            <form id="fabric-form" method="POST" action="">
+            <input type="hidden" name="path" value="/orders/fabric">
+            <input type="hidden" name="returnUrl" id="returnUrl" value="">
+                <!-- Customer Information -->
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="customer_name">Customer Name: <span class="required">*</span></label>
+                        <input type="text" id="customer_name" name="customer_name" required maxlength="100">
+                    </div>
+
+                    <div class="form-group"> 
+                        <label for="contact_number">Contact Number:</label>
+                        <input type="phone" id="contact_number" name="contact_number" pattern="[0-9]*">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" rows="2" maxlength="300" placeholder="Customer address (street, city, landmark)"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customer_type">Customer Type: <span class="required">*</span></label>
+                        <select id="customer_type" name="customer_type" required>
+                            <option value="">-- Select Customer Type --</option>
+                            <option value="New">New</option>
+                            <option value="Regular">Regular</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="purchase_date">Purchase Date: <span class="required">*</span></label>
+                        <input type="date" id="purchase_date" name="purchase_date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="payment_status">Payment Status:</label>
+                        <select id="payment_status" name="payment_status">
+                            <option value="Unpaid">Unpaid</option>
+                            <option value="Partial">Partial</option>
+                            <option value="Paid">Paid</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="session">Session:</label>
+                        <select id="session" name="session">
+                            <option value="">-- Select Session --</option>
+                            <option value="Wedding">Wedding</option>
+                            <option value="Diwali">Diwali</option>
+                            <option value="Holi">Holi</option>
+                            <option value="Eid">Raksha Bandhan</option>
+                            <option value="Karva Chauth">Karva Chauth</option>
+                            <option value="Dussehra">Dussehra</option>
+                            <option value="Casual">Casual</option>
+                            <option value="Office">Office</option>
+                            <option value="Party">Party</option>
+                            <option value="Festival">Festival</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group form-grid-full">
+                        <label for="note">Note:</label>
+                        <textarea id="note" name="note" rows="3" maxlength="500"></textarea>
+                    </div>
+                </div>
+
+                <!-- Fabric Items Section -->
+                <h4 style="margin-top: 30px; color: #007bff;">Fabric Items</h4>
+                <div id="fabric-items-container">
+                    <!-- Fabric items will be added by JavaScript -->
+                </div>
+
+                <button type="button" class="add-fabric-btn" onclick="addFabricItem()">
+                    ➕ Add More Fabric
+                </button>
+
+                <!-- Order Total -->
+                <div class="order-total" id="order-total-section" style="display: none;">
+                    <h3 id="order-total-display">Total: ₹0.00</h3>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <button type="submit" id="submit-btn">Save Order</button>
+                    <button type="reset" onclick="clearForm()">Clear Form</button>
+                    <button type="button" class="btn-secondary" onclick="testConnection()">Test Connection</button>
+                </div>
+            </form>
+        </div>
+
+    <!-- Link to external JavaScript file -->
+    <!-- TODO: Update the path to your JavaScript file -->
+    <script src="{{ url_for('static', filename='scripts/common/session-manager.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/common/quick-navigation.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/common/smart-form-persistence.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/orders/fabric.js') }}"></script>
+</body>
+</html>

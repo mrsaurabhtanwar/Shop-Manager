@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Order - Fabric + Tailoring</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/order/fabric_tailor.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/session-manager.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Combined Order - Fabric + Tailoring</h1>
+        
+        <form id="combinedForm" class="order-form">
+            <div class="form-section">
+                <h2>👤 Customer Information</h2>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="customer_name">Customer Name <span class="required">*</span></label>
+                        <input type="text" id="customer_name" name="customer_name" required maxlength="100" placeholder="Enter customer name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact">Contact <span class="required">*</span></label>
+                        <input type="text" id="contact" name="contact" required placeholder="Phone/Email" maxlength="50">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" rows="2" maxlength="300" placeholder="Customer address (street, city, landmark)"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customer_type">Customer Type</label>
+                        <select id="customer_type" name="customer_type">
+                            <option value="New">New Customer</option>
+                            <option value="Regular">Regular Customer</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="order_date">Order Date <span class="required">*</span></label>
+                        <input type="date" id="order_date" name="order_date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sessions">Session</label>
+                        <select id="sessions" name="sessions">
+                            <option value="">-- Select Session --</option>
+                            <option value="Wedding">Wedding</option>
+                            <option value="Diwali">Diwali</option>
+                            <option value="Holi">Holi</option>
+                            <option value="Raksha Bandhan">Raksha Bandhan</option>
+                            <option value="Karva Chauth">Karva Chauth</option>
+                            <option value="Dussehra">Dussehra</option>
+                            <option value="Casual">Casual</option>
+                            <option value="Office">Office</option>
+                            <option value="Party">Party</option>
+                            <option value="Festival">Festival</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group form-grid-full">
+                        <label for="notes">Notes</label>
+                        <textarea id="notes" name="notes" rows="3" maxlength="500" placeholder="Any special instructions or notes..."></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>📦 Order Management</h2>
+                
+                <div class="order-actions">
+                    <button type="button" id="addFabricBtn" class="action-btn fabric-btn">
+                        🧵 Add Fabric Order
+                    </button>
+                    <button type="button" id="addTailoringBtn" class="action-btn tailor-btn">
+                        ✂️ Add Tailoring Order
+                    </button>
+                </div>
+                
+                <div class="order-status">
+                    <div class="status-grid">
+                        <div class="status-card" id="fabricStatus">
+                            <div class="status-icon">🧵</div>
+                            <div class="status-content">
+                                <h4>Fabric Order</h4>
+                                <div class="status-text" id="fabricStatusText">Not added</div>
+                                <div class="order-id" id="fabricOrderId"></div>
+                            </div>
+                            <div class="status-price" id="fabricStatusPrice">₹0.00</div>
+                        </div>
+                        
+                        <div class="status-card" id="tailoringStatus">
+                            <div class="status-icon">✂️</div>
+                            <div class="status-content">
+                                <h4>Tailoring Order</h4>
+                                <div class="status-text" id="tailoringStatusText">Not added</div>
+                                <div class="order-id" id="tailoringOrderId"></div>
+                            </div>
+                            <div class="status-price" id="tailoringStatusPrice">₹0.00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="price-summary">
+                    <div class="price-row">
+                        <span>Fabric Price:</span>
+                        <input type="number" id="fabric_price" name="fabric_price" value="0" step="0.01" min="0" placeholder="0.00">
+                    </div>
+                    
+                    <div class="price-row">
+                        <span>Tailoring Price:</span>
+                        <input type="number" id="tailoring_price" name="tailoring_price" value="0" step="0.01" min="0" placeholder="0.00">
+                    </div>
+                    
+                    <div class="price-row subtotal">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">₹0.00</span>
+                    </div>
+                    
+                    <div class="price-row total">
+                        <span><strong>Total Amount:</strong></span>
+                        <span id="total"><strong>₹0.00</strong></span>
+                    </div>
+                    
+                    <div class="form-group payment-status-group">
+                        <label for="paid_status">Payment Status</label>
+                        <select id="paid_status" name="paid_status">
+                            <option value="Unpaid">Unpaid</option>
+                            <option value="Partial">Partial</option>
+                            <option value="Paid">Paid</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" id="saveCombinedBtn" class="save-btn" disabled>
+                    💾 Save Combined Order
+                </button>
+                <button type="button" id="clearBtn" class="clear-btn">
+                    🔄 Clear All
+                </button>
+            </div>
+        </form>
+        
+        <div id="message" class="message hidden"></div>
+    </div>
+    
+    <!-- Hidden fields to store order IDs -->
+    <input type="hidden" id="fabric_order_id" name="fabric_order_id">
+    <input type="hidden" id="tailoring_order_id" name="tailoring_order_id">
+
+    <script src="{{ url_for('static', filename='scripts/common/session-manager.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/common/quick-navigation.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/common/smart-form-persistence.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/orders/fabric_tailor.js') }}"></script>
+</body>
+</html>

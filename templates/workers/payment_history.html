@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment History - Shop Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/workers/payment_history.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="?" class="back-btn">← Back</a>
+            <h1>Payment History</h1>
+            <p>All payment records and statistics</p>
+        </div>
+        
+        <div class="content">
+            <div class="filters">
+                <div class="filter-group">
+                    <select id="workerFilter">
+                        <option value="">All Workers</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <input type="date" id="dateFrom" placeholder="From Date">
+                </div>
+                <div class="filter-group">
+                    <input type="date" id="dateTo" placeholder="To Date">
+                </div>
+                <div class="filter-group">
+                    <input type="text" id="searchInput" placeholder="Search notes...">
+                </div>
+            </div>
+            
+            <div class="entry-count" id="entryCount">Loading payment history...</div>
+            
+            <div class="summary-cards" id="summaryCards">
+                <div class="summary-card total">
+                    <h3 id="totalWork">₹0</h3>
+                    <p>Total Work Amount</p>
+                </div>
+                <div class="summary-card advance">
+                    <h3 id="totalAdvance">₹0</h3>
+                    <p>Total Advance Given</p>
+                </div>
+                <div class="summary-card remaining">
+                    <h3 id="totalRemaining">₹0</h3>
+                    <p>Total Remaining Payment</p>
+                </div>
+                <div class="summary-card entries">
+                    <h3 id="totalEntries">0</h3>
+                    <p>Total Entries</p>
+                </div>
+            </div>
+            
+            <div class="loading" id="loading">
+                <div class="loading-spinner"></div>
+                <p>Loading payment history...</p>
+            </div>
+            
+            <div class="history-table" id="historyTable" style="display: none;">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Worker Name</th>
+                                <th>Paint Count</th>
+                                <th>Shirt Count</th>
+                                <th>Total Work</th>
+                                <th>Advance Taken</th>
+                                <th>Remaining</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="no-data" id="noData" style="display: none;">
+                <h3>No payment records found</h3>
+                <p>Start by adding payment entries to see history here.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/common/gas-client.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/workers/payment_history.js') }}"></script>
+</body>
+</html>

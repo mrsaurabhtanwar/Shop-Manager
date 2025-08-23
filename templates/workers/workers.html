@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Manager - Workers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/workers/worker.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Shop Manager</h1>
+            <p>Worker Management System</p>
+        </div>
+        
+        <div class="menu">
+            <div class="menu-grid">
+                <a href="/workers/add" class="menu-item add-worker">
+                    <div class="icon">👨‍💼</div>
+                    <h3>Add Worker</h3>
+                    <p>Register new workers with their details</p>
+                </a>
+                
+                <a href="/workers/list" class="menu-item worker-list">
+                    <div class="icon">📋</div>
+                    <h3>Worker List</h3>
+                    <p>View all registered workers</p>
+                </a>
+                
+                <a href="/workers/payment/add" class="menu-item add-payment">
+                    <div class="icon">💰</div>
+                    <h3>Add Daily Payment</h3>
+                    <p>Record daily work and payments</p>
+                </a>
+                
+                <a href="/workers/payment/history" class="menu-item payment-history">
+                    <div class="icon">📊</div>
+                    <h3>Payment History</h3>
+                    <p>View all payment records</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

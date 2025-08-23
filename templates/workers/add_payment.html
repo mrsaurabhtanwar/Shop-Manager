@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Daily Payment - Shop Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/workers/add_payment.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="?" class="back-btn">← Back</a>
+            <h1>Add Daily Payment</h1>
+            <p>Record daily work and payment details</p>
+        </div>
+        
+        <div class="form-container">
+            <div class="rate-info">
+                <h4>Current Rates</h4>
+                <p>Paint Work: ₹110 per piece</p>
+                <p>Shirt Work: ₹65 per piece</p>
+            </div>
+            
+            <div class="message" id="message"></div>
+            <div class="loading" id="loading">
+                <div class="loading-spinner"></div>
+                <p>Adding payment entry...</p>
+            </div>
+            
+            <form id="addPaymentForm">
+                <div class="form-group">
+                    <label for="workerName">Select Worker *</label>
+                    <select id="workerName" name="workerName" required>
+                        <option value="">Loading workers...</option>
+                    </select>
+                </div>
+                
+                <div class="work-section">
+                    <div class="form-group">
+                        <label for="paintCount">Paint Count</label>
+                        <input type="number" id="paintCount" name="paintCount" min="0" value="0" placeholder="Number of paint pieces">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="shirtCount">Shirt Count</label>
+                        <input type="number" id="shirtCount" name="shirtCount" min="0" value="0" placeholder="Number of shirt pieces">
+                    </div>
+                </div>
+                
+                <div class="calculation-card">
+                    <div class="calculation-item">
+                        <span class="calculation-label">Paint Work (₹110 × <span id="paintDisplay">0</span>):</span>
+                        <span class="calculation-value">₹<span id="paintAmount">0</span></span>
+                    </div>
+                    <div class="calculation-item">
+                        <span class="calculation-label">Shirt Work (₹65 × <span id="shirtDisplay">0</span>):</span>
+                        <span class="calculation-value">₹<span id="shirtAmount">0</span></span>
+                    </div>
+                    <div class="calculation-item">
+                        <span class="calculation-label">Total Work Amount:</span>
+                        <span class="calculation-value">₹<span id="totalAmount">0</span></span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="advanceTaken">Advance Taken</label>
+                    <input type="number" id="advanceTaken" name="advanceTaken" min="0" value="0" step="0.01" placeholder="Enter advance amount">
+                </div>
+                
+                <div class="calculation-card">
+                    <div class="calculation-item">
+                        <span class="calculation-label">Remaining Payment:</span>
+                        <span class="calculation-value">₹<span id="remainingAmount">0</span></span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">Notes (Optional)</label>
+                    <textarea id="notes" name="notes" placeholder="Any additional notes..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">Add Payment Entry</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/common/gas-client.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/workers/add_payment.js') }}"></script>
+</body>
+</html>
