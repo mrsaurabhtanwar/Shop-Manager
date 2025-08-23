@@ -9,9 +9,11 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV FLASK_ENV=production
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
+# Install system dependencies (minimal) and curl for HEALTHCHECK
+RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
+    curl \
+    ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements and install Python dependencies
@@ -24,12 +26,19 @@ COPY . .
 # Make startup script executable
 RUN chmod +x start.sh
 
-# Create logs directory and ensure proper permissions
-RUN mkdir -p logs static/icons && \
-    chown -R appuser:appuser /app
+# Metadata
+LABEL org.opencontainers.image.title="Shop Manager"
+LABEL org.opencontainers.image.description="A small Flask-based shop manager webapp"
+LABEL org.opencontainers.image.licenses="MIT"
 
-# Create non-root user for security
+# Create non-root user for security (tolerate if already exists)
 RUN adduser --disabled-password --gecos '' appuser || true
+
+# Create logs directory and ensure proper permissions (best-effort)
+RUN mkdir -p logs static/icons && \
+    chown -R appuser:appuser /app || true
+
+# Switch to non-root user
 USER appuser
 
 # Expose port
