@@ -1,0 +1,11 @@
+2025-08-24 03:15:06,443 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-24 03:15:06,470 - werkzeug - WARNING -  * Debugger is active!
+2025-08-24 03:15:06,475 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-24 03:15:29,698 - werkzeug - INFO -  * Detected change in 'D:\\Shop Manager\\shop.py', reloading
+2025-08-24 03:15:30,096 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-24 03:15:30,116 - werkzeug - WARNING -  * Debugger is active!
+2025-08-24 03:15:30,119 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-24 03:17:13,919 - werkzeug - INFO -  * Detected change in 'D:\\Shop Manager\\shop.py', reloading
+2025-08-24 03:17:14,309 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-24 03:17:14,326 - werkzeug - WARNING -  * Debugger is active!
+2025-08-24 03:17:14,330 - werkzeug - INFO -  * Debugger PIN: 830-721-376

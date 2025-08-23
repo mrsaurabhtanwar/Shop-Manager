@@ -95,3 +95,5 @@
 2025-08-24 03:10:02,419 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
 2025-08-24 03:10:02,444 - werkzeug - WARNING -  * Debugger is active!
 2025-08-24 03:10:02,446 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-24 03:15:05,665 - werkzeug - INFO -  * Detected change in 'D:\\Shop Manager\\shop.py', reloading
+2025-08-24 03:15:05,760 - werkzeug - INFO -  * Restarting with stat

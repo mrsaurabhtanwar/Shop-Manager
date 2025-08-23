@@ -26,14 +26,37 @@ if not app.config['DEBUG']:
 
 # Logging configuration
 log_level = getattr(logging, os.getenv('LOG_LEVEL', 'INFO').upper())
-logging.basicConfig(
-    level=log_level,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(),
-        logging.FileHandler(os.getenv('LOG_FILE', 'app.log'))
-    ]
-)
+
+# Production-safe logging - prefer console logging for cloud deployments
+if os.getenv('FLASK_ENV') == 'production' and not os.getenv('LOG_FILE'):
+    # Console-only logging for production cloud environments
+    logging.basicConfig(
+        level=log_level,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[logging.StreamHandler()]
+    )
+else:
+    # File + console logging for development or when explicitly configured
+    handlers = [logging.StreamHandler()]
+    
+    log_file = os.getenv('LOG_FILE', 'logs/app.log')
+    try:
+        # Create logs directory if it doesn't exist
+        log_dir = os.path.dirname(log_file)
+        if log_dir and not os.path.exists(log_dir):
+            os.makedirs(log_dir, exist_ok=True)
+        
+        # Add file handler
+        handlers.append(logging.FileHandler(log_file))
+    except (OSError, PermissionError) as e:
+        # Fall back to console logging only
+        print(f"Warning: Could not create log file {log_file}: {e}")
+
+    logging.basicConfig(
+        level=log_level,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=handlers
+    )
 
 logger = logging.getLogger(__name__)
 

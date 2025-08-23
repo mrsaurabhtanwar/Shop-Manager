@@ -21,8 +21,15 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
+# Make startup script executable
+RUN chmod +x start.sh
+
+# Create logs directory and ensure proper permissions
+RUN mkdir -p logs static/icons && \
+    chown -R appuser:appuser /app
+
 # Create non-root user for security
-RUN adduser --disabled-password --gecos '' appuser && chown -R appuser:appuser /app
+RUN adduser --disabled-password --gecos '' appuser || true
 USER appuser
 
 # Expose port
@@ -33,4 +40,4 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:5000/health || exit 1
 
 # Command to run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "4", "--timeout", "120", "shop:app"]
+CMD ["./start.sh"]
