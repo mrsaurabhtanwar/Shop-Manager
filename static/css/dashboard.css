@@ -308,6 +308,35 @@ body::before {
     animation: spin 1s linear infinite;
 }
 
+/* Recent Activities Placeholder */
+.recent-activities-content {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.activity-placeholder {
+    text-align: center;
+    padding: 2rem;
+    color: #6b7280;
+}
+
+.activity-placeholder i {
+    opacity: 0.6;
+    margin-bottom: 1rem;
+}
+
+.activity-placeholder p {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.activity-placeholder small {
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
 @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.7; transform: scale(1.1); }
@@ -364,6 +393,8 @@ body::before {
     box-shadow: var(--shadow-sm) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     transition: all var(--transition-normal);
+    min-height: 70px;
+    padding: 0.75rem 0;
 }
 
 .navbar-brand {
@@ -377,7 +408,7 @@ body::before {
 }
 
 /* Enhanced Buttons */
-.refresh-btn, .setup-btn, .install-btn {
+.install-btn {
     border: none;
     padding: 0.75rem 1.5rem;
     border-radius: var(--radius-full);
@@ -389,19 +420,6 @@ body::before {
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     backdrop-filter: blur(10px);
-}
-
-.refresh-btn {
-    background: linear-gradient(135deg, var(--secondary-color), var(--info-color));
-    color: white;
-}
-
-.setup-btn {
-    background: linear-gradient(135deg, var(--warning-color), var(--danger-color));
-    color: white;
-}
-
-.install-btn {
     background: linear-gradient(135deg, var(--success-color), var(--info-color));
     color: white;
     animation: pulse-glow 2s ease-in-out infinite;
@@ -418,12 +436,12 @@ body::before {
     }
 }
 
-.refresh-btn:hover, .setup-btn:hover, .install-btn:hover {
+.install-btn:hover {
     transform: translateY(-2px) scale(1.05);
     box-shadow: var(--shadow-lg);
 }
 
-.refresh-btn:active, .setup-btn:active, .install-btn:active {
+.install-btn:active {
     transform: translateY(0) scale(1.02);
 }
 
@@ -443,6 +461,7 @@ body::before {
     display: block;
     height: 100%;
     min-height: 180px;
+    text-align: center;
 }
 
 .mini-card::before {
@@ -481,6 +500,8 @@ body::before {
     color: white;
     box-shadow: var(--shadow-md);
     transition: all var(--transition-bounce);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .mini-card:hover .mini-icon {
@@ -493,6 +514,7 @@ body::before {
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 .mini-value {
@@ -505,12 +527,18 @@ body::before {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-align: center;
 }
 
 .mini-sub {
     color: #6b7280;
     font-size: 0.875rem;
     font-weight: 500;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.4;
+    overflow: visible;
 }
 
 /* Quick Actions Cards */
@@ -523,11 +551,13 @@ body::before {
     transition: all var(--transition-normal);
     color: inherit;
     text-decoration: none;
-    height: 140px;
+    min-height: 160px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
 .action-card:hover {
@@ -551,12 +581,22 @@ body::before {
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--primary-color);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: initial;
 }
 
 .action-sub {
     font-size: 0.875rem;
     color: #6b7280;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.4;
+    max-width: 100%;
+    overflow: visible;
 }
 
 /* Status Badges */
@@ -711,6 +751,7 @@ body::before {
     .mini-card {
         padding: 1.25rem;
         min-height: 160px;
+        text-align: center;
     }
     
     .mini-icon {
@@ -724,7 +765,9 @@ body::before {
     }
     
     .action-card {
-        height: 120px;
+        min-height: 140px;
+        height: auto;
+        padding: 1rem;
     }
     
     .setup-content {
@@ -733,26 +776,18 @@ body::before {
         max-height: 90vh;
     }
     
-    .refresh-btn, .setup-btn, .install-btn {
+    .install-btn {
         padding: 0.625rem 1.25rem;
         font-size: 0.75rem;
         margin-right: 0.5rem;
         margin-bottom: 0.5rem;
-    }
-
-    /* Make buttons and inputs full-width for easier tapping */
-    .refresh-btn, .setup-btn, .install-btn, .action-card, .mini-card, .stat-card {
-        -webkit-tap-highlight-color: rgba(0,0,0,0);
-    }
-
-    .install-btn, .refresh-btn, .setup-btn {
         width: 100%;
         display: block;
         margin-right: 0;
     }
 
     .action-card, .mini-card {
-        text-align: left;
+        text-align: center;
     }
 }
 
@@ -789,6 +824,7 @@ body::before {
     .mini-card {
         padding: 1rem;
         min-height: 140px;
+        text-align: center;
     }
     
     .mini-icon {
@@ -802,8 +838,10 @@ body::before {
     }
     
     .action-card {
-        height: 100px;
+        min-height: 120px;
+        height: auto;
         padding: 0.75rem;
+        text-align: center;
     }
     
     .navbar-brand {
@@ -825,8 +863,7 @@ body::before {
 
 /* Focus States for Accessibility */
 .stat-card:focus,
-.refresh-btn:focus,
-.setup-btn:focus {
+.install-btn:focus {
     outline: 2px solid var(--secondary-color);
     outline-offset: 2px;
 }
@@ -844,8 +881,8 @@ body::before {
         border: 1px solid #ddd !important;
     }
     
-    .setup-btn,
-    .refresh-btn {
+    .install-btn,
+    .right-menu {
         display: none !important;
     }
 }
@@ -1030,9 +1067,8 @@ body::before {
 
 .right-menu {
     position: fixed;
-    right: 16px;
-    top: calc(50% + 40px);
-    transform: translateY(-50%) scale(0.98);
+    left: 16px;
+    top: 90px;
     z-index: 1199;
     background: var(--card-gradient);
     border-radius: 12px;
@@ -1040,6 +1076,8 @@ body::before {
     padding: 8px;
     display: none;
     width: 220px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .right-menu.open {
@@ -1049,15 +1087,26 @@ body::before {
 .right-menu a {
     display: flex;
     gap: 12px;
-    padding: 10px;
+    padding: 12px;
     align-items: center;
     color: var(--primary-color);
     text-decoration: none;
     border-radius: 8px;
+    transition: all var(--transition-fast);
+    font-weight: 500;
 }
 
 .right-menu a:hover {
-    background: rgba(255,255,255,0.06);
+    background: rgba(102, 126, 234, 0.1);
+    color: var(--secondary-color);
+    transform: translateX(4px);
+}
+
+.right-menu .menu-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(107, 114, 128, 0.3), transparent);
+    margin: 8px 4px;
 }
 
 /* Ensure menu links are large enough on touch devices */

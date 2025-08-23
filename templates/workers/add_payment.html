@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <a href="?" class="back-btn">← Back</a>
+            <a href="#" onclick="window.sessionManager && window.sessionManager.quickBack ? window.sessionManager.quickBack() : window.history.back(); return false;" class="back-btn">← Back</a>
             <h1>Add Daily Payment</h1>
             <p>Record daily work and payment details</p>
         </div>
@@ -85,6 +85,7 @@
     </div>
 
     <script src="{{ url_for('static', filename='scripts/common/gas-client.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/common/session-manager.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/workers/add_payment.js') }}"></script>
 </body>
 </html>

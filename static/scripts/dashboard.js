@@ -43,15 +43,8 @@
                 API_KEY = storedKey;
                 loadDashboardData();
             } else {
-                // If we have a cached successful test for any API key, avoid forcing the setup modal
-                try {
-                    if (window.sessionManager && window.sessionManager.TestCache && window.sessionManager.TestCache.get() && window.sessionManager.TestCache.isValid()) {
-                        // Use cached result but no API key saved - still open setup lightly (non-blocking)
-                        console.log('Using cached test result, skipping forced setup modal');
-                    } else {
-                        openSetup();
-                    }
-                } catch (e) { openSetup(); }
+                // No automatic setup popup - user can manually open via Setup API button
+                console.log('No API key found. Use Setup API button to configure.');
             }
         });
 
@@ -601,8 +594,19 @@
                 }
             });
             
-            document.getElementById('recentActivities').innerHTML = activities.length > 0 ? 
-                activities.slice(0, 8).join('') : '<p class="text-muted text-center">No recent activities found</p>';
+            // Update the content
+            const recentActivitiesDiv = document.getElementById('recentActivities');
+            if (activities.length > 0) {
+                recentActivitiesDiv.innerHTML = activities.slice(0, 8).join('');
+            } else {
+                recentActivitiesDiv.innerHTML = `
+                    <div class="activity-placeholder">
+                        <i class="fas fa-clock fa-2x mb-3 text-muted"></i>
+                        <p class="text-muted">No recent activities to display</p>
+                        <small class="text-muted">Activities will appear here when you start using the system</small>
+                    </div>
+                `;
+            }
         }
 
         function showLoadingStates() {
@@ -623,15 +627,19 @@
         }
 
         function refreshDashboard() {
-            const btn = document.querySelector('.refresh-btn');
-            const originalHTML = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Refreshing...';
-            btn.disabled = true;
-            
-            loadDashboardData().finally(() => {
-                btn.innerHTML = originalHTML;
-                btn.disabled = false;
-            });
+            // Update the text/icon in the menu instead of a button
+            const menuItem = document.querySelector('[onclick="refreshDashboard(); return false;"]');
+            if (menuItem) {
+                const originalHTML = menuItem.innerHTML;
+                menuItem.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Refreshing...';
+                
+                loadDashboardData().finally(() => {
+                    menuItem.innerHTML = originalHTML;
+                });
+            } else {
+                // Fallback if menu item not found
+                loadDashboardData();
+            }
         }
 
         // Auto-refresh every 5 minutes

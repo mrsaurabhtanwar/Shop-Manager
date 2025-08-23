@@ -143,6 +143,9 @@
                 <button type="button" id="clearBtn" class="clear-btn">
                     🔄 Clear All
                 </button>
+                <button type="button" onclick="window.sessionManager && window.sessionManager.quickBack ? window.sessionManager.quickBack() : window.history.back()" class="clear-btn">
+                    ← Back
+                </button>
             </div>
         </form>
         

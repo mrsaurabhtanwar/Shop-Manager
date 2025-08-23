@@ -9,3 +9,259 @@
 2025-08-24 03:17:14,309 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
 2025-08-24 03:17:14,326 - werkzeug - WARNING -  * Debugger is active!
 2025-08-24 03:17:14,330 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-24 04:33:27,425 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-24 04:33:27,506 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-08-24 04:33:27,506 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-24 04:33:27,509 - werkzeug - INFO -  * Restarting with stat
+2025-08-24 04:33:27,822 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-24 04:33:27,839 - werkzeug - WARNING -  * Debugger is active!
+2025-08-24 04:33:27,844 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-24 04:33:30,172 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:33:30] "GET / HTTP/1.1" 200 -
+2025-08-24 04:33:30,522 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:33:30] "GET /static/scripts/pwa.js HTTP/1.1" 200 -
+2025-08-24 04:33:30,541 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:33:30] "GET /static/css/session-manager.css HTTP/1.1" 200 -
+2025-08-24 04:33:30,558 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:33:30] "GET /static/scripts/dashboard.js HTTP/1.1" 200 -
+2025-08-24 04:33:30,558 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:33:30] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 04:33:30,583 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:33:30] "GET /static/scripts/common/session-manager.js HTTP/1.1" 200 -
+2025-08-24 04:33:32,509 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:33:32] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 04:33:32,532 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:33:32] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 04:35:41,781 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:35:41] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 04:35:41,782 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:35:41] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 04:35:41,783 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:35:41] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:35:41,786 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 04:35:41,797 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:35:41] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 04:38:04,767 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:38:04] "GET / HTTP/1.1" 200 -
+2025-08-24 04:38:04,942 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:38:04] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:38:04,945 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:38:04] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 04:38:04,946 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:38:04] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 04:38:04,947 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:38:04] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 04:38:04,947 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:38:04] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:38:05,752 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:38:05] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 04:38:05,784 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:38:05] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 04:38:09,324 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 04:38:09,326 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:38:09] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 04:39:03,662 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:39:03] "GET / HTTP/1.1" 200 -
+2025-08-24 04:39:03,763 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:39:03] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 04:39:03,765 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:39:03] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:39:03,765 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:39:03] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 04:39:03,765 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:39:03] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:39:03,771 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:39:03] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 04:39:05,971 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:39:05] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 04:39:06,121 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:39:06] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 04:40:34,788 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:40:34] "GET / HTTP/1.1" 200 -
+2025-08-24 04:40:34,867 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:40:34] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:40:34,868 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:40:34] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:40:34,869 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:40:34] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 04:40:34,870 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:40:34] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 04:40:34,871 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:40:34] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 04:40:35,238 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:40:35] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 04:40:35,379 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:40:35] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 04:42:28,620 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:42:28] "GET / HTTP/1.1" 200 -
+2025-08-24 04:42:28,723 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:42:28] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 04:42:28,729 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:42:28] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 04:42:28,729 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:42:28] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:42:28,730 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:42:28] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:42:28,754 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:42:28] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 04:42:29,702 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:42:29] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 04:42:29,730 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:42:29] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 04:48:51,577 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:48:51] "GET /orders HTTP/1.1" 200 -
+2025-08-24 04:48:51,677 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:48:51] "GET /static/css/order/orders.css HTTP/1.1" 200 -
+2025-08-24 04:48:53,062 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:48:53] "GET /orders/fabric HTTP/1.1" 200 -
+2025-08-24 04:48:53,177 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:48:53] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:48:53,180 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:48:53] "GET /static/scripts/common/quick-navigation.js HTTP/1.1" 200 -
+2025-08-24 04:48:53,182 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:48:53] "GET /static/scripts/orders/fabric.js HTTP/1.1" 200 -
+2025-08-24 04:48:53,224 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:48:53] "GET /static/css/order/fabric.css HTTP/1.1" 200 -
+2025-08-24 04:48:53,236 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:48:53] "GET /static/scripts/common/session-manager.js HTTP/1.1" 200 -
+2025-08-24 04:48:53,241 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:48:53] "GET /static/scripts/common/smart-form-persistence.js HTTP/1.1" 200 -
+2025-08-24 04:49:02,076 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:02] "GET / HTTP/1.1" 200 -
+2025-08-24 04:49:02,160 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:02] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:49:02,163 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:02] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 04:49:02,164 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:02] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:02,165 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:02] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:02,168 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:02] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:03,109 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:03] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 04:49:03,128 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:03] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 04:49:16,332 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:16] "GET /workers HTTP/1.1" 200 -
+2025-08-24 04:49:16,407 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:16] "[36mGET /static/css/workers/worker.css HTTP/1.1[0m" 304 -
+2025-08-24 04:49:17,791 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:17] "GET /workers/add HTTP/1.1" 200 -
+2025-08-24 04:49:17,874 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:17] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:49:17,877 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:17] "[36mGET /static/css/workers/add_worker.css HTTP/1.1[0m" 304 -
+2025-08-24 04:49:17,881 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:17] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:17,887 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:17] "[36mGET /static/scripts/common/gas-client.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:17,895 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:17] "[36mGET /static/scripts/workers/add_worker.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:20,863 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:20] "GET / HTTP/1.1" 200 -
+2025-08-24 04:49:20,923 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:20] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 04:49:20,934 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:20] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:20,934 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:20] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:49:20,948 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:20] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:20,950 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:20] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:21,253 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:21] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 04:49:21,429 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:21] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 04:49:36,410 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:36] "GET /workers HTTP/1.1" 200 -
+2025-08-24 04:49:36,486 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:36] "[36mGET /static/css/workers/worker.css HTTP/1.1[0m" 304 -
+2025-08-24 04:49:38,365 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:38] "GET /workers/list HTTP/1.1" 200 -
+2025-08-24 04:49:38,432 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:38] "[36mGET /static/css/workers/worker_list.css HTTP/1.1[0m" 304 -
+2025-08-24 04:49:38,436 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:38] "[36mGET /static/scripts/common/gas-client.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:38,438 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:38] "[36mGET /static/scripts/workers/worker_list.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:47,826 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:47] "GET /workers/add HTTP/1.1" 200 -
+2025-08-24 04:49:47,904 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:47] "[36mGET /static/css/workers/add_worker.css HTTP/1.1[0m" 304 -
+2025-08-24 04:49:47,911 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:47] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:49:47,918 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:47] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:47,921 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:47] "[36mGET /static/scripts/common/gas-client.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:47,926 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:47] "[36mGET /static/scripts/workers/add_worker.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:49,784 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:49] "GET / HTTP/1.1" 200 -
+2025-08-24 04:49:49,853 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:49] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 04:49:49,860 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:49] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:49:49,862 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:49] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:49,867 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:49] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:49,872 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:49] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 04:49:50,165 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:50] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 04:49:50,313 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:49:50] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 04:53:01,002 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:01] "GET / HTTP/1.1" 200 -
+2025-08-24 04:53:01,096 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:01] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 04:53:01,099 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:01] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 04:53:01,102 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:01] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:53:01,103 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:01] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:53:01,153 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:01] "GET /static/scripts/dashboard.js HTTP/1.1" 200 -
+2025-08-24 04:53:01,886 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:01] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 04:53:01,902 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:01] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 04:53:05,087 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:05] "GET /workers HTTP/1.1" 200 -
+2025-08-24 04:53:05,173 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:05] "[36mGET /static/css/workers/worker.css HTTP/1.1[0m" 304 -
+2025-08-24 04:53:06,572 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:06] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 04:53:08,870 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:08] "GET /expenses HTTP/1.1" 200 -
+2025-08-24 04:53:08,936 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:08] "[36mGET /static/css/expenses/expenses.css HTTP/1.1[0m" 304 -
+2025-08-24 04:53:08,936 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:08] "[36mGET /static/scripts/expenses/expenses.js HTTP/1.1[0m" 304 -
+2025-08-24 04:53:10,637 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:10] "GET /expenses/fabric HTTP/1.1" 200 -
+2025-08-24 04:53:10,689 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:10] "GET /static/css/expenses/fabric_expenses.css HTTP/1.1" 200 -
+2025-08-24 04:53:10,697 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:10] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:53:10,703 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:10] "GET /static/scripts/expenses/fabric_expenses.js HTTP/1.1" 200 -
+2025-08-24 04:53:13,122 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:13] "GET /expenses/fabric HTTP/1.1" 200 -
+2025-08-24 04:53:13,203 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:13] "[36mGET /static/css/expenses/fabric_expenses.css HTTP/1.1[0m" 304 -
+2025-08-24 04:53:13,209 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:13] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:53:13,211 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:13] "[36mGET /static/scripts/expenses/fabric_expenses.js HTTP/1.1[0m" 304 -
+2025-08-24 04:53:28,855 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:28] "GET / HTTP/1.1" 200 -
+2025-08-24 04:53:28,912 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:28] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 04:53:28,923 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:28] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:53:28,924 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:28] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 04:53:28,926 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:28] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:53:28,927 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:28] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 04:53:29,150 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:29] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 04:53:29,291 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:29] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 04:53:50,179 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:50] "GET /orders HTTP/1.1" 200 -
+2025-08-24 04:53:50,242 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:50] "[36mGET /static/css/order/orders.css HTTP/1.1[0m" 304 -
+2025-08-24 04:53:52,368 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:52] "GET /orders/tailor HTTP/1.1" 200 -
+2025-08-24 04:53:52,469 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:52] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:53:52,477 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:52] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:53:52,486 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:52] "[36mGET /static/scripts/common/quick-navigation.js HTTP/1.1[0m" 304 -
+2025-08-24 04:53:52,489 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:52] "[36mGET /static/scripts/common/smart-form-persistence.js HTTP/1.1[0m" 304 -
+2025-08-24 04:53:52,493 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:52] "GET /static/scripts/orders/tailor.js HTTP/1.1" 200 -
+2025-08-24 04:53:52,502 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:53:52] "GET /static/css/order/tailor.css HTTP/1.1" 200 -
+2025-08-24 04:54:01,350 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:01] "GET /orders/tailor HTTP/1.1" 200 -
+2025-08-24 04:54:01,418 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:01] "[36mGET /static/css/order/tailor.css HTTP/1.1[0m" 304 -
+2025-08-24 04:54:01,425 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:01] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:54:01,431 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:01] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:54:01,439 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:01] "[36mGET /static/scripts/common/smart-form-persistence.js HTTP/1.1[0m" 304 -
+2025-08-24 04:54:01,440 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:01] "[36mGET /static/scripts/common/quick-navigation.js HTTP/1.1[0m" 304 -
+2025-08-24 04:54:01,445 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:01] "[36mGET /static/scripts/orders/tailor.js HTTP/1.1[0m" 304 -
+2025-08-24 04:54:16,918 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:16] "GET / HTTP/1.1" 200 -
+2025-08-24 04:54:17,007 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:17] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 04:54:17,016 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:17] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:54:17,024 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:17] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:54:17,026 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:17] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 04:54:17,030 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:17] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 04:54:17,275 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:17] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 04:54:17,298 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:17] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 04:54:40,524 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:40] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 04:54:40,527 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:40] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:54:40,531 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 04:54:40,533 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:40] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 04:54:40,536 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:40] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 04:54:52,302 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:52] "GET /orders HTTP/1.1" 200 -
+2025-08-24 04:54:52,526 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:52] "[36mGET /static/css/order/orders.css HTTP/1.1[0m" 304 -
+2025-08-24 04:54:52,550 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 04:54:52,552 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:52] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 04:54:54,752 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 04:54:54,754 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:54] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 04:54:55,341 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:55] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 04:54:55,481 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:54:55] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 04:57:57,772 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:57:57] "GET / HTTP/1.1" 200 -
+2025-08-24 04:57:58,250 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:57:58] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 04:57:58,261 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:57:58] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 04:57:58,263 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:57:58] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 04:57:58,264 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:57:58] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 04:57:58,289 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:57:58] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 04:57:59,239 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 04:57:59,241 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:57:59] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 04:57:59,616 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:57:59] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 04:57:59,903 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 04:57:59] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:00:51,528 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:00:51] "GET / HTTP/1.1" 200 -
+2025-08-24 05:00:51,788 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:00:51] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 05:00:51,789 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:00:51] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:00:51,790 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:00:51] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 05:00:51,790 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:00:51] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 05:00:51,801 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:00:51] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 05:00:52,164 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:00:52,166 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:00:52] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:00:52,897 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:00:52] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:00:53,246 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:00:53] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:01:35,971 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:01:35] "GET / HTTP/1.1" 200 -
+2025-08-24 05:01:36,074 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:01:36] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 05:01:36,077 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:01:36] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 05:01:36,078 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:01:36] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 05:01:36,079 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:01:36] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:01:36,096 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:01:36] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 05:01:36,456 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:01:36,457 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:01:36] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:01:36,934 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:01:36] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:01:37,289 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:01:37] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:02:20,202 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:02:20] "GET / HTTP/1.1" 200 -
+2025-08-24 05:02:20,501 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:02:20] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 05:02:20,513 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:02:20] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 05:02:20,520 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:02:20] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 05:02:20,543 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:02:20] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 05:02:20,568 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:02:20] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:02:21,710 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:02:21] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:02:21,812 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:02:21] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:02:22,378 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:02:22,380 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:02:22] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:03:00,583 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:03:00] "GET /orders HTTP/1.1" 200 -
+2025-08-24 05:03:00,798 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:03:00] "[36mGET /static/css/order/orders.css HTTP/1.1[0m" 304 -
+2025-08-24 05:03:00,977 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:03:00,979 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:03:00] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:03:07,609 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:03:07,612 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:03:07] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:03:08,472 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:03:08] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:03:08,781 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:03:08] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:03:26,996 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:03:26] "GET /orders HTTP/1.1" 200 -
+2025-08-24 05:03:27,299 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:03:27] "[36mGET /static/css/order/orders.css HTTP/1.1[0m" 304 -
+2025-08-24 05:03:32,182 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:03:32] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:03:37,041 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:03:37,044 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:03:37] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:03:54,054 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:03:54,079 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:03:54] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:03:54,092 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:03:54] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 05:03:54,113 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:03:54] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 05:03:54,114 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:03:54] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:03:54,960 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:03:54,962 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:03:54] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:05:06,447 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:05:06] "GET / HTTP/1.1" 200 -
+2025-08-24 05:05:06,586 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:05:06] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:05:06,587 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:05:06] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 05:05:06,588 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:05:06] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 05:05:06,646 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:05:06] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 05:05:06,681 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:05:06] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 05:05:07,911 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:05:07] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:05:07,929 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/favicon.ico
+2025-08-24 05:05:07,931 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:05:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-24 05:05:07,937 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:05:07] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:05:13,060 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:05:13] "GET /orders HTTP/1.1" 200 -
+2025-08-24 05:05:13,121 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:05:13] "[36mGET /static/css/order/orders.css HTTP/1.1[0m" 304 -
+2025-08-24 05:05:14,672 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:05:14] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:08:58,288 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:08:58] "GET / HTTP/1.1" 200 -
+2025-08-24 05:08:58,403 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:08:58] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 05:08:58,404 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:08:58] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 05:08:58,404 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:08:58] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 05:08:58,406 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:08:58] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:08:58,435 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:08:58] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 05:08:58,967 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:08:58] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:08:59,960 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:08:59] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -

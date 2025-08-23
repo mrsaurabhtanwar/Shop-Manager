@@ -554,14 +554,6 @@ async function testConnection() {
         return;
     }
 
-    // If cached success exists, use it and avoid re-testing
-    try {
-        if (window.sessionManager && window.sessionManager.TestCache && window.sessionManager.TestCache.isValid()) {
-            showMessage('✅ Connection OK (cached)', 'success');
-            return;
-        }
-    } catch (e) {}
-
     showMessage('Testing connection to Google Sheets...', 'info');
     
     try {

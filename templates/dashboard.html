@@ -29,42 +29,8 @@
         <p>To connect to your Google Sheets, you need to provide a Google Sheets API key.</p>
 
         <div class="mb-3">
-          <h5>Steps to get your API key:</h5>
-          <ol>
-            <li>
-              Go to <a href="https://console.developers.google.com/" target="_blank">Google Cloud Console</a>
-            </li>
-            <li>Create a new project or select existing one</li>
-            <li>Enable the "Google Sheets API"</li>
-            <li>Go to "Credentials" and create an API key</li>
-            <li>Make sure your sheets are publicly readable (Share > Anyone with link can view)</li>
-          </ol>
-        </div>
-
-        <div class="mb-3">
           <label class="form-label">Google Sheets API Key:</label>
           <input type="text" id="apiKeyInput" class="form-control" placeholder="Enter your Google Sheets API key" />
-        </div>
-
-        <div class="mb-3">
-          <h6>Your Sheet IDs (from your scripts):</h6>
-          <ul>
-            <li>
-              <strong>Combined Orders:</strong> 199mFt3yz1cZQUGcF84pZgNQoxCpOS2gHxFGDD71CZVg
-            </li>
-            <li>
-              <strong>Fabric Orders:</strong> 1tFb4EBzzvdmDNY0bOtyTXAhX1aRqzfq7NzXLhDqYj0o
-            </li>
-            <li>
-              <strong>Tailoring Orders:</strong> 128vwp1tjsej9itNAkQY1Y-5sJsMv3N1TZi5Pl9Wgn6Y
-            </li>
-            <li>
-              <strong>Expenses:</strong> 1QD0FHcJl7og1Fc1_BdQG2BCQq-N7KIr49jw3whzarXc
-            </li>
-            <li>
-              <strong>Workers:</strong> 1msVf01VuWsk1mhSMVrvypq_7ubSVjDKlr8aG-6bqE7Q
-            </li>
-          </ul>
         </div>
 
         <div id="connectionStatus"></div>
@@ -86,24 +52,20 @@
           <button id="installBtn" class="install-btn" style="display: none;" onclick="promptInstall()">
             <i class="fas fa-download me-2"></i>Install App
           </button>
-          <button class="refresh-btn" onclick="refreshDashboard()"><i class="fas fa-sync-alt me-2"></i>Refresh Data</button>
-          <button class="setup-btn" onclick="openSetup()"><i class="fas fa-cog me-2"></i>Setup API</button>
         </div>
       </div>
     </nav>
 
-    <!-- Right-side compact menu toggle -->
-    <button class="right-toggle" id="rightToggle" aria-label="Open quick menu" title="Quick menu">
-      <i class="fas fa-ellipsis-v"></i>
-    </button>
-    <div class="right-menu" id="rightMenu" role="menu" aria-hidden="true">
+  <div class="right-menu" id="rightMenu" role="menu" aria-hidden="true">
       <a href="{{ url_for('orders') }}" role="menuitem"><i class="fas fa-shopping-cart"></i> Orders</a>
       <a href="{{ url_for('workers') }}" role="menuitem"><i class="fas fa-users"></i> Workers</a>
       <a href="{{ url_for('expenses') }}" role="menuitem"><i class="fas fa-wallet"></i> Expenses</a>
+      <hr class="menu-divider">
+      <a href="#" role="menuitem" onclick="refreshDashboard(); return false;"><i class="fas fa-sync-alt"></i> Refresh Data</a>
       <a href="#" role="menuitem" onclick="openSetup(); return false;"><i class="fas fa-cog"></i> Setup API</a>
     </div>
 
-    <div class="container-fluid dashboard-container" style="margin-top: 80px;">
+    <div class="container-fluid dashboard-container" style="margin-top: 100px;">
       <!-- KPI Cards -->
       <div class="kpi-grid">
         <div class="stat-card">
@@ -251,25 +213,16 @@
         <div class="col-lg-12">
           <div class="stat-card">
             <h4 class="mb-4"><i class="fas fa-clock me-2"></i>Recent Activities</h4>
-            <div id="recentActivities" class="loading">
-              <i class="fas fa-spinner"></i>
-              <p>Loading recent activities...</p>
+            <div id="recentActivities" class="recent-activities-content">
+              <div class="activity-placeholder">
+                <i class="fas fa-clock fa-2x mb-3 text-muted"></i>
+                <p class="text-muted">Loading recent activities...</p>
+                <small class="text-muted">Fetching latest orders and transactions</small>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Add loading state -->
-    <div class="stat-card loading">
-      <i class="fas fa-spinner"></i>
-      Loading...
-    </div>
-
-    <!-- Add trend indicators -->
-    <div class="trend-indicator trend-up">
-      <i class="fas fa-arrow-up"></i>
-      +15.3%
     </div>
     </div> <!-- .main-wrapper -->
     </div> <!-- .app-layout -->
@@ -279,12 +232,15 @@
     <script>
       // Small helper to open setup modal if no API key saved
       document.addEventListener('DOMContentLoaded', function() {
+        // Removed automatic popup - user can manually open via Setup API button
+        /*
         try {
           const apiKey = localStorage.getItem('sheetsApiKey');
           if (!apiKey) {
             setTimeout(openSetup, 800);
           }
         } catch (e) {}
+        */
 
         // Sidebar toggle
         const sidebar = document.getElementById('appSidebar');
@@ -328,22 +284,35 @@
           setTimeout(() => window.dispatchEvent(new Event('resize')), 300);
         }
 
-        // Click handlers
-        toggle && toggle.addEventListener('click', function() { toggleSidebar(this); });
-        navbarHamburger && navbarHamburger.addEventListener('click', function() { toggleSidebar(this); });
-        sidebarHamburger && sidebarHamburger.addEventListener('click', function() { toggleSidebar(this); });
+    // Click handlers
+    toggle && toggle.addEventListener('click', function() { toggleSidebar(this); });
+    sidebarHamburger && sidebarHamburger.addEventListener('click', function() { toggleSidebar(this); });
 
-        // Keyboard support: Enter or Space toggles
-        [toggle, navbarHamburger, sidebarHamburger].forEach(el => {
-          if (!el) return;
-          el.setAttribute('tabindex', '0');
-          el.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              toggleSidebar(el);
-            }
-          });
-        });
+    // Keyboard support: Enter or Space toggles for sidebar controls
+    [toggle, sidebarHamburger].forEach(el => {
+      if (!el) return;
+      el.setAttribute('tabindex', '0');
+      el.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleSidebar(el);
+        }
+      });
+    });
+
+    // Keyboard support for navbar hamburger to toggle quick menu
+    if (navbarHamburger) {
+      navbarHamburger.setAttribute('tabindex', '0');
+      navbarHamburger.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const rightMenu = document.getElementById('rightMenu');
+          if (!rightMenu) return;
+          const isOpen = rightMenu.classList.toggle('open');
+          rightMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        }
+      });
+    }
       });
     </script>
     
@@ -394,25 +363,28 @@
       }
     </script>
     <script>
-      // Right-side quick menu toggle
+      // Right-side quick menu toggle (triggered by top-left navbar hamburger)
       (function(){
-        const rightToggle = document.getElementById('rightToggle');
+        const navbarHamburger = document.getElementById('navbarHamburger');
         const rightMenu = document.getElementById('rightMenu');
         function closeMenu(){
+          if (!rightMenu) return;
           rightMenu.classList.remove('open');
           rightMenu.setAttribute('aria-hidden', 'true');
         }
         function openMenu(){
+          if (!rightMenu) return;
           rightMenu.classList.add('open');
           rightMenu.setAttribute('aria-hidden', 'false');
         }
-        rightToggle && rightToggle.addEventListener('click', function(e){
+        navbarHamburger && navbarHamburger.addEventListener('click', function(e){
+          if (!rightMenu) return;
           if (rightMenu.classList.contains('open')) closeMenu(); else openMenu();
         });
-        // Close on outside click
+        // Close on outside click (exclude navbarHamburger)
         document.addEventListener('click', function(e){
-          if (!rightMenu || !rightToggle) return;
-          if (rightMenu.classList.contains('open') && !rightMenu.contains(e.target) && !rightToggle.contains(e.target)){
+          if (!rightMenu) return;
+          if (rightMenu.classList.contains('open') && !rightMenu.contains(e.target) && !navbarHamburger.contains(e.target)){
             closeMenu();
           }
         }, true);

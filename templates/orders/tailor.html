@@ -191,6 +191,9 @@
                         <button type="reset" onclick="clearForm()" class="btn btn-secondary">
                             🔄 Clear Form
                         </button>
+                        <button type="button" onclick="window.sessionManager && window.sessionManager.quickBack ? window.sessionManager.quickBack() : window.history.back()" class="btn btn-secondary">
+                            ← Back
+                        </button>
                     </div>
                 </fieldset>
             </form>
