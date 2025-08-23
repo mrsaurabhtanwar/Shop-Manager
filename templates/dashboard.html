@@ -306,8 +306,27 @@
         const sidebarHamburger = document.getElementById('sidebarHamburger');
 
         function toggleSidebar(trigger) {
-          const isCollapsed = sidebar.classList.toggle('collapsed');
-          const expanded = !isCollapsed;
+            // On small screens, toggle a mobile-open class to slide the sidebar in/out
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            if (isMobile) {
+              const isOpen = sidebar.classList.toggle('mobile-open');
+              // ensure collapsed state is synced for larger screens
+              if (isOpen) sidebar.classList.remove('collapsed');
+              const expanded = isOpen;
+              toggle && toggle.setAttribute('aria-expanded', expanded);
+              navbarHamburger && navbarHamburger.setAttribute('aria-expanded', expanded);
+              sidebarHamburger && sidebarHamburger.setAttribute('aria-expanded', expanded);
+              if (sidebarHamburger) {
+                sidebarHamburger.setAttribute('aria-label', expanded ? 'Collapse sidebar' : 'Expand sidebar');
+                sidebarHamburger.title = expanded ? 'Collapse sidebar' : 'Expand sidebar';
+              }
+              trigger && trigger.focus();
+              setTimeout(() => window.dispatchEvent(new Event('resize')), 300);
+              return;
+            }
+
+            const isCollapsed = sidebar.classList.toggle('collapsed');
+            const expanded = !isCollapsed;
           // Keep aria-expanded in sync for accessibility
           toggle && toggle.setAttribute('aria-expanded', expanded);
           navbarHamburger && navbarHamburger.setAttribute('aria-expanded', expanded);

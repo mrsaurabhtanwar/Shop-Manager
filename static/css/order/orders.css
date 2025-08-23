@@ -13,11 +13,13 @@
         
         .container {
             max-width: 800px;
+            width: calc(100% - 40px); /* fluid on small screens */
             margin: 0 auto;
             background: white;
             border-radius: 15px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            touch-action: manipulation;
         }
         
         .header {
@@ -151,11 +153,12 @@
             }
             
             .menu {
-                padding: 20px;
+                padding: 16px;
             }
             
             .menu-item {
-                padding: 25px;
+                padding: 20px;
+                min-height: 110px; /* larger tap target */
             }
         }
         

@@ -9,9 +9,10 @@ body {
 
 .container {
     max-width: 1200px;
+    width: calc(100% - 40px);
     margin: 0 auto;
     background-color: white;
-    padding: 30px;
+    padding: 24px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
@@ -37,7 +38,7 @@ h2, h3 {
 .form-group select,
 .form-group textarea {
     width: 100%;
-    max-width: 350px;
+    max-width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -360,8 +361,8 @@ button[type="reset"]:hover, .btn-secondary:hover {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .container {
-        padding: 15px;
-        margin: 10px;
+    padding: 12px;
+    margin: 8px;
     }
     
     .form-group input,
@@ -373,9 +374,10 @@ button[type="reset"]:hover, .btn-secondary:hover {
     button[type="submit"],
     button[type="reset"],
     .btn {
-        width: 100%;
-        margin-bottom: 8px;
-        margin-right: 0;
+    width: 100%;
+    margin-bottom: 12px;
+    margin-right: 0;
+    padding: 12px 16px;
     }
 
     .fabric-item {

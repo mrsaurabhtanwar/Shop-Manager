@@ -221,8 +221,9 @@ body::before {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     box-shadow: var(--shadow-md);
-    /* Fixed height to prevent chart overflow and cutting */
-    height: 400px;
+    /* Use aspect-ratio + min-height for responsive charts to avoid cutting on mobile */
+    aspect-ratio: 16 / 9;
+    min-height: 280px;
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
@@ -243,14 +244,16 @@ body::before {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 /* Ensure canvas fits properly within its container without overflow */
 .chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
     max-width: 100% !important;
     max-height: 100% !important;
-    width: auto !important;
-    height: auto !important;
     display: block;
     margin: 0 auto;
 }
@@ -695,7 +698,8 @@ body::before {
     
     .chart-container {
         padding: 1rem;
-        height: 350px; /* Slightly smaller on mobile */
+        aspect-ratio: 14 / 9;
+        min-height: 240px; /* Slightly smaller on mobile */
         margin-bottom: 1rem;
     }
     
@@ -734,6 +738,21 @@ body::before {
         font-size: 0.75rem;
         margin-right: 0.5rem;
         margin-bottom: 0.5rem;
+    }
+
+    /* Make buttons and inputs full-width for easier tapping */
+    .refresh-btn, .setup-btn, .install-btn, .action-card, .mini-card, .stat-card {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+
+    .install-btn, .refresh-btn, .setup-btn {
+        width: 100%;
+        display: block;
+        margin-right: 0;
+    }
+
+    .action-card, .mini-card {
+        text-align: left;
     }
 }
 
@@ -984,22 +1003,32 @@ body::before {
 
 /* Make sidebar visible on small screens as a top nav when collapsed */
 @media (max-width: 768px) {
-    .sidebar { 
-        position: relative; 
-        width: 100%; 
-        height: auto; 
-        display: flex; 
+    /* Mobile: hide the sidebar by default and allow it to slide in as an overlay */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 280px;
+        transform: translateX(-110%);
+        transition: transform var(--transition-normal);
+        z-index: 1100;
+        display: flex;
+        background: rgba(0,0,0,0.6);
+        padding-top: 56px; /* allow for top navbar */
     }
-    .sidebar-toggle { 
-        display: block; 
-        position: static;
-        transform: none;
-        margin-top: auto;
+    .sidebar.mobile-open {
+        transform: translateX(0);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        background: rgba(255,255,255,0.03);
     }
-    .sidebar-hamburger {
+    .sidebar-toggle {
         display: none;
     }
-    .main-wrapper { 
-        margin-left: 0; 
+    .sidebar-hamburger {
+        display: inline-flex;
+    }
+    .main-wrapper {
+        margin-left: 0;
     }
 }
