@@ -61,37 +61,21 @@
             document.getElementById('setupModal').style.display = 'none';
         }
 
-        async function testConnection() {
+        async function saveSetup() {
             const apiKey = document.getElementById('apiKeyInput').value.trim();
             if (!apiKey) {
                 showStatus('Please enter an API key', 'error');
                 return;
             }
 
-            showStatus('Testing connection...', 'warning');
+            API_KEY = apiKey;
+            localStorage.setItem('googleSheetsApiKey', apiKey);
+            showStatus('✅ API key saved successfully!', 'success');
             
-            try {
-                // Test connection with a simple sheet read
-                const testUrl = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_CONFIG.workers.id}/values/Worker_List?key=${apiKey}`;
-                const response = await fetch(testUrl);
-                
-                if (response.ok) {
-                    API_KEY = apiKey;
-                    localStorage.setItem('googleSheetsApiKey', apiKey);
-                    try { window.sessionManager && window.sessionManager.TestCache && window.sessionManager.TestCache.set(apiKey, { success: true, message: 'OK' }); } catch(e){}
-                    showStatus('✅ Connection successful! API key saved.', 'success');
-                    
-                    setTimeout(() => {
-                        closeSetup();
-                        loadDashboardData();
-                    }, 2000);
-                } else {
-                    const error = await response.json();
-                    showStatus(`❌ Connection failed: ${error.error?.message || 'Invalid API key'}`, 'error');
-                }
-            } catch (error) {
-                showStatus(`❌ Connection failed: ${error.message}`, 'error');
-            }
+            setTimeout(() => {
+                closeSetup();
+                loadDashboardData();
+            }, 1500);
         }
 
         function showStatus(message, type) {
@@ -560,44 +544,81 @@
                 });
             });
             
-            // Sort by date (most recent first) and take top 5
+            // Sort by date (most recent first) and take top 10
             allOrders.sort((a, b) => b.date - a.date)
-                     .slice(0, 5)
+                     .slice(0, 10)
                      .forEach(order => {
                 if (!isNaN(order.date.getTime()) && order.customer) {
                     const statusClass = (order.status || '').toLowerCase().replace(/\s+/g, '');
-                    activities.push(`
-                        <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
-                            <div>
-                                <strong>${order.type}:</strong> ${order.customer}
-                                <br><small class="text-muted">₹${order.amount.toLocaleString()} • ${order.date.toLocaleDateString()}</small>
-                            </div>
-                            <span class="status-badge status-${statusClass}">${order.status || 'Pending'}</span>
-                        </div>
-                    `);
+                    activities.push({
+                        type: order.type,
+                        customer: order.customer,
+                        amount: order.amount,
+                        status: order.status || 'Pending',
+                        statusClass: statusClass,
+                        date: order.date.toLocaleDateString()
+                    });
                 }
             });
             
             // Add recent worker payments
-            dashboardData.payments.slice(0, 3).forEach(payment => {
+            dashboardData.payments.slice(0, 5).forEach(payment => {
                 const amount = parseFloat(payment['Total Work Amount']) || 0;
                 if (payment['Worker Name'] && amount > 0) {
-                    activities.push(`
-                        <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
-                            <div>
-                                <strong>Worker Payment:</strong> ${payment['Worker Name']}
-                                <br><small class="text-muted">₹${amount.toLocaleString()} • ${payment['Date']}</small>
-                            </div>
-                            <span class="text-success"><i class="fas fa-check-circle"></i> Paid</span>
-                        </div>
-                    `);
+                    activities.push({
+                        type: 'Worker Payment',
+                        customer: payment['Worker Name'],
+                        amount: amount,
+                        status: 'Paid',
+                        statusClass: 'paid',
+                        date: payment['Date'] || 'N/A'
+                    });
                 }
             });
             
-            // Update the content
+            // Update the content with table format
             const recentActivitiesDiv = document.getElementById('recentActivities');
             if (activities.length > 0) {
-                recentActivitiesDiv.innerHTML = activities.slice(0, 8).join('');
+                // Create table HTML
+                let tableHTML = `
+                    <div class="table-responsive">
+                        <table class="table table-hover activities-table">
+                            <thead class="table-header">
+                                <tr>
+                                    <th class="activity-type-col">Activity Type</th>
+                                    <th class="customer-col">Customer/Worker</th>
+                                    <th class="amount-col">Amount</th>
+                                    <th class="status-col">Status</th>
+                                    <th class="date-col">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                `;
+                
+                activities.slice(0, 12).forEach(activity => {
+                    tableHTML += `
+                        <tr class="activity-row">
+                            <td class="activity-type">
+                                <i class="fas ${activity.type.includes('Order') ? 'fa-shopping-cart' : 'fa-user-check'}"></i>
+                                ${activity.type}
+                            </td>
+                            <td class="customer-name">${activity.customer}</td>
+                            <td class="amount-value">₹${activity.amount.toLocaleString()}</td>
+                            <td class="status-cell">
+                                <span class="status-badge status-${activity.statusClass}">${activity.status}</span>
+                            </td>
+                            <td class="date-value">${activity.date}</td>
+                        </tr>
+                    `;
+                });
+                
+                tableHTML += `
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+                
+                recentActivitiesDiv.innerHTML = tableHTML;
             } else {
                 recentActivitiesDiv.innerHTML = `
                     <div class="activity-placeholder">

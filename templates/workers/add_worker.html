@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Worker - Shop Manager</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/workers/add_worker.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/session-manager.css') }}">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <a href="#" onclick="window.sessionManager && window.sessionManager.quickBack ? window.sessionManager.quickBack() : window.history.back(); return false;" class="back-btn">← Back</a>
+            <a href="#" onclick="window.history.back(); return false;" class="back-btn">← Back</a>
             <h1>Add New Worker</h1>
             <p>Register a new worker in the system</p>
         </div>
@@ -44,7 +43,6 @@
     </div>
 
     <script src="{{ url_for('static', filename='scripts/common/gas-client.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/common/session-manager.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/workers/add_worker.js') }}"></script>
     
     

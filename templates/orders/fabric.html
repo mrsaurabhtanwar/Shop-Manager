@@ -7,7 +7,6 @@
     <!-- Link to external CSS file -->
     <!-- TODO: Update the path to your CSS file -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/order/fabric.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/session-manager.css') }}">
 </head>
 <body>
     <div class="container">
@@ -103,17 +102,13 @@
                 <div style="margin-top: 20px;">
                     <button type="submit" id="submit-btn">Save Order</button>
                     <button type="reset" onclick="clearForm()">Clear Form</button>
-                    <button type="button" class="btn-secondary" onclick="testConnection()">Test Connection</button>
-                    <button type="button" class="btn-secondary" onclick="window.sessionManager && window.sessionManager.quickBack ? window.sessionManager.quickBack() : window.history.back()">← Back</button>
+                    <button type="button" class="btn-secondary" onclick="window.history.back()">← Back</button>
                 </div>
             </form>
         </div>
 
     <!-- Link to external JavaScript file -->
     <!-- TODO: Update the path to your JavaScript file -->
-    <script src="{{ url_for('static', filename='scripts/common/session-manager.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/common/quick-navigation.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/common/smart-form-persistence.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/orders/fabric.js') }}"></script>
 </body>
 </html>

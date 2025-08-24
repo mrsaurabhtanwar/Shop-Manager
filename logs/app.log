@@ -265,3 +265,304 @@
 2025-08-24 05:08:58,435 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:08:58] "GET /static/css/dashboard.css HTTP/1.1" 200 -
 2025-08-24 05:08:58,967 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:08:58] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
 2025-08-24 05:08:59,960 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:08:59] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:13:19,135 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:13:19] "GET / HTTP/1.1" 200 -
+2025-08-24 05:13:19,234 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:13:19] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 05:13:19,234 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:13:19] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 05:13:19,239 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:13:19] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 05:13:19,240 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:13:19] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:13:19,289 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:13:19] "GET /static/scripts/dashboard.js HTTP/1.1" 200 -
+2025-08-24 05:13:19,757 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:13:19] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:13:19,780 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:13:19] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:17:44,136 - werkzeug - INFO -  * Detected change in 'D:\\Shop Manager\\shop.py', reloading
+2025-08-24 05:17:44,298 - werkzeug - INFO -  * Restarting with stat
+2025-08-24 05:17:44,806 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-24 05:17:44,845 - werkzeug - WARNING -  * Debugger is active!
+2025-08-24 05:17:44,853 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-24 05:17:51,926 - werkzeug - INFO -  * Detected change in 'D:\\Shop Manager\\shop.py', reloading
+2025-08-24 05:17:52,004 - werkzeug - INFO -  * Restarting with stat
+2025-08-24 05:17:52,325 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-24 05:17:52,362 - werkzeug - WARNING -  * Debugger is active!
+2025-08-24 05:17:52,366 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-24 05:18:22,623 - werkzeug - INFO -  * Detected change in 'D:\\Shop Manager\\shop.py', reloading
+2025-08-24 05:18:22,675 - werkzeug - INFO -  * Restarting with stat
+2025-08-24 05:18:23,051 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-24 05:18:23,073 - werkzeug - WARNING -  * Debugger is active!
+2025-08-24 05:18:23,077 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-24 05:18:47,825 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.233.118.47:5000
+2025-08-24 05:18:47,826 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-24 05:18:47,868 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-24 05:18:48,358 - werkzeug - WARNING -  * Debugger is active!
+2025-08-24 05:18:48,361 - werkzeug - INFO -  * Debugger PIN: 952-753-160
+2025-08-24 05:19:27,763 - werkzeug - INFO -  * Detected change in 'D:\\Shop Manager\\shop.py', reloading
+2025-08-24 05:19:27,771 - werkzeug - INFO -  * Detected change in 'D:\\Shop Manager\\shop.py', reloading
+2025-08-24 05:19:28,521 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-24 05:19:28,579 - werkzeug - INFO -  * Detected change in 'D:\\Shop Manager\\shop.py', reloading
+2025-08-24 05:19:28,638 - werkzeug - INFO -  * Restarting with stat
+2025-08-24 05:19:29,015 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-24 05:19:29,039 - werkzeug - WARNING -  * Debugger is active!
+2025-08-24 05:19:29,042 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-24 05:19:29,044 - werkzeug - WARNING -  * Debugger is active!
+2025-08-24 05:19:29,047 - werkzeug - INFO -  * Debugger PIN: 952-753-160
+2025-08-24 05:24:04,143 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:24:04] "GET / HTTP/1.1" 200 -
+2025-08-24 05:24:04,709 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:24:04] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:24:04,728 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:24:04] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 05:24:04,738 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:24:04] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 05:24:04,770 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:24:04] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 05:24:04,828 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:24:04] "GET /static/scripts/dashboard.js HTTP/1.1" 200 -
+2025-08-24 05:24:05,587 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:24:05] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:24:05,588 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:24:05] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:24:05,609 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:24:05] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:25:40,503 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:25:40] "GET / HTTP/1.1" 200 -
+2025-08-24 05:25:40,614 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:25:40] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 05:25:40,616 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:25:40] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 05:25:40,617 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:25:40] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 05:25:40,628 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:25:40] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:25:40,634 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:25:40] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 05:25:41,040 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:25:41] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:25:41,044 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:25:41] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:25:41,067 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:25:41] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:26:01,676 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:26:01] "GET /orders HTTP/1.1" 200 -
+2025-08-24 05:26:01,758 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:26:01] "[36mGET /static/css/order/orders.css HTTP/1.1[0m" 304 -
+2025-08-24 05:26:03,160 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:26:03] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:26:03,172 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:26:03] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:26:34,306 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:26:34] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 05:26:34,317 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:26:34] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:26:34,337 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:26:34] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 05:26:34,352 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:26:34,357 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:26:34] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:27:26,033 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:26] "GET /orders HTTP/1.1" 200 -
+2025-08-24 05:27:26,144 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:26] "[36mGET /static/css/order/orders.css HTTP/1.1[0m" 304 -
+2025-08-24 05:27:26,395 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:27:26,396 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:26] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:27:27,926 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:27] "GET /orders/fabric HTTP/1.1" 200 -
+2025-08-24 05:27:28,014 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:28] "[36mGET /static/css/order/fabric.css HTTP/1.1[0m" 304 -
+2025-08-24 05:27:28,028 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:28] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 05:27:28,031 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:28] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 05:27:28,031 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:28] "[36mGET /static/scripts/orders/fabric.js HTTP/1.1[0m" 304 -
+2025-08-24 05:27:28,033 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:28] "[36mGET /static/scripts/common/smart-form-persistence.js HTTP/1.1[0m" 304 -
+2025-08-24 05:27:28,034 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:28] "[36mGET /static/scripts/common/quick-navigation.js HTTP/1.1[0m" 304 -
+2025-08-24 05:27:28,807 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:27:28,809 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:28] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:27:34,187 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:34] "GET / HTTP/1.1" 200 -
+2025-08-24 05:27:34,354 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:34] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:27:34,355 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:34] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 05:27:34,355 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:34] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 05:27:34,356 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:34] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 05:27:34,398 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:27:34,400 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:34] "GET /static/scripts/dashboard.js HTTP/1.1" 200 -
+2025-08-24 05:27:34,401 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:34] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:27:35,002 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:35] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:27:35,008 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:35] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:27:35,053 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:35] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:27:40,739 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:40] "GET /workers HTTP/1.1" 200 -
+2025-08-24 05:27:40,856 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:27:40,857 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:40] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:27:40,872 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:40] "[36mGET /static/css/workers/worker.css HTTP/1.1[0m" 304 -
+2025-08-24 05:27:43,105 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:43] "GET /workers/add HTTP/1.1" 200 -
+2025-08-24 05:27:43,234 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:43] "[36mGET /static/css/workers/add_worker.css HTTP/1.1[0m" 304 -
+2025-08-24 05:27:43,238 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:43] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 05:27:43,246 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:43] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 05:27:43,248 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:43] "[36mGET /static/scripts/workers/add_worker.js HTTP/1.1[0m" 304 -
+2025-08-24 05:27:43,251 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:43] "[36mGET /static/scripts/common/gas-client.js HTTP/1.1[0m" 304 -
+2025-08-24 05:27:43,445 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:27:43,447 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:43] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:27:46,036 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:46] "GET / HTTP/1.1" 200 -
+2025-08-24 05:27:46,192 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:46] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 05:27:46,192 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:46] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 05:27:46,192 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:46] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 05:27:46,193 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:46] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 05:27:46,198 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:46] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:27:46,275 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:27:46,276 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:46] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:27:46,805 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:46] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:27:46,862 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:46] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:27:46,909 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:46] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:27:52,292 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:52] "GET /workers HTTP/1.1" 200 -
+2025-08-24 05:27:52,447 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:52] "[36mGET /static/css/workers/worker.css HTTP/1.1[0m" 304 -
+2025-08-24 05:27:54,077 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:27:54,080 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:54] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:27:55,765 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:55] "GET /workers/add HTTP/1.1" 200 -
+2025-08-24 05:27:55,918 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:55] "[36mGET /static/css/workers/add_worker.css HTTP/1.1[0m" 304 -
+2025-08-24 05:27:55,927 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:55] "[36mGET /static/css/session-manager.css HTTP/1.1[0m" 304 -
+2025-08-24 05:27:55,930 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:55] "[36mGET /static/scripts/common/gas-client.js HTTP/1.1[0m" 304 -
+2025-08-24 05:27:55,933 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:55] "[36mGET /static/scripts/common/session-manager.js HTTP/1.1[0m" 304 -
+2025-08-24 05:27:55,934 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:55] "[36mGET /static/scripts/workers/add_worker.js HTTP/1.1[0m" 304 -
+2025-08-24 05:27:56,331 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:27:56,333 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:27:56] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:42:58,439 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:42:58] "GET / HTTP/1.1" 200 -
+2025-08-24 05:42:58,911 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:42:58] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:42:58,912 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:42:58] "GET /static/scripts/dashboard.js HTTP/1.1" 200 -
+2025-08-24 05:42:58,912 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:42:58] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 05:42:59,133 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:42:59,135 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:42:59] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:43:00,362 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:00] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:43:00,367 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:00] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:43:00,494 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:00] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:43:04,503 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:04] "GET /workers HTTP/1.1" 200 -
+2025-08-24 05:43:04,624 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:04] "[36mGET /static/css/workers/worker.css HTTP/1.1[0m" 304 -
+2025-08-24 05:43:04,892 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:43:04,893 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:04] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:43:06,866 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:06] "GET /workers/add HTTP/1.1" 200 -
+2025-08-24 05:43:06,967 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:06] "[36mGET /static/css/workers/add_worker.css HTTP/1.1[0m" 304 -
+2025-08-24 05:43:06,973 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:06] "[36mGET /static/scripts/workers/add_worker.js HTTP/1.1[0m" 304 -
+2025-08-24 05:43:07,198 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:07] "GET /static/scripts/common/gas-client.js HTTP/1.1" 200 -
+2025-08-24 05:43:08,055 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:43:08,057 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:08] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:43:11,655 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:43:11,656 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:11] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:43:11,875 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:11] "[36mGET /static/css/workers/worker.css HTTP/1.1[0m" 304 -
+2025-08-24 05:43:11,910 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:43:11,911 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:11] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:43:38,265 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:43:38,266 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:38] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:43:39,160 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:39] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:43:39,162 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:39] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:43:39,292 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:43:39] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:47:07,002 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:47:07] "GET / HTTP/1.1" 200 -
+2025-08-24 05:47:07,090 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:47:07] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:47:07,108 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:47:07] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 05:47:07,130 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:47:07] "GET /static/scripts/dashboard.js HTTP/1.1" 200 -
+2025-08-24 05:47:07,188 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:47:07,189 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:47:07] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:47:08,042 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:47:08] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:47:08,071 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:47:08] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:47:08,192 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:47:08] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:49:39,635 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:49:39] "GET / HTTP/1.1" 200 -
+2025-08-24 05:49:39,699 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:49:39] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:49:39,736 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:49:39] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 05:49:39,770 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:49:39] "GET /static/scripts/dashboard.js HTTP/1.1" 200 -
+2025-08-24 05:49:40,376 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:49:40] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:49:40,377 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:49:40] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:49:40,391 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:49:40] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:49:41,871 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:49:41,873 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:49:41] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:50:04,349 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:50:04] "GET / HTTP/1.1" 200 -
+2025-08-24 05:50:04,413 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:50:04] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 05:50:04,415 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:50:04] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 05:50:04,419 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:50:04] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:50:04,503 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:50:04,505 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:50:04] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:50:05,084 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:50:05] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:50:05,100 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:50:05] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:50:05,200 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:50:05] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:54:39,265 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:39] "GET / HTTP/1.1" 200 -
+2025-08-24 05:54:39,346 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:39] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:54:39,451 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:39] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 05:54:39,599 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:39] "GET /static/scripts/dashboard.js HTTP/1.1" 200 -
+2025-08-24 05:54:40,067 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:54:40,068 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:40] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 05:54:40,269 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:40] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:54:40,271 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:40] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:54:40,476 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:40] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:54:43,086 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:43] "GET / HTTP/1.1" 200 -
+2025-08-24 05:54:43,219 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:43] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 05:54:43,225 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:43] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 05:54:43,232 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:43] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 05:54:43,765 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:43] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:54:43,769 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:43] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 05:54:43,780 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:43] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 05:54:44,717 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 05:54:44,717 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 05:54:44] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 06:00:58,553 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:00:58] "GET / HTTP/1.1" 200 -
+2025-08-24 06:00:58,830 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 06:00:58,834 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:00:58] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 06:00:58,859 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:00:58] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 06:00:58,859 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:00:58] "GET /static/scripts/dashboard.js HTTP/1.1" 200 -
+2025-08-24 06:00:58,861 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:00:58] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 06:00:59,711 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:00:59] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:00:59,735 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:00:59] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 06:00:59,999 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:00:59] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:01:08,562 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:01:08] "GET / HTTP/1.1" 200 -
+2025-08-24 06:01:08,606 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:01:08] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 06:01:08,606 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:01:08] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 06:01:08,608 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:01:08] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 06:01:09,025 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 06:01:09,026 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:01:09] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 06:01:09,467 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:01:09] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:01:09,538 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:01:09] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 06:01:09,571 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:01:09] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:03:58,911 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:03:58] "GET / HTTP/1.1" 200 -
+2025-08-24 06:03:58,986 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:03:58] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 06:03:58,986 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:03:58] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 06:03:58,986 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:03:58] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 06:03:59,090 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 06:03:59,092 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:03:59] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 06:03:59,563 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:03:59] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 06:03:59,568 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:03:59] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:03:59,635 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:03:59] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:04:07,471 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:04:07] "GET / HTTP/1.1" 200 -
+2025-08-24 06:04:07,526 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:04:07] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 06:04:07,530 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:04:07] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 06:04:07,531 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:04:07] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 06:04:07,580 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 06:04:07,581 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:04:07] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 06:04:07,974 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:04:07] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 06:04:07,975 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:04:07] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:04:07,988 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:04:07] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:05:00,882 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-24 06:05:00,971 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-08-24 06:05:00,972 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-24 06:05:00,973 - werkzeug - INFO -  * Restarting with stat
+2025-08-24 06:05:01,251 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-24 06:05:01,263 - werkzeug - WARNING -  * Debugger is active!
+2025-08-24 06:05:01,269 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-24 06:05:03,100 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:03] "GET / HTTP/1.1" 200 -
+2025-08-24 06:05:03,317 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:03] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 06:05:03,335 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:03] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 06:05:03,360 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:03] "GET /static/scripts/dashboard.js HTTP/1.1" 200 -
+2025-08-24 06:05:05,026 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:05] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 06:05:05,031 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:05] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:05:05,281 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:05] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:05:14,647 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:14] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 06:05:14,648 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:14] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 06:05:14,649 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 06:05:14,655 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:14] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 06:05:17,765 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:17] "GET / HTTP/1.1" 200 -
+2025-08-24 06:05:17,830 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:17] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 06:05:17,830 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:17] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 06:05:17,831 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:17] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 06:05:17,833 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 06:05:17,835 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:17] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 06:05:18,427 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:18] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:05:18,431 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:18] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 06:05:18,465 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:05:18] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:10:46,756 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:10:46] "GET / HTTP/1.1" 200 -
+2025-08-24 06:10:47,074 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 06:10:47,076 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:10:47] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 06:10:47,100 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:10:47] "GET / HTTP/1.1" 200 -
+2025-08-24 06:10:47,167 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:10:47] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 06:10:47,168 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:10:47] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 06:10:47,434 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 06:10:47,435 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:10:47] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 06:10:47,471 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:10:47] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 06:10:54,582 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:10:54] "GET / HTTP/1.1" 200 -
+2025-08-24 06:10:54,623 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:10:54] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-24 06:10:54,628 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:10:54] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 06:10:54,628 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:10:54] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 06:10:54,645 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 06:10:54,647 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:10:54] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 06:10:55,227 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:10:55] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:10:55,230 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:10:55] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 06:10:55,243 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:10:55] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:14:44,945 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:44] "GET / HTTP/1.1" 200 -
+2025-08-24 06:14:45,095 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 06:14:45,097 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:45] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 06:14:45,116 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:45] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 06:14:45,117 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:45] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 06:14:45,117 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:45] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 06:14:46,239 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:46] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:14:46,240 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:46] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 06:14:46,537 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:46] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:14:52,011 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:52] "GET / HTTP/1.1" 200 -
+2025-08-24 06:14:52,068 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:52] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-24 06:14:52,070 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:52] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-24 06:14:52,070 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:52] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-24 06:14:52,116 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
+2025-08-24 06:14:52,117 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:52] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-24 06:14:52,621 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:52] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-24 06:14:52,629 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:52] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-24 06:14:52,751 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:14:52] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -

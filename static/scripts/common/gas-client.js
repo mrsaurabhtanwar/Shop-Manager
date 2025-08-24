@@ -35,7 +35,7 @@ class GASClient {
                 response = await this.makePostRequest(requestData);
                 
             } else {
-                // Handle GET requests (getWorkers, getWorkerNames, getPaymentHistory, testConnection)
+                // Handle GET requests (getWorkers, getWorkerNames, getPaymentHistory)
                 const action = functionName === 'getPaymentHistory' ? 'getPayments' : functionName;
                 response = await this.makeGetRequest(action);
             }
@@ -183,11 +183,6 @@ window.google = {
                             },
                             getPaymentHistory: () => {
                                 return gasClient.withSuccessHandler(callback).withFailureHandler(errorCallback).executeFunction('getPaymentHistory');
-                            },
-                            
-                            // Test function
-                            testConnection: () => {
-                                return gasClient.withSuccessHandler(callback).withFailureHandler(errorCallback).executeFunction('testConnection');
                             }
                         };
                     }
@@ -260,17 +255,6 @@ window.WorkerAPI = {
             return result;
         } catch (error) {
             console.error('Error getting payment history:', error);
-            throw error;
-        }
-    },
-    
-    // Utility function
-    async testConnection() {
-        try {
-            const result = await gasClient.callFunction('testConnection');
-            return result;
-        } catch (error) {
-            console.error('Error testing connection:', error);
             throw error;
         }
     }

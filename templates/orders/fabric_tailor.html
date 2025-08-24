@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combined Order - Fabric + Tailoring</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/order/fabric_tailor.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/session-manager.css') }}">
 </head>
 <body>
     <div class="container">
@@ -143,7 +142,7 @@
                 <button type="button" id="clearBtn" class="clear-btn">
                     🔄 Clear All
                 </button>
-                <button type="button" onclick="window.sessionManager && window.sessionManager.quickBack ? window.sessionManager.quickBack() : window.history.back()" class="clear-btn">
+                <button type="button" onclick="window.history.back()" class="clear-btn">
                     ← Back
                 </button>
             </div>
@@ -156,9 +155,6 @@
     <input type="hidden" id="fabric_order_id" name="fabric_order_id">
     <input type="hidden" id="tailoring_order_id" name="tailoring_order_id">
 
-    <script src="{{ url_for('static', filename='scripts/common/session-manager.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/common/quick-navigation.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/common/smart-form-persistence.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/orders/fabric_tailor.js') }}"></script>
 </body>
 </html>

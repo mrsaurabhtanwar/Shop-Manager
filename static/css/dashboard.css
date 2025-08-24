@@ -83,13 +83,14 @@ body::before {
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-lg);
-    padding: 2rem;
-    margin-bottom: 1.5rem;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
     box-shadow: var(--shadow-md);
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    min-height: 200px;
 }
 
 .stat-card::before {
@@ -131,13 +132,13 @@ body::before {
 
 /* Animated Stat Icons */
 .stat-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: var(--radius-full);
     background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
     color: white;
@@ -177,10 +178,10 @@ body::before {
 
 /* Stat Values with Counter Animation */
 .stat-value {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 800;
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     line-height: 1;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
@@ -205,11 +206,12 @@ body::before {
 
 .stat-label {
     color: #6b7280;
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     position: relative;
+    margin-bottom: 0.5rem;
 }
 
 /* Enhanced Chart Containers */
@@ -218,12 +220,12 @@ body::before {
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
     box-shadow: var(--shadow-md);
     /* Use aspect-ratio + min-height for responsive charts to avoid cutting on mobile */
     aspect-ratio: 16 / 9;
-    min-height: 280px;
+    min-height: 350px;
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
@@ -259,10 +261,10 @@ body::before {
 }
 
 .chart-title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 700;
     color: var(--primary-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     text-align: center;
     position: relative;
 }
@@ -337,6 +339,99 @@ body::before {
     opacity: 0.8;
 }
 
+/* Enhanced Activities Table Styles */
+.activities-table {
+    border: none;
+    background: transparent;
+    margin-bottom: 0;
+}
+
+.activities-table .table-header {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(159, 122, 234, 0.1));
+    border: none;
+}
+
+.activities-table .table-header th {
+    border: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1rem 0.75rem;
+}
+
+.activities-table tbody tr {
+    border: none;
+    transition: all var(--transition-fast);
+}
+
+.activities-table tbody tr:hover {
+    background: rgba(102, 126, 234, 0.05);
+    transform: translateY(-1px);
+}
+
+.activities-table td {
+    border: none;
+    padding: 1rem 0.75rem;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.activity-type {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.activity-type i {
+    margin-right: 0.5rem;
+    color: var(--secondary-color);
+    width: 16px;
+}
+
+.customer-name {
+    color: #374151;
+    font-weight: 500;
+}
+
+.amount-value {
+    font-weight: 700;
+    color: var(--success-color);
+    text-align: right;
+}
+
+.status-cell {
+    text-align: center;
+}
+
+.date-value {
+    color: #6b7280;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+/* Table Column Widths */
+.activity-type-col { width: 25%; }
+.customer-col { width: 25%; }
+.amount-col { width: 20%; }
+.status-col { width: 15%; }
+.date-col { width: 15%; }
+
+/* Enhanced Status Badges for Table */
+.activities-table .status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(10px);
+    display: inline-block;
+    min-width: 70px;
+    text-align: center;
+}
+
 @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.7; transform: scale(1.1); }
@@ -350,9 +445,9 @@ body::before {
 /* Responsive Grid */
 .kpi-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 /* Enhanced Trend Indicators */
@@ -393,14 +488,14 @@ body::before {
     box-shadow: var(--shadow-sm) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     transition: all var(--transition-normal);
-    min-height: 70px;
-    padding: 0.75rem 0;
+    min-height: 90px;
+    padding: 1rem 0;
 }
 
 .navbar-brand {
     font-weight: 800 !important;
     color: var(--primary-color) !important;
-    font-size: 1.5rem !important;
+    font-size: 1.75rem !important;
     background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
@@ -451,7 +546,7 @@ body::before {
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-lg);
-    padding: 1.5rem;
+    padding: 2rem;
     box-shadow: var(--shadow-md);
     transition: all var(--transition-normal);
     position: relative;
@@ -460,7 +555,7 @@ body::before {
     text-decoration: none;
     display: block;
     height: 100%;
-    min-height: 180px;
+    min-height: 220px;
     text-align: center;
 }
 
@@ -488,13 +583,13 @@ body::before {
 }
 
 .mini-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 75px;
+    height: 75px;
     border-radius: var(--radius-full);
     background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
     color: white;
@@ -510,18 +605,18 @@ body::before {
 }
 
 .mini-title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     text-align: center;
 }
 
 .mini-value {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 800;
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     line-height: 1;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
@@ -538,64 +633,6 @@ body::before {
     white-space: normal;
     word-wrap: break-word;
     line-height: 1.4;
-    overflow: visible;
-}
-
-/* Quick Actions Cards */
-.action-card {
-    background: var(--card-gradient);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    transition: all var(--transition-normal);
-    color: inherit;
-    text-decoration: none;
-    min-height: 160px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-}
-
-.action-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    color: inherit;
-    text-decoration: none;
-}
-
-.action-icon {
-    color: var(--secondary-color);
-    transition: all var(--transition-normal);
-}
-
-.action-card:hover .action-icon {
-    transform: scale(1.1);
-    color: var(--accent-color);
-}
-
-.action-label {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    text-align: center;
-    white-space: nowrap;
-    overflow: visible;
-    text-overflow: initial;
-}
-
-.action-sub {
-    font-size: 0.875rem;
-    color: #6b7280;
-    text-align: center;
-    white-space: normal;
-    word-wrap: break-word;
-    line-height: 1.4;
-    max-width: 100%;
     overflow: visible;
 }
 
@@ -1068,14 +1105,14 @@ body::before {
 .right-menu {
     position: fixed;
     left: 16px;
-    top: 90px;
+    top: 110px;
     z-index: 1199;
     background: var(--card-gradient);
-    border-radius: 12px;
+    border-radius: 16px;
     box-shadow: var(--shadow-xl);
-    padding: 8px;
+    padding: 12px;
     display: none;
-    width: 220px;
+    width: 280px;
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -1086,14 +1123,15 @@ body::before {
 
 .right-menu a {
     display: flex;
-    gap: 12px;
-    padding: 12px;
+    gap: 16px;
+    padding: 16px;
     align-items: center;
     color: var(--primary-color);
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 12px;
     transition: all var(--transition-fast);
     font-weight: 500;
+    font-size: 1.1rem;
 }
 
 .right-menu a:hover {
@@ -1106,7 +1144,7 @@ body::before {
     border: none;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(107, 114, 128, 0.3), transparent);
-    margin: 8px 4px;
+    margin: 12px 8px;
 }
 
 /* Ensure menu links are large enough on touch devices */

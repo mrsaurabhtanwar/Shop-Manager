@@ -1,7 +1,7 @@
 import os
 import logging
 from datetime import datetime
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -65,6 +65,10 @@ logger = logging.getLogger(__name__)
 @app.route("/")
 def dashboard():
     return render_template("dashboard.html")
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('static/images', 'icon-192.png', mimetype='image/png')
 
 
 
@@ -132,7 +136,9 @@ def other_expenses():
 # Error handlers for production
 @app.errorhandler(404)
 def not_found(error):
-    logger.warning(f"404 error: {request.url}")
+    # Don't log favicon.ico 404s as warnings since browsers always request them
+    if not request.url.endswith('/favicon.ico'):
+        logger.warning(f"404 error: {request.url}")
     return render_template('errors/404.html'), 404
 
 @app.errorhandler(500)

@@ -546,35 +546,6 @@ function getCurrentTimestamp() {
 }
 
 /**
- * Test Google Apps Script connection
- */
-async function testConnection() {
-    if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE') {
-        showMessage('Please configure the Google Apps Script URL first.', 'warning');
-        return;
-    }
-
-    showMessage('Testing connection to Google Sheets...', 'info');
-    
-    try {
-        const response = await fetch(GOOGLE_SCRIPT_URL, {
-            method: 'GET',
-            mode: 'cors'
-        });
-        
-        if (response.ok) {
-            const text = await response.text();
-            showMessage('Connection successful! Google Apps Script is working.', 'success');
-            try { window.sessionManager && window.sessionManager.TestCache && window.sessionManager.TestCache.set(null, { success: true, message: 'OK' }); } catch(e){}
-        } else {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
-    } catch (error) {
-        showMessage('Connection failed: ' + error.message, 'danger');
-    }
-}
-
-/**
  * Auto-save form data to localStorage (optional feature)
  */
 function autoSaveForm() {
