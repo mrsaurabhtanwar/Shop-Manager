@@ -417,28 +417,28 @@ function createShirtMeasurementForm() {
         
         <div class="measurement-grid">
             <div class="measurement-field">
-                <label>📐 Chest (inches): <span class="required">*</span></label>
-                <input type="number" id="popup_shirt_chest" step="0.5" min="20" max="80" value="${document.getElementById('shirt_chest').value || ''}" placeholder="Chest measurement" required>
+                <label>📐 लम्बाई : <span class="required">*</span></label> 
+                <input type="number" id="popup_shirt_chest" step="0.5" min="20" max="80" value="${document.getElementById('shirt_chest').value || ''}" placeholder="लम्बाई measurement" required>
             </div>
             <div class="measurement-field">
-                <label>👤 Shoulder (inches):</label>
-                <input type="number" id="popup_shirt_shoulder" step="0.5" min="10" max="30" value="${document.getElementById('shirt_shoulder').value || ''}" placeholder="Shoulder width">
+                <label>👤 आस्तीन :</label>
+                <input type="number" id="popup_shirt_shoulder" step="0.5" min="10" max="30" value="${document.getElementById('shirt_shoulder').value || ''}" placeholder="आस्तीन measurement">
             </div>
             <div class="measurement-field">
-                <label>💪 Sleeve Length (inches):</label>
-                <input type="number" id="popup_shirt_sleeve" step="0.5" min="15" max="40" value="${document.getElementById('shirt_sleeve').value || ''}" placeholder="Sleeve length">
+                <label>💪 तीरा :</label>
+                <input type="number" id="popup_shirt_sleeve" step="0.5" min="15" max="40" value="${document.getElementById('shirt_sleeve').value || ''}" placeholder="तीरा measurement">
             </div>
             <div class="measurement-field">
-                <label>📏 Shirt Length (inches):</label>
-                <input type="number" id="popup_shirt_length" step="0.5" min="20" max="50" value="${document.getElementById('shirt_length').value || ''}" placeholder="Total shirt length">
+                <label>📏 सीना :</label>
+                <input type="number" id="popup_shirt_length" step="0.5" min="20" max="50" value="${document.getElementById('shirt_length').value || ''}" placeholder="सीना meaurement">
             </div>
             <div class="measurement-field">
-                <label>🔗 Neck (inches):</label>
-                <input type="number" id="popup_shirt_neck" step="0.25" min="10" max="25" value="${document.getElementById('shirt_neck').value || ''}" placeholder="Neck size">
+                <label>🔗 कमर :</label>
+                <input type="number" id="popup_shirt_neck" step="0.25" min="10" max="25" value="${document.getElementById('shirt_neck').value || ''}" placeholder="कमर measurement">
             </div>
             <div class="measurement-field">
-                <label>💪 Bicep (inches):</label>
-                <input type="number" id="popup_shirt_bicep" step="0.25" min="8" max="25" value="${document.getElementById('shirt_bicep').value || ''}" placeholder="Bicep measurement">
+                <label>💪 कॉलर :</label>
+                <input type="number" id="popup_shirt_bicep" step="0.25" min="8" max="25" value="${document.getElementById('shirt_bicep').value || ''}" placeholder="कॉलर measurement">
             </div>
         </div>
         
@@ -466,32 +466,32 @@ function createPantMeasurementForm() {
         
         <div class="measurement-grid">
             <div class="measurement-field">
-                <label>⭕ Waist (inches): <span class="required">*</span></label>
-                <input type="number" id="popup_pant_waist" step="0.5" min="20" max="80" value="${document.getElementById('pant_waist').value || ''}" placeholder="Waist measurement" required>
+                <label>⭕ लम्बाई : <span class="required">*</span></label>
+                <input type="number" id="popup_pant_waist" step="0.5" min="20" max="80" value="${document.getElementById('pant_waist').value || ''}" placeholder="लम्बाई measurement" required>
             </div>
             <div class="measurement-field">
-                <label>🍑 Hip (inches):</label>
-                <input type="number" id="popup_pant_hip" step="0.5" min="25" max="90" value="${document.getElementById('pant_hip').value || ''}" placeholder="Hip measurement">
+                <label>🍑 कमर :</label>
+                <input type="number" id="popup_pant_hip" step="0.5" min="25" max="90" value="${document.getElementById('pant_hip').value || ''}" placeholder="कमर measurement">
             </div>
             <div class="measurement-field">
-                <label>📏 Inseam (inches):</label>
-                <input type="number" id="popup_pant_inseam" step="0.5" min="15" max="50" value="${document.getElementById('pant_inseam').value || ''}" placeholder="Inner leg length">
+                <label>📏 जांघ :</label>
+                <input type="number" id="popup_pant_inseam" step="0.5" min="15" max="50" value="${document.getElementById('pant_inseam').value || ''}" placeholder="जांघ measurement">
             </div>
             <div class="measurement-field">
-                <label>📐 Outseam (inches):</label>
-                <input type="number" id="popup_pant_outseam" step="0.5" min="30" max="65" value="${document.getElementById('pant_outseam').value || ''}" placeholder="Outer leg length">
+                <label>📐 मोहोरी :</label>
+                <input type="number" id="popup_pant_outseam" step="0.5" min="30" max="65" value="${document.getElementById('pant_outseam').value || ''}" placeholder="मोहोरी measurement">
             </div>
             <div class="measurement-field">
-                <label>🦵 Thigh (inches):</label>
-                <input type="number" id="popup_pant_thigh" step="0.25" min="15" max="40" value="${document.getElementById('pant_thigh').value || ''}" placeholder="Thigh measurement">
+                <label>🦵 हिप :</label>
+                <input type="number" id="popup_pant_thigh" step="0.25" min="15" max="40" value="${document.getElementById('pant_thigh').value || ''}" placeholder="हिप measurement">
             </div>
             <div class="measurement-field">
-                <label>🦵 Knee (inches):</label>
-                <input type="number" id="popup_pant_knee" step="0.25" min="10" max="30" value="${document.getElementById('pant_knee').value || ''}" placeholder="Knee measurement">
+                <label>🦵 आसन :</label>
+                <input type="number" id="popup_pant_knee" step="0.25" min="10" max="30" value="${document.getElementById('pant_knee').value || ''}" placeholder="आसन measurement">
             </div>
             <div class="measurement-field">
-                <label>👠 Bottom (inches):</label>
-                <input type="number" id="popup_pant_bottom" step="0.25" min="6" max="25" value="${document.getElementById('pant_bottom').value || ''}" placeholder="Bottom opening width">
+                <label> Extra :</label>
+                <input type="number" id="popup_pant_bottom" step="0.25" min="6" max="25" value="${document.getElementById('pant_bottom').value || ''}" placeholder="Extra opening width">
             </div>
         </div>
         

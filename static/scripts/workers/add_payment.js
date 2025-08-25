@@ -85,7 +85,9 @@
             }
             
             // Show loading
+            const originalText = submitBtn.textContent;
             submitBtn.disabled = true;
+            submitBtn.textContent = '⏳ Submitting...';
             loading.style.display = 'block';
             message.style.display = 'none';
             
@@ -94,6 +96,7 @@
                 .then(result => {
                     loading.style.display = 'none';
                     submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
                     const ok = result && result.success !== false;
                     if (ok) {
                         const msg = result.message || 'Payment entry added successfully!';
@@ -109,6 +112,7 @@
                 .catch(error => {
                     loading.style.display = 'none';
                     submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
                     showMessage('Failed to add payment entry. Please try again.', 'error');
                     console.error('Network or other error adding payment:', error);
                 });
@@ -126,4 +130,5 @@
                     message.style.display = 'none';
                 }, 3000);
             }
+            try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch(e) {}
         }

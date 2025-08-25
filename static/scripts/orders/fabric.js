@@ -302,12 +302,11 @@ async function handleFormSubmission(e) {
     }
     
     const submitBtn = document.getElementById('submit-btn');
-    const originalText = submitBtn.textContent;
+    const originalText = submitBtn ? submitBtn.textContent : '';
     
     // Show loading state
     showLoading(true);
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Saving...';
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = '⏳ Submitting...'; }
     
     try {
         // Prepare form data
@@ -400,8 +399,7 @@ async function handleFormSubmission(e) {
     } finally {
         // Reset button state
         showLoading(false);
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
     }
 }
 

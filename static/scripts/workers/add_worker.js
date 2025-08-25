@@ -18,6 +18,8 @@
             
             // Show loading
             submitBtn.disabled = true;
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '⏳ Submitting...';
             loading.style.display = 'block';
             message.style.display = 'none';
             
@@ -46,6 +48,7 @@
                     console.log('Add worker response:', result);
                     loading.style.display = 'none';
                     submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
                     
                     if (result && result.success) {
                         showMessage(result.message || 'Worker added successfully!', 'success');
@@ -64,8 +67,9 @@
                 .catch(function(error) {
                     clearTimeout(timeoutId); // Clear the timeout
                     console.error('Network or other error:', error);
-                    loading.style.display = 'none';
-                    submitBtn.disabled = false;
+                        loading.style.display = 'none';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
                     
                     let errorMessage = 'Failed to add worker. ';
                     if (error && error.message) {

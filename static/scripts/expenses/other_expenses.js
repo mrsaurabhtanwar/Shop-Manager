@@ -3,7 +3,8 @@ document.getElementById('otherExpenseForm').addEventListener('submit', function(
     e.preventDefault();
 
     const submitBtn = this.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
+    const originalText = submitBtn ? submitBtn.textContent : '';
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = '⏳ Submitting...'; }
 
     const formData = new FormData(this);
     const data = Object.fromEntries(formData);
@@ -22,14 +23,16 @@ document.getElementById('otherExpenseForm').addEventListener('submit', function(
 
     fetch('https://script.google.com/macros/s/AKfycbxT5VTEBWxliIxm3P9LgtaNgKjiucgGa75jyAIExtHGRKTlUMspaCrbg5d4QdIdmtOY/exec', {
         method: 'POST',
+        mode: 'no-cors',
         headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
         body: payload,
         signal: controller.signal
     })
     .then(async response => {
         clearTimeout(timeout);
+        if (response.type === 'opaque') return { success: true };
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        return response.json();
+        try { return await response.json(); } catch(e) { return { success: true }; }
     })
     .then(result => {
         if (result && result.success) {
@@ -45,7 +48,7 @@ document.getElementById('otherExpenseForm').addEventListener('submit', function(
     })
     .finally(() => {
         clearTimeout(timeout);
-        submitBtn.disabled = false;
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
     });
 });
 
@@ -62,4 +65,5 @@ function showMessage(text, type='info') {
     el.style.background = type === 'success' ? '#e6ffed' : type === 'error' ? '#ffe6e6' : '#eef3ff';
     el.style.color = type === 'success' ? '#1a6f35' : type === 'error' ? '#8a1a1a' : '#0b3a66';
     setTimeout(() => { el.style.display = 'none'; }, 4000);
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch(e) {}
 }

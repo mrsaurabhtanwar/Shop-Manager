@@ -710,3 +710,70 @@
 2025-08-24 06:36:07,140 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:36:07] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
 2025-08-24 06:36:07,160 - __main__ - WARNING - 404 error: http://127.0.0.1:3000/.well-known/appspecific/com.chrome.devtools.json
 2025-08-24 06:36:07,161 - werkzeug - INFO - 127.0.0.1 - - [24/Aug/2025 06:36:07] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-25 08:33:38,542 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 08:33:38,641 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-08-25 08:33:38,642 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-25 08:33:38,643 - werkzeug - INFO -  * Restarting with stat
+2025-08-25 08:33:38,887 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 08:33:38,898 - werkzeug - WARNING -  * Debugger is active!
+2025-08-25 08:33:38,902 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-25 08:33:43,803 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:33:43] "GET / HTTP/1.1" 200 -
+2025-08-25 08:33:44,053 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:33:44] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-25 08:33:44,054 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:33:44] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-25 08:33:44,056 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:33:44] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-25 08:33:45,459 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:33:45] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-25 08:33:45,462 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:33:45] "GET /favicon.ico HTTP/1.1" 200 -
+2025-08-25 08:33:45,475 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:33:45] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 08:33:45,480 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:33:45] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 08:33:49,990 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:33:49] "GET /orders HTTP/1.1" 200 -
+2025-08-25 08:33:50,038 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:33:50] "[36mGET /static/css/order/orders.css HTTP/1.1[0m" 304 -
+2025-08-25 08:33:50,197 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:33:50] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 08:33:57,825 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:33:57] "GET /orders/tailor HTTP/1.1" 200 -
+2025-08-25 08:33:57,883 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:33:57] "[36mGET /static/css/order/tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 08:33:57,891 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:33:57] "[36mGET /static/scripts/orders/tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 08:33:58,083 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:33:58] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 08:40:17,094 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:40:17] "GET /orders/tailor HTTP/1.1" 200 -
+2025-08-25 08:40:17,201 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:40:17] "[36mGET /static/css/order/tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 08:40:17,205 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:40:17] "[36mGET /static/scripts/orders/tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 08:40:17,907 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:40:17] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 08:40:33,080 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:40:33] "GET /orders/tailor HTTP/1.1" 200 -
+2025-08-25 08:40:33,115 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:40:33] "[36mGET /static/css/order/tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 08:40:33,164 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:40:33] "GET /static/scripts/orders/tailor.js HTTP/1.1" 200 -
+2025-08-25 08:40:33,290 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:40:33] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 08:42:03,895 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:42:03] "GET /orders/tailor HTTP/1.1" 200 -
+2025-08-25 08:42:03,981 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:42:03] "[36mGET /static/css/order/tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 08:42:04,102 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:42:04] "GET /static/scripts/orders/tailor.js HTTP/1.1" 200 -
+2025-08-25 08:42:04,226 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:42:04] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 08:45:01,499 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:45:01] "GET /orders/tailor HTTP/1.1" 200 -
+2025-08-25 08:45:01,636 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:45:01] "[36mGET /static/css/order/tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 08:45:01,719 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:45:01] "GET /static/scripts/orders/tailor.js HTTP/1.1" 200 -
+2025-08-25 08:45:03,204 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:45:03] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 08:59:27,191 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:59:27] "GET /orders/tailor HTTP/1.1" 200 -
+2025-08-25 08:59:27,496 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:59:27] "[36mGET /static/css/order/tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 08:59:27,558 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:59:27] "GET /static/scripts/orders/tailor.js HTTP/1.1" 200 -
+2025-08-25 08:59:28,714 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 08:59:28] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 09:09:58,572 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 09:09:58,632 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-08-25 09:09:58,632 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-25 09:09:58,633 - werkzeug - INFO -  * Restarting with stat
+2025-08-25 09:09:58,962 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 09:09:58,980 - werkzeug - WARNING -  * Debugger is active!
+2025-08-25 09:09:58,992 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-25 09:10:03,383 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:03] "GET / HTTP/1.1" 200 -
+2025-08-25 09:10:03,629 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:03] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-25 09:10:03,630 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:03] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-25 09:10:03,632 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:03] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-25 09:10:04,820 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:04] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-25 09:10:04,840 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:04] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 09:10:04,861 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:04] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 09:10:04,871 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:04] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 09:10:09,863 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:09] "GET /expenses HTTP/1.1" 200 -
+2025-08-25 09:10:09,919 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:09] "[36mGET /static/css/expenses/expenses.css HTTP/1.1[0m" 304 -
+2025-08-25 09:10:09,923 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:09] "[36mGET /static/scripts/expenses/expenses.js HTTP/1.1[0m" 304 -
+2025-08-25 09:10:10,174 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:10] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 09:10:11,803 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:11] "GET /expenses/fabric HTTP/1.1" 200 -
+2025-08-25 09:10:11,852 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:11] "[36mGET /static/css/expenses/fabric_expenses.css HTTP/1.1[0m" 304 -
+2025-08-25 09:10:11,865 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:11] "GET /static/scripts/expenses/fabric_expenses.js HTTP/1.1" 200 -
+2025-08-25 09:10:12,073 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:12] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
