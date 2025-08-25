@@ -777,3 +777,316 @@
 2025-08-25 09:10:11,852 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:11] "[36mGET /static/css/expenses/fabric_expenses.css HTTP/1.1[0m" 304 -
 2025-08-25 09:10:11,865 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:11] "GET /static/scripts/expenses/fabric_expenses.js HTTP/1.1" 200 -
 2025-08-25 09:10:12,073 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:10:12] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 09:46:52,500 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 09:46:52,571 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-08-25 09:46:52,571 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-25 09:46:52,573 - werkzeug - INFO -  * Restarting with stat
+2025-08-25 09:46:52,975 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 09:46:53,002 - werkzeug - WARNING -  * Debugger is active!
+2025-08-25 09:46:53,010 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-25 09:46:55,153 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:46:55] "GET / HTTP/1.1" 200 -
+2025-08-25 09:46:55,441 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:46:55] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-25 09:46:55,442 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:46:55] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-25 09:46:55,443 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:46:55] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-25 09:46:56,672 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:46:56] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-25 09:46:56,680 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:46:56] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 09:46:56,694 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:46:56] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 09:46:56,764 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:46:56] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 09:47:00,668 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:47:00] "GET /orders HTTP/1.1" 200 -
+2025-08-25 09:47:00,736 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:47:00] "[36mGET /static/css/order/orders.css HTTP/1.1[0m" 304 -
+2025-08-25 09:47:00,957 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:47:00] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 09:47:02,227 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:47:02] "GET /orders/fabric-tailor HTTP/1.1" 200 -
+2025-08-25 09:47:02,289 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:47:02] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 09:47:02,364 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:47:02] "GET /static/scripts/orders/fabric_tailor.js HTTP/1.1" 200 -
+2025-08-25 09:47:02,587 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:47:02] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 09:47:22,088 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:47:22] "GET /orders/fabric?customer_name=Deepak&contact=9166758467&customer_type=New&order_date=2025-08-25&sessions=Wedding&notes=&return_to_combined=true&master_order_id=CMB1756095442052970&expected_fabric_id=F-CMB1756095442052970 HTTP/1.1" 200 -
+2025-08-25 09:47:22,171 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:47:22] "[36mGET /static/css/order/fabric.css HTTP/1.1[0m" 304 -
+2025-08-25 09:47:22,173 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:47:22] "GET /static/scripts/orders/fabric.js HTTP/1.1" 200 -
+2025-08-25 09:47:22,361 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:47:22] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 09:47:56,905 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:47:56] "GET /orders/fabric-tailor?fabric_order_added=true&fabric_price=25536.00&fabric_order_id=F-CMB1756095442052970&master_order_id=CMB1756095442052970&customer_name=Deepak&contact=9166758467&customer_type=New&order_date=2025-08-25&sessions=Wedding&notes=&address=bjk HTTP/1.1" 200 -
+2025-08-25 09:47:57,003 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:47:57] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 09:47:57,006 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:47:57] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 09:47:57,257 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:47:57] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 09:48:03,418 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:48:03] "GET /orders/tailor?customer_name=Deepak&contact=9166758467&customer_type=New&order_date=2025-08-25&sessions=Wedding&notes=&return_to_combined=true&master_order_id=CMB1756095483118125&expected_tailor_id=T-CMB1756095483118125 HTTP/1.1" 200 -
+2025-08-25 09:48:03,490 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:48:03] "[36mGET /static/css/order/tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 09:48:03,491 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:48:03] "[36mGET /static/scripts/orders/tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 09:48:03,726 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:48:03] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 09:48:47,258 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:48:47] "GET /orders/fabric-tailor?tailor_returned=true&order_id=T-CMB1756095483118125&master_order_id=CMB1756095483118125&address=bjk HTTP/1.1" 200 -
+2025-08-25 09:48:47,339 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:48:47] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 09:48:47,342 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:48:47] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 09:48:47,564 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 09:48:47] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:02:07,410 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 10:02:07,475 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-08-25 10:02:07,475 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-25 10:02:07,477 - werkzeug - INFO -  * Restarting with stat
+2025-08-25 10:02:07,822 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 10:02:07,839 - werkzeug - WARNING -  * Debugger is active!
+2025-08-25 10:02:07,845 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-25 10:02:10,389 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:10] "GET / HTTP/1.1" 200 -
+2025-08-25 10:02:10,720 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:10] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-25 10:02:10,721 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:10] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-25 10:02:10,722 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:10] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-25 10:02:11,568 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:11] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:02:11,763 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:11] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:02:12,465 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:12] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-25 10:02:12,709 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:12] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:02:17,265 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:17] "GET /orders HTTP/1.1" 200 -
+2025-08-25 10:02:17,353 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:17] "[36mGET /static/css/order/orders.css HTTP/1.1[0m" 304 -
+2025-08-25 10:02:17,570 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:17] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:02:18,426 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:18] "GET /orders/fabric-tailor HTTP/1.1" 200 -
+2025-08-25 10:02:18,495 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:18] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:02:18,722 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:18] "GET /static/scripts/orders/fabric_tailor.js HTTP/1.1" 200 -
+2025-08-25 10:02:19,190 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:19] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:02:25,673 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:25] "GET /orders/fabric?customer_name=SAURABH&contact=5448&customer_type=New&order_date=2025-08-25&sessions=&notes=&return_to_combined=true&master_order_id=CMB1756096345613914&expected_fabric_id=F-CMB1756096345613914 HTTP/1.1" 200 -
+2025-08-25 10:02:25,772 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:25] "[36mGET /static/css/order/fabric.css HTTP/1.1[0m" 304 -
+2025-08-25 10:02:25,773 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:25] "[36mGET /static/scripts/orders/fabric.js HTTP/1.1[0m" 304 -
+2025-08-25 10:02:25,961 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:25] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:02:46,053 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:46] "GET /orders/fabric-tailor?fabric_order_added=true&fabric_price=736.00&fabric_order_id=F-CMB1756096345613914&master_order_id=CMB1756096345613914&customer_name=SAURABH&contact=5448&customer_type=New&order_date=2025-08-25&sessions=&notes= HTTP/1.1" 200 -
+2025-08-25 10:02:46,146 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:46] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:02:46,147 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:46] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:02:46,333 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:46] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:02:48,483 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:48] "GET /orders/tailor?customer_name=SAURABH&contact=5448&customer_type=New&order_date=2025-08-25&sessions=&notes=&return_to_combined=true&master_order_id=CMB1756096368460235&expected_tailor_id=T-CMB1756096368460235 HTTP/1.1" 200 -
+2025-08-25 10:02:48,548 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:48] "[36mGET /static/css/order/tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:02:48,552 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:48] "[36mGET /static/scripts/orders/tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:02:48,902 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:02:48] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:03:15,998 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:03:15] "GET /orders/fabric-tailor?tailor_returned=true&order_id=T-CMB1756096368460235&master_order_id=CMB1756096368460235 HTTP/1.1" 200 -
+2025-08-25 10:03:16,069 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:03:16] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:03:16,074 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:03:16] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:03:16,298 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:03:16] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:05:40,751 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:05:40] "GET /orders/fabric-tailor?tailor_returned=true&order_id=T-CMB1756096368460235&master_order_id=CMB1756096368460235 HTTP/1.1" 200 -
+2025-08-25 10:05:40,851 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:05:40] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:05:40,857 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:05:40] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:05:41,206 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:05:41] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:06:14,220 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 10:06:14,266 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-08-25 10:06:14,268 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-25 10:06:14,270 - werkzeug - INFO -  * Restarting with stat
+2025-08-25 10:06:14,578 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 10:06:14,593 - werkzeug - WARNING -  * Debugger is active!
+2025-08-25 10:06:14,598 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-25 10:06:17,830 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:17] "GET / HTTP/1.1" 200 -
+2025-08-25 10:06:18,087 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:18] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-25 10:06:18,088 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:18] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-25 10:06:18,090 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:18] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-25 10:06:19,554 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:19] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-25 10:06:19,649 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:19] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:06:19,931 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:19] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:06:19,952 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:19] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:06:38,955 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:38] "GET /orders HTTP/1.1" 200 -
+2025-08-25 10:06:39,037 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:39] "[36mGET /static/css/order/orders.css HTTP/1.1[0m" 304 -
+2025-08-25 10:06:39,295 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:39] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:06:40,541 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:40] "GET /orders/fabric-tailor HTTP/1.1" 200 -
+2025-08-25 10:06:40,612 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:40] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:06:40,616 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:40] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:06:40,947 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:40] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:06:49,391 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:49] "GET /orders/fabric?customer_name=Deepak&contact=12312312312&customer_type=New&order_date=2025-08-25&sessions=Wedding&notes=&return_to_combined=true&master_order_id=CMB1756096609356049&expected_fabric_id=F-CMB1756096609356049 HTTP/1.1" 200 -
+2025-08-25 10:06:49,485 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:49] "[36mGET /static/css/order/fabric.css HTTP/1.1[0m" 304 -
+2025-08-25 10:06:49,487 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:49] "[36mGET /static/scripts/orders/fabric.js HTTP/1.1[0m" 304 -
+2025-08-25 10:06:49,682 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:06:49] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:07:11,931 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:07:11] "GET /orders/fabric-tailor?fabric_order_added=true&fabric_price=49036.00&fabric_order_id=F-CMB1756096609356049&master_order_id=CMB1756096609356049&customer_name=Deepak&contact=12312312312&customer_type=New&order_date=2025-08-25&sessions=Wedding&notes= HTTP/1.1" 200 -
+2025-08-25 10:07:12,005 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:07:12] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:07:12,007 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:07:12] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:07:12,257 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:07:12] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:07:15,598 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:07:15] "GET /orders/tailor?customer_name=Deepak&contact=12312312312&customer_type=New&order_date=2025-08-25&sessions=Wedding&notes=&return_to_combined=true&master_order_id=CMB1756096635557727&expected_tailor_id=T-CMB1756096635557727 HTTP/1.1" 200 -
+2025-08-25 10:07:15,657 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:07:15] "[36mGET /static/css/order/tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:07:15,659 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:07:15] "[36mGET /static/scripts/orders/tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:07:15,923 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:07:15] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:07:36,794 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:07:36] "GET /orders/fabric-tailor?tailor_returned=true&order_id=T-CMB1756096635557727&master_order_id=CMB1756096635557727 HTTP/1.1" 200 -
+2025-08-25 10:07:36,867 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:07:36] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:07:36,871 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:07:36] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:07:37,120 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:07:37] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:09:42,495 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 10:09:42,555 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-08-25 10:09:42,555 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-25 10:09:42,559 - werkzeug - INFO -  * Restarting with stat
+2025-08-25 10:09:43,000 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 10:09:43,019 - werkzeug - WARNING -  * Debugger is active!
+2025-08-25 10:09:43,030 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-25 10:09:45,115 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:45] "GET / HTTP/1.1" 200 -
+2025-08-25 10:09:45,438 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:45] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-25 10:09:45,442 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:45] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-25 10:09:45,442 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:45] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-25 10:09:46,825 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:46] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:09:46,908 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:46] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:09:47,030 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:47] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-25 10:09:47,789 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:47] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:09:48,866 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:48] "GET /workers HTTP/1.1" 200 -
+2025-08-25 10:09:48,956 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:48] "[36mGET /static/css/workers/worker.css HTTP/1.1[0m" 304 -
+2025-08-25 10:09:49,262 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:49] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:09:50,616 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:50] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:09:50,619 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:50] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:09:50,638 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:50] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:09:51,634 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:51] "GET /orders HTTP/1.1" 200 -
+2025-08-25 10:09:51,729 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:51] "[36mGET /static/css/order/orders.css HTTP/1.1[0m" 304 -
+2025-08-25 10:09:51,991 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:51] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:09:52,771 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:52] "GET /orders/fabric-tailor HTTP/1.1" 200 -
+2025-08-25 10:09:52,870 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:52] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:09:53,708 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:53] "GET /static/scripts/orders/fabric_tailor.js HTTP/1.1" 200 -
+2025-08-25 10:09:54,271 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:09:54] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:10:01,312 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:01] "GET /orders/fabric?customer_name=SAURABH&contact=12312312312&customer_type=Regular&order_date=2025-08-25&sessions=Party&notes=&return_to_combined=true&master_order_id=CMB1756096801253986&expected_fabric_id=F-CMB1756096801253986 HTTP/1.1" 200 -
+2025-08-25 10:10:01,415 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:01] "[36mGET /static/css/order/fabric.css HTTP/1.1[0m" 304 -
+2025-08-25 10:10:01,418 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:01] "[36mGET /static/scripts/orders/fabric.js HTTP/1.1[0m" 304 -
+2025-08-25 10:10:01,611 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:01] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:10:23,364 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:23] "GET /orders/fabric-tailor?fabric_order_added=true&fabric_price=4473.00&fabric_order_id=F-CMB1756096801253986&master_order_id=CMB1756096801253986&customer_name=SAURABH&contact=12312312312&customer_type=Regular&order_date=2025-08-25&sessions=Party&notes= HTTP/1.1" 200 -
+2025-08-25 10:10:23,468 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:23] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:10:23,476 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:23] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:10:23,738 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:23] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:10:25,791 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:25] "GET /orders/tailor?customer_name=SAURABH&contact=12312312312&customer_type=Regular&order_date=2025-08-25&sessions=Party&notes=&return_to_combined=true&master_order_id=CMB1756096825742692&expected_tailor_id=T-CMB1756096825742692 HTTP/1.1" 200 -
+2025-08-25 10:10:25,875 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:25] "[36mGET /static/css/order/tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:10:25,881 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:25] "[36mGET /static/scripts/orders/tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:10:26,089 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:26] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:10:47,337 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:47] "GET /orders/fabric-tailor?tailor_returned=true&order_id=T-CMB1756096825742692&master_order_id=CMB1756096825742692 HTTP/1.1" 200 -
+2025-08-25 10:10:47,437 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:47] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:10:47,438 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:47] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:10:47,701 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:10:47] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:15:28,747 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 10:15:28,803 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-08-25 10:15:28,803 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-25 10:15:28,804 - werkzeug - INFO -  * Restarting with stat
+2025-08-25 10:15:29,138 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 10:15:29,165 - werkzeug - WARNING -  * Debugger is active!
+2025-08-25 10:15:29,171 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-25 10:15:31,396 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:15:31] "GET / HTTP/1.1" 200 -
+2025-08-25 10:15:31,697 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:15:31] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-25 10:15:31,698 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:15:31] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-25 10:15:31,699 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:15:31] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-25 10:15:32,777 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:15:32] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:15:32,779 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:15:32] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-25 10:15:32,939 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:15:32] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:15:32,966 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:15:32] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:15:36,281 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:15:36] "GET /orders HTTP/1.1" 200 -
+2025-08-25 10:15:36,355 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:15:36] "[36mGET /static/css/order/orders.css HTTP/1.1[0m" 304 -
+2025-08-25 10:15:36,628 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:15:36] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:15:37,705 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:15:37] "GET /orders/fabric-tailor HTTP/1.1" 200 -
+2025-08-25 10:15:37,778 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:15:37] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:15:38,118 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:15:38] "GET /static/scripts/orders/fabric_tailor.js HTTP/1.1" 200 -
+2025-08-25 10:15:38,288 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:15:38] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:16:28,394 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:16:28] "GET /orders/fabric-tailor HTTP/1.1" 200 -
+2025-08-25 10:16:28,448 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:16:28] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:16:28,451 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:16:28] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:16:28,623 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:16:28] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:16:59,892 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 10:16:59,920 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-08-25 10:16:59,921 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-25 10:16:59,923 - werkzeug - INFO -  * Restarting with stat
+2025-08-25 10:17:00,215 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 10:17:00,228 - werkzeug - WARNING -  * Debugger is active!
+2025-08-25 10:17:00,232 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-25 10:17:02,257 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:17:02] "GET / HTTP/1.1" 200 -
+2025-08-25 10:17:02,532 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:17:02] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-25 10:17:02,545 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:17:02] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-25 10:17:02,547 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:17:02] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-25 10:17:03,668 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:17:03] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-25 10:17:03,833 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:17:03] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:17:03,866 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:17:03] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:17:03,986 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:17:03] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:17:04,691 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:17:04] "GET /orders HTTP/1.1" 200 -
+2025-08-25 10:17:04,964 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:17:04] "[36mGET /static/css/order/orders.css HTTP/1.1[0m" 304 -
+2025-08-25 10:17:05,172 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:17:05] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:17:06,159 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:17:06] "GET /orders/fabric-tailor HTTP/1.1" 200 -
+2025-08-25 10:17:06,415 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:17:06] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:17:06,421 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:17:06] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:17:06,635 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:17:06] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:18:39,109 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 10:18:39,138 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-08-25 10:18:39,139 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-25 10:18:39,141 - werkzeug - INFO -  * Restarting with stat
+2025-08-25 10:18:39,423 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 10:18:39,441 - werkzeug - WARNING -  * Debugger is active!
+2025-08-25 10:18:39,451 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-25 10:18:41,607 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:41] "GET / HTTP/1.1" 200 -
+2025-08-25 10:18:41,733 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:41] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+2025-08-25 10:18:41,760 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:41] "GET /static/scripts/dashboard.js HTTP/1.1" 200 -
+2025-08-25 10:18:41,763 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:41] "GET /static/scripts/pwa.js HTTP/1.1" 200 -
+2025-08-25 10:18:43,387 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:43] "GET /static/manifest.json HTTP/1.1" 200 -
+2025-08-25 10:18:43,398 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:43] "GET /favicon.ico HTTP/1.1" 200 -
+2025-08-25 10:18:43,401 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:43] "GET /static/sw.js HTTP/1.1" 200 -
+2025-08-25 10:18:43,407 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:43] "GET /static/images/icon-192.png HTTP/1.1" 200 -
+2025-08-25 10:18:43,418 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:43] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:18:43,456 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:43] "GET / HTTP/1.1" 200 -
+2025-08-25 10:18:43,458 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:43] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-25 10:18:43,458 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:43] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-25 10:18:43,470 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:43] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-25 10:18:43,475 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:43] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-25 10:18:43,477 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:43] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:18:45,119 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:45] "GET /orders HTTP/1.1" 200 -
+2025-08-25 10:18:45,157 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:45] "GET /static/css/order/orders.css HTTP/1.1" 200 -
+2025-08-25 10:18:45,199 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:45] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:18:45,914 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:45] "GET /orders/fabric-tailor HTTP/1.1" 200 -
+2025-08-25 10:18:45,948 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:45] "GET /static/css/order/fabric_tailor.css HTTP/1.1" 200 -
+2025-08-25 10:18:45,956 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:45] "GET /static/scripts/orders/fabric_tailor.js HTTP/1.1" 200 -
+2025-08-25 10:18:46,037 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:46] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:18:55,513 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:55] "GET /orders/fabric?customer_name=sad&contact=sd&customer_type=New&order_date=2025-08-25&sessions=Holi&notes=&return_to_combined=true&master_order_id=CMB1756097335476886&expected_fabric_id=F-CMB1756097335476886 HTTP/1.1" 200 -
+2025-08-25 10:18:55,547 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:55] "GET /static/css/order/fabric.css HTTP/1.1" 200 -
+2025-08-25 10:18:55,555 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:55] "GET /static/scripts/orders/fabric.js HTTP/1.1" 200 -
+2025-08-25 10:18:55,593 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:18:55] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:19:21,134 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:19:21] "GET /orders/fabric-tailor?fabric_order_added=true&fabric_price=24.00&fabric_order_id=F-CMB1756097335476886&master_order_id=CMB1756097335476886&customer_name=sad&contact=sd&customer_type=New&order_date=2025-08-25&sessions=Holi&notes= HTTP/1.1" 200 -
+2025-08-25 10:19:21,169 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:19:21] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:19:21,180 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:19:21] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:19:21,230 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:19:21] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:19:24,834 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:19:24] "GET /orders/tailor?customer_name=sad&contact=sd&customer_type=New&order_date=2025-08-25&sessions=Holi&notes=&return_to_combined=true&master_order_id=CMB1756097364804553&expected_tailor_id=T-CMB1756097364804553 HTTP/1.1" 200 -
+2025-08-25 10:19:24,867 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:19:24] "GET /static/css/order/tailor.css HTTP/1.1" 200 -
+2025-08-25 10:19:24,879 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:19:24] "GET /static/scripts/orders/tailor.js HTTP/1.1" 200 -
+2025-08-25 10:19:24,924 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:19:24] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:19:49,875 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:19:49] "GET /orders/fabric-tailor?tailor_returned=true&order_id=T-CMB1756097364804553&master_order_id=CMB1756097364804553 HTTP/1.1" 200 -
+2025-08-25 10:19:49,921 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:19:49] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:19:49,933 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:19:49] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:19:49,952 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:19:49] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:22:45,363 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:22:45] "GET /orders/fabric-tailor?tailor_returned=true&order_id=T-CMB1756097364804553&master_order_id=CMB1756097364804553 HTTP/1.1" 200 -
+2025-08-25 10:22:45,400 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:22:45] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:22:45,752 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:22:45] "GET /static/scripts/orders/fabric_tailor.js HTTP/1.1" 200 -
+2025-08-25 10:22:45,778 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:22:45] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:25:52,795 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:25:52] "GET /orders/fabric-tailor?tailor_returned=true&order_id=T-CMB1756097364804553&master_order_id=CMB1756097364804553 HTTP/1.1" 200 -
+2025-08-25 10:25:52,824 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:25:52] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:25:52,943 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:25:52] "GET /static/scripts/orders/fabric_tailor.js HTTP/1.1" 200 -
+2025-08-25 10:25:52,991 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:25:52] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:28:35,614 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:28:35] "GET /orders/fabric-tailor?tailor_returned=true&order_id=T-CMB1756097364804553&master_order_id=CMB1756097364804553 HTTP/1.1" 200 -
+2025-08-25 10:28:35,633 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:28:35] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:28:35,640 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:28:35] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:28:35,678 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:28:35] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:37:12,698 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 10:37:12,736 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-08-25 10:37:12,736 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-25 10:37:12,738 - werkzeug - INFO -  * Restarting with stat
+2025-08-25 10:37:13,069 - __main__ - INFO - Starting Shop Manager on 127.0.0.1:3000 (debug=True)
+2025-08-25 10:37:13,092 - werkzeug - WARNING -  * Debugger is active!
+2025-08-25 10:37:13,098 - werkzeug - INFO -  * Debugger PIN: 830-721-376
+2025-08-25 10:37:15,189 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:15] "GET / HTTP/1.1" 200 -
+2025-08-25 10:37:15,494 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:15] "[36mGET /static/scripts/pwa.js HTTP/1.1[0m" 304 -
+2025-08-25 10:37:15,497 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:15] "[36mGET /static/css/dashboard.css HTTP/1.1[0m" 304 -
+2025-08-25 10:37:15,498 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:15] "[36mGET /static/scripts/dashboard.js HTTP/1.1[0m" 304 -
+2025-08-25 10:37:16,537 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:16] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-08-25 10:37:16,540 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:16] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:37:16,565 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:16] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:37:16,640 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:16] "[36mGET /static/images/icon-192.png HTTP/1.1[0m" 304 -
+2025-08-25 10:37:17,790 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:17] "GET /orders HTTP/1.1" 200 -
+2025-08-25 10:37:17,885 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:17] "[36mGET /static/css/order/orders.css HTTP/1.1[0m" 304 -
+2025-08-25 10:37:18,131 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:18] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:37:18,894 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:18] "GET /orders/fabric-tailor HTTP/1.1" 200 -
+2025-08-25 10:37:19,019 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:19] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:37:19,030 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:19] "GET /static/scripts/orders/fabric_tailor.js HTTP/1.1" 200 -
+2025-08-25 10:37:19,284 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:19] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:37:25,066 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:25] "GET /orders/fabric?customer_name=SAURABH&contact=12312312312&customer_type=New&order_date=2025-08-25&sessions=&notes=&return_to_combined=true&master_order_id=CMB1756098445013244&expected_fabric_id=F-CMB1756098445013244 HTTP/1.1" 200 -
+2025-08-25 10:37:25,175 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:25] "[36mGET /static/css/order/fabric.css HTTP/1.1[0m" 304 -
+2025-08-25 10:37:25,180 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:25] "[36mGET /static/scripts/orders/fabric.js HTTP/1.1[0m" 304 -
+2025-08-25 10:37:25,363 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:25] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:37:46,609 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:46] "GET /orders/fabric-tailor?fabric_order_added=true&fabric_price=4899.00&fabric_order_id=F-CMB1756098445013244&master_order_id=CMB1756098445013244&customer_name=SAURABH&contact=12312312312&customer_type=New&order_date=2025-08-25&sessions=&notes= HTTP/1.1" 200 -
+2025-08-25 10:37:46,694 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:46] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:37:46,697 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:46] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:37:46,885 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:46] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:37:48,793 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:48] "GET /orders/tailor?customer_name=SAURABH&contact=12312312312&customer_type=New&order_date=2025-08-25&sessions=&notes=&return_to_combined=true&master_order_id=CMB1756098468763332&expected_tailor_id=T-CMB1756098468763332 HTTP/1.1" 200 -
+2025-08-25 10:37:48,884 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:48] "[36mGET /static/css/order/tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:37:48,887 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:48] "[36mGET /static/scripts/orders/tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:37:49,098 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:37:49] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-08-25 10:38:13,651 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:38:13] "GET /orders/fabric-tailor?tailor_returned=true&order_id=T-CMB1756098468763332&master_order_id=CMB1756098468763332 HTTP/1.1" 200 -
+2025-08-25 10:38:13,721 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:38:13] "[36mGET /static/css/order/fabric_tailor.css HTTP/1.1[0m" 304 -
+2025-08-25 10:38:13,723 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:38:13] "[36mGET /static/scripts/orders/fabric_tailor.js HTTP/1.1[0m" 304 -
+2025-08-25 10:38:13,966 - werkzeug - INFO - 127.0.0.1 - - [25/Aug/2025 10:38:13] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -

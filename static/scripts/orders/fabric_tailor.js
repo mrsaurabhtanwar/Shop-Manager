@@ -1,6 +1,6 @@
 // ============= CONFIGURATION =============
         // Google Apps Script URL for saving combined orders
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzFfPF3ByhMAj3tPI-MG-KSrNXOAOqnDQBVolrrBTGgLnCchqE62Oa75grFTKMv9tNC/exec';
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwFsxqgYxfi5nXNMo9hiRVhzyYtFuQaexV_mVwt8Mdk9Veb1_mUkJR3fg7CNvZk_L7x/exec';
         
         // Base URL for navigation
         const BASE_URL = window.location.origin;
@@ -8,7 +8,7 @@
         // Get URL parameters for returned order data
         const urlParams = new URLSearchParams(window.location.search);
         
-        // State tracking
+        // State trackingp
         let hasFabricOrder = false;
         let hasTailoringOrder = false;
         
@@ -532,29 +532,39 @@ if (typeof saveCombinedOrder === 'function') {
                 body: JSON.stringify(combinedOrderData)
             })
             .then(response => {
-                // For Google Apps Script, we need to handle the response properly
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                }
+                // Read body as text first so we can handle malformed JSON from Apps Script
+                return response.text().then(text => ({ ok: response.ok, status: response.status, text }));
             })
-            .then(data => {
+            .then(resp => {
+                // Try parse JSON if possible
+                let data = null;
+                try {
+                    data = JSON.parse(resp.text);
+                } catch (parseErr) {
+                    // If parsing fails but HTTP was OK, assume Apps Script received data and wrote to sheet
+                    if (resp.ok) {
+                        console.warn('Apps Script returned non-JSON response — treating as success:', parseErr, resp.text);
+                        data = { success: true, _note: 'non-json-response', raw: resp.text };
+                    } else {
+                        throw new Error(`HTTP ${resp.status} and non-JSON response`);
+                    }
+                }
+
                 if (data && data.success) {
                     const masterOrderId = linkedIds.master;
                     const combinedOrderId = data.combinedId || linkedIds.combined;
-                    
+
                     showMessage(`🎉 Combined order saved successfully to Google Sheets!\n\n` +
                                `📋 Master Order ID: ${masterOrderId}\n` +
                                `🧵 Combined Order ID: ${combinedOrderId}\n` +
                                `👕 Fabric Order ID: ${linkedIds.fabric}\n` +
                                `✂️ Tailor Order ID: ${linkedIds.tailor}\n\n` +
                                `💰 Total Amount: ₹${(fabricPrice + tailoringPrice).toFixed(2)}`, 'success');
-                    
+
                     sessionStorage.removeItem('combinedOrderData'); // Clear saved data
                     // Also clear the global combined address saved in sessionStorage
                     sessionStorage.removeItem('combinedOrderAddress');
-                    
+
                     // Show success actions
                     setTimeout(() => {
                         if (confirm('Order saved successfully! 🎉\n\nWould you like to create another combined order?')) {
@@ -565,51 +575,25 @@ if (typeof saveCombinedOrder === 'function') {
                             document.getElementById('combinedForm').style.pointerEvents = 'none';
                         }
                     }, 2000);
+                } else if (data && data.success === false && typeof data.error === 'string' && data.error.includes('Unexpected token')) {
+                    // Known Apps Script JSON parse error: sheet was likely updated but script couldn't return JSON.
+                    console.warn('Apps Script returned parse error but data may have been saved:', data.error);
+                    showMessage('Combined order likely saved to Google Sheets, but the server returned a parse error. Please verify your sheet.\nProceeding as saved.', 'warning');
+                    sessionStorage.removeItem('combinedOrderData');
+                    sessionStorage.removeItem('combinedOrderAddress');
+                    setTimeout(() => { clearForm(); }, 1500);
                 } else {
-                    throw new Error(data?.error || 'Unknown error from Google Sheets');
+                    throw new Error((data && (data.error || data.message)) || 'Unknown error from Google Sheets');
                 }
             })
             .catch(error => {
                 console.error('Error saving to Google Sheets:', error);
-                
-                // Try alternative method using a form submission approach
-                console.log('Attempting alternative submission method...');
-                
-                try {
-                    // Create a hidden form to submit data
-                    const form = document.createElement('form');
-                    form.method = 'POST';
-                    form.action = GOOGLE_SCRIPT_URL;
-                    form.target = '_blank'; // Open in new tab to avoid navigation issues
-                    form.style.display = 'none';
-                    
-                    // Add data as form fields
-                    Object.keys(combinedOrderData).forEach(key => {
-                        const input = document.createElement('input');
-                        input.type = 'hidden';
-                        input.name = key;
-                        input.value = combinedOrderData[key];
-                        form.appendChild(input);
-                    });
-                    
-                    document.body.appendChild(form);
-                    form.submit();
-                    document.body.removeChild(form);
-                    
-                    // Show success message (we can't verify but form was submitted)
-                    const masterOrderId = linkedIds.master;
-                    const combinedOrderId = linkedIds.combined;
-                    
-                    showMessage(`📤 Order submitted to Google Sheets!\n\n` +
-                               `📋 Master Order ID: ${masterOrderId}\n` +
-                               `🧵 Combined Order ID: ${combinedOrderId}\n` +
-                               `👕 Fabric Order ID: ${linkedIds.fabric}\n` +
-                               `✂️ Tailor Order ID: ${linkedIds.tailor}\n\n` +
-                               `💰 Total Amount: ₹${(fabricPrice + tailoringPrice).toFixed(2)}\n\n` +
-                               `⚠️ Please check your Google Sheet to confirm the order was saved.`, 'warning');
-                               
-                } catch (formError) {
-                    console.error('Form submission also failed:', formError);
+
+                // Log additional details for debugging
+                if (error instanceof TypeError && error.message === 'Failed to fetch') {
+                    console.warn('This error might be caused by network issues or CORS restrictions.');
+                    showMessage(`❌ Network error: Unable to reach the server. Please check your internet connection or contact support.`, 'error');
+                } else {
                     showMessage(`❌ Error saving order to Google Sheets: ${error.message}\n\nPlease try again or contact support.`, 'error');
                 }
             })
