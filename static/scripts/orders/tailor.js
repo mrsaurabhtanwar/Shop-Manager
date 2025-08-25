@@ -3,7 +3,7 @@
 
 // ============= CONFIGURATION =============
 // Replace this URL with your Google Apps Script web app URL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx4bt4ssQH0Yo3qreX0ZeNblIrVkyf2PwI3M3lcnpV9zPh2niDuYDvJSTmZFmxFTX6u/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwk0e9FEEM4C9B7ndsshTJA8Afa1NmGf8_x-JW-vf3rHh-OKPiGH0HQRboyuRCegOrm/exec';
 
 // ============= GLOBAL VARIABLES =============
 let selectedGarments = new Set();
@@ -440,6 +440,10 @@ function createShirtMeasurementForm() {
                 <label>💪 कॉलर :</label>
                 <input type="number" id="popup_shirt_bicep" step="0.25" min="8" max="25" value="${document.getElementById('shirt_bicep').value || ''}" placeholder="कॉलर measurement">
             </div>
+            <div class="measurement-field">
+                <label>💪 बाजू :</label>
+                <input type="number" id="popup_shirt_bajoo" step="0.25" min="8" max="25" value="${document.getElementById('shirt_bajoo') ? document.getElementById('shirt_bajoo').value : ''}" placeholder="बाजू measurement">
+            </div>
         </div>
         
         <div style="background: linear-gradient(135deg, #e3f2fd, #f3e5f5); padding: 15px; border-radius: 10px; margin: 20px 0; text-align: center;">
@@ -558,8 +562,8 @@ function saveMeasurements(garmentType) {
             return;
         }
         
-        // Save all shirt measurements
-        const measurements = ['quantity', 'fabric_meters', 'chest', 'shoulder', 'sleeve', 'length', 'neck', 'bicep'];
+    // Save all shirt measurements (added 'bajoo')
+    const measurements = ['quantity', 'fabric_meters', 'chest', 'shoulder', 'sleeve', 'length', 'neck', 'bicep', 'bajoo'];
         measurements.forEach(measurement => {
             const value = document.getElementById(`popup_shirt_${measurement}`).value;
             document.getElementById(`shirt_${measurement}`).value = value || '';

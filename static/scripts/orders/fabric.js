@@ -11,10 +11,8 @@ let fabricItemCounter = 0;
 
 // Brand names array
 const brandNames = [
-    '', 'Raymond', 'Peter England', 'Louis Philippe', 'Van Heusen', 'Arrow', 
-    'Allen Solly', 'Blackberrys', 'Park Avenue', 'ColorPlus', 'Zodiac', 
-    'Siyaram', 'Donear', 'Bombay Rayon', 'Graviera', 'Dinesh Suitings',
-    'Arvind', 'Vimal', 'Reid & Taylor', 'Digjam', 'Other'
+    '', 
+    'Siyaram', 'Vimal', 'Mafatlal', 'Cadini', 'Gwalior', 'Jai karni Gwalior',  'Other'
 ];
 
 // Initialize the form when page loads
