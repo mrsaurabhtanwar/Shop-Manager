@@ -227,3 +227,25 @@ media/
 
 # Session files
 flask_session/
+# Google Sheets credentials and config
+service-account.json
+google_account_service.json
+*service-account*.json
+*account_service*.json
+*google_account*.json
+*service_account*.json
+google_sheets_*.js
+google_config.py
+google_url.txt
+
+# Environment variables
+.env
+.env.*
+*.env
+.env.local
+.env.*.local
+
+# Credentials
+credentials.json
+client_secret*.json
+*client_secret*.json
