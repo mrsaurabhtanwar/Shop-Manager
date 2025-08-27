@@ -3,6 +3,8 @@ import logging
 import json
 from typing import List, Dict, Optional, TypedDict
 
+from pydantic import BaseSettings, Field
+
 class Order(TypedDict):
     order_id: str
     customer_name: str
@@ -64,17 +66,26 @@ from datetime import datetime
 
 logger = logging.getLogger(__name__)
 
+
+class GSheetsSettings(BaseSettings):
+    GOOGLE_SHEETS_ID: Optional[str] = Field(None, env='GOOGLE_SHEETS_ID')
+    GOOGLE_SERVICE_ACCOUNT_FILE: str = Field('service-account.json', env='GOOGLE_SERVICE_ACCOUNT_FILE')
+    MOCK_SHEETS: bool = Field(False, env='MOCK_SHEETS')
+
+
+settings = GSheetsSettings()
+
 class GoogleSheetsService:
     def __init__(self):
-    # Require GOOGLE_SHEETS_ID to be set in environment for safety (no hard-coded IDs)
-    self.spreadsheet_id: str = os.getenv('GOOGLE_SHEETS_ID', '')
-    self.client: Optional[gspread.Client] = None
-    self.spreadsheet: Optional[gspread.Spreadsheet] = None
-    self.mock: bool = False
-    self._initialized: bool = False
+        # Use validated settings
+        self.spreadsheet_id: str = settings.GOOGLE_SHEETS_ID or ''
+        self.client: Optional[gspread.Client] = None
+        self.spreadsheet: Optional[gspread.Spreadsheet] = None
+        self.mock: bool = False
+        self._initialized: bool = False
 
-    # Minimal in-memory mock data used when MOCK_SHEETS env var is true
-    mock_order: Order = {
+        # Minimal in-memory mock data used when MOCK_SHEETS env var is true
+        mock_order: Order = {
             'order_id': 'MOCK001',
             'customer_name': 'Test Customer',
             'contact_info': '0000000000',
@@ -92,7 +103,7 @@ class GoogleSheetsService:
             'created_at': ''
         }
         self._mock_orders: List[Order] = [mock_order]
-        
+
         mock_measurements: OrderMeasurements = {
             'shirt': None,
             'pants': None,
@@ -101,8 +112,9 @@ class GoogleSheetsService:
         self._mock_measurements: Dict[str, OrderMeasurements] = {
             'MOCK001': mock_measurements
         }
+
         # Initialize client only if a spreadsheet id is provided or MOCK_SHEETS is enabled
-        if os.getenv('MOCK_SHEETS', '').lower() in ('1', 'true', 'yes'):
+        if settings.MOCK_SHEETS:
             # initialize_client will detect MOCK_SHEETS and set mock mode
             self.initialize_client()
         elif self.spreadsheet_id:
