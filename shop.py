@@ -15,9 +15,26 @@ class AppSettings(BaseSettings):
     SECRET_KEY: str = Field('dev-secret-key-change-in-production', env='SECRET_KEY')
     LOG_LEVEL: str = Field('INFO', env='LOG_LEVEL')
     LOG_FILE: str = Field('logs/app.log', env='LOG_FILE')
+    WTF_CSRF_ENABLED: bool = Field(True, env='WTF_CSRF_ENABLED')
+    SESSION_COOKIE_SECURE: bool = Field(True, env='SESSION_COOKIE_SECURE')
+    SESSION_COOKIE_HTTPONLY: bool = Field(True, env='SESSION_COOKIE_HTTPONLY')
+    SESSION_COOKIE_SAMESITE: str = Field('Lax', env='SESSION_COOKIE_SAMESITE')
 
 
-app_settings = AppSettings()
+app_settings = AppSettings(
+    FLASK_APP=os.getenv('FLASK_APP', 'shop.py'),
+    FLASK_ENV=os.getenv('FLASK_ENV', 'development'),
+    DEBUG=os.getenv('DEBUG', 'False').lower() in ('1', 'true', 'yes'),
+    HOST=os.getenv('HOST', '127.0.0.1'),
+    PORT=int(os.getenv('PORT', '3000')),
+    SECRET_KEY=os.getenv('SECRET_KEY', 'dev-secret-key-change-in-production'),
+    LOG_LEVEL=os.getenv('LOG_LEVEL', 'INFO'),
+    LOG_FILE=os.getenv('LOG_FILE', 'logs/app.log'),
+    WTF_CSRF_ENABLED=os.getenv('WTF_CSRF_ENABLED', 'True').lower() in ('1', 'true', 'yes'),
+    SESSION_COOKIE_SECURE=os.getenv('SESSION_COOKIE_SECURE', 'True').lower() in ('1', 'true', 'yes'),
+    SESSION_COOKIE_HTTPONLY=os.getenv('SESSION_COOKIE_HTTPONLY', 'True').lower() in ('1', 'true', 'yes'),
+    SESSION_COOKIE_SAMESITE=os.getenv('SESSION_COOKIE_SAMESITE', 'Lax')
+)
 
 # Load environment variables
 env = app_settings.FLASK_ENV
@@ -34,13 +51,13 @@ app = Flask(__name__)
 # Configuration
 app.config['SECRET_KEY'] = app_settings.SECRET_KEY
 app.config['DEBUG'] = bool(app_settings.DEBUG)
-app.config['WTF_CSRF_ENABLED'] = os.getenv('WTF_CSRF_ENABLED', 'True').lower() == 'true'
+app.config['WTF_CSRF_ENABLED'] = bool(app_settings.WTF_CSRF_ENABLED)
 
 # Security settings for production
 if not app.config['DEBUG']:
-    app.config['SESSION_COOKIE_SECURE'] = os.getenv('SESSION_COOKIE_SECURE', 'True').lower() == 'true'
-    app.config['SESSION_COOKIE_HTTPONLY'] = os.getenv('SESSION_COOKIE_HTTPONLY', 'True').lower() == 'true'
-    app.config['SESSION_COOKIE_SAMESITE'] = os.getenv('SESSION_COOKIE_SAMESITE', 'Lax')
+    app.config['SESSION_COOKIE_SECURE'] = bool(app_settings.SESSION_COOKIE_SECURE)
+    app.config['SESSION_COOKIE_HTTPONLY'] = bool(app_settings.SESSION_COOKIE_HTTPONLY)
+    app.config['SESSION_COOKIE_SAMESITE'] = app_settings.SESSION_COOKIE_SAMESITE
 
 # Logging configuration
 log_level = getattr(logging, app_settings.LOG_LEVEL.upper())
@@ -55,7 +72,7 @@ if app_settings.FLASK_ENV == 'production' and not app_settings.LOG_FILE:
     )
 else:
     # File + console logging for development or when explicitly configured
-    handlers = [logging.StreamHandler()]
+    handlers: list[logging.Handler] = [logging.StreamHandler()]
     
     log_file = app_settings.LOG_FILE
     try:

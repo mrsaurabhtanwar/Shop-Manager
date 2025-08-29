@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailor Interface - Orders Management</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .filters {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .filter-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr auto;
+            gap: 15px;
+            align-items: end;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .filter-input, .filter-select {
+            padding: 12px 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .filter-input:focus, .filter-select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .search-btn {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .orders-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .orders-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .orders-count {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .orders-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .order-card {
+            border: 2px solid #e1e5e9;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            background: white;
+        }
+
+        .order-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            gap: 15px;
+        }
+
+        .order-info {
+            flex: 1;
+        }
+
+        .order-id {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .customer-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .customer-address {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .order-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .detail-label {
+            font-size: 12px;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .detail-value {
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .status-badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .status-pending {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .status-in-process {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+
+        .status-ready {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        .status-delivered {
+            background: #f3e8ff;
+            color: #9333ea;
+        }
+
+        .garment-types {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .garment-tag {
+            padding: 4px 10px;
+            background: #f8fafc;
+            color: #475569;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .error {
+            background: #fee2e2;
+            color: #dc2626;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .no-orders {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+
+        .no-orders i {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .filter-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .order-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .status-badge {
+                position: static;
+                align-self: flex-start;
+            }
+
+            .order-details {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1><i class="fas fa-cut"></i>Tailor Interface</h1>
+            <p>Manage orders and track cutting progress</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="searchInput">Search Customer</label>
+                    <input type="text" id="searchInput" class="filter-input" 
+                           placeholder="Search by name, address, or order ID...">
+                </div>
+                
+                <div class="filter-group">
+                    <label for="statusFilter">Order Status</label>
+                    <select id="statusFilter" class="filter-select">
+                        <option value="all">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="in process">In Process</option>
+                        <option value="ready">Ready</option>
+                        <option value="delivered">Delivered</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="garmentFilter">Garment Type</label>
+                    <select id="garmentFilter" class="filter-select">
+                        <option value="all">All Types</option>
+                        <option value="shirt">Shirt Only</option>
+                        <option value="pant">Pant Only</option>
+                        <option value="both">Both</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <button class="search-btn" onclick="loadOrders()">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </div>
+
+        <!-- Orders Container -->
+        <div class="orders-container">
+            <div class="orders-header">
+                <h2>Orders</h2>
+                <span class="orders-count" id="ordersCount">Loading...</span>
+            </div>
+            
+            <div id="ordersContent">
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin fa-2x"></i>
+                    <p>Loading orders...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visible debug badge to confirm script execution -->
+    <div id="debugStatus" style="position:fixed;bottom:12px;right:12px;background:#111;color:#fff;padding:8px 10px;border-radius:8px;display:none;font-size:13px;z-index:9999;box-shadow:0 4px 12px rgba(0,0,0,0.2)">Script inactive</div>
+
+    <script>
+    console.log('Script loaded');
+    let allOrders = [];
+
+    // Global error hooks to capture any runtime issues
+    window.addEventListener('error', function (e) {
+        console.error('Window error captured:', e.message || e);
+    });
+    window.addEventListener('unhandledrejection', function (e) {
+        console.error('Unhandled promise rejection:', e.reason || e);
+    });
+
+    // Load orders and register listeners after DOM is ready to avoid missing elements
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOMContentLoaded fired');
+        try {
+            // Add event listeners for real-time search
+            const searchEl = document.getElementById('searchInput');
+            const statusEl = document.getElementById('statusFilter');
+            const garmentEl = document.getElementById('garmentFilter');
+
+            if (searchEl) searchEl.addEventListener('input', debounce(loadOrders, 300));
+            else console.warn('searchInput element not found');
+
+            if (statusEl) statusEl.addEventListener('change', loadOrders);
+            else console.warn('statusFilter element not found');
+
+            if (garmentEl) garmentEl.addEventListener('change', loadOrders);
+            else console.warn('garmentFilter element not found');
+
+        } catch (err) {
+            console.error('Error registering event listeners:', err);
+        }
+
+        try {
+            loadOrders();
+        } catch (err) {
+            console.error('Error calling loadOrders on DOMContentLoaded:', err);
+        }
+    });
+
+    // Show debug badge when script is active
+    try {
+        const dbg = document.getElementById('debugStatus');
+        if (dbg) { dbg.style.display = 'block'; dbg.textContent = 'Script active'; }
+    } catch (e) {
+        console.warn('Could not update debugStatus element', e);
+    }
+
+        async function loadOrders() {
+            const ordersContent = document.getElementById('ordersContent');
+            const ordersCount = document.getElementById('ordersCount');
+            const debugStatus = document.getElementById('debugStatus');
+            
+            // Show loading state
+            ordersContent.innerHTML = `
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin fa-2x"></i>
+                    <p>Loading orders...</p>
+                </div>
+            `;
+
+            try {
+                // Get filter values
+                const search = document.getElementById('searchInput').value;
+                const status = document.getElementById('statusFilter').value;
+                const garmentType = document.getElementById('garmentFilter').value;
+
+                // Build query parameters
+                const params = new URLSearchParams({
+                    search: search,
+                    status: status,
+                    garment_type: garmentType
+                });
+
+                console.log('Fetching orders with params:', params.toString());
+                debugStatus.textContent = 'Fetching orders...';
+
+                // Fetch orders from API with credentials
+                const response = await fetch(`/api/orders?${params}`, {
+                    credentials: 'same-origin',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Cache-Control': 'no-cache'
+                    }
+                });
+                
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error('HTTP error response:', response.status, errorText);
+                    throw new Error(`HTTP ${response.status}: ${errorText}`);
+                }
+
+                const data = await response.json();
+                console.log('API /api/orders response:', data);
+                debugStatus.textContent = 'Orders loaded';
+
+                if (data.success) {
+                    allOrders = data.orders;
+                    renderOrders(data.orders);
+                    ordersCount.textContent = `${data.total} orders`;
+                } else {
+                    showError(data.message || 'Failed to load orders');
+                    debugStatus.textContent = 'Error: ' + (data.message || 'Failed to load orders');
+                }
+
+            } catch (error) {
+                console.error('Error loading orders:', error);
+                const errorMessage = error.message || 'Network error occurred while loading orders';
+                showError(errorMessage);
+                debugStatus.textContent = 'Error: ' + errorMessage;
+            }
+        }
+
+        function renderOrders(orders) {
+            const ordersContent = document.getElementById('ordersContent');
+
+            if (orders.length === 0) {
+                ordersContent.innerHTML = `
+                    <div class="no-orders">
+                        <i class="fas fa-inbox"></i>
+                        <h3>No orders found</h3>
+                        <p>Try adjusting your filters or search criteria</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const ordersHTML = orders.map(order => {
+                // defensive accessors
+                const delivery_status = (order && order.delivery_status) ? String(order.delivery_status) : 'Pending';
+                const garment_types = (order && order.garment_types) ? String(order.garment_types) : '';
+                const statusClass = `status-${delivery_status.toLowerCase().replace(/\s+/g, '-')}`;
+                const garmentTags = garment_types.split(',').map(g => g.trim()).filter(Boolean).map(garment => 
+                    `<span class="garment-tag">${garment}</span>`
+                ).join('');
+
+                return `
+                    <div class="order-card" onclick="viewOrderDetails('${order.order_id}')">
+                        <div class="status-badge ${statusClass}">${order.delivery_status}</div>
+                        
+                        <div class="order-header">
+                            <div class="order-info">
+                                <div class="order-id">#${order.order_id}</div>
+                                <div class="customer-name">${order.customer_name}</div>
+                                <div class="customer-address">${order.address}</div>
+                            </div>
+                        </div>
+
+                        <div class="order-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Order Date</span>
+                                <span class="detail-value">${formatDate(order && order.order_date)}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Delivery Date</span>
+                                <span class="detail-value">${formatDate(order && order.delivery_date)}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Price</span>
+                                <span class="detail-value">₹${order && (order.price !== undefined ? order.price : '-')}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Payment</span>
+                                <span class="detail-value">${order && order.payment_status ? order.payment_status : '-'}</span>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <span class="detail-label">Garments</span>
+                            <div class="garment-types">
+                                ${garmentTags}
+                            </div>
+                        </div>
+
+                        ${order.notes ? `
+                            <div class="detail-item" style="margin-top: 10px;">
+                                <span class="detail-label">Notes</span>
+                                <span class="detail-value">${order.notes}</span>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+
+            ordersContent.innerHTML = `<div class="orders-grid">${ordersHTML}</div>`;
+        }
+
+        function showError(message) {
+            const ordersContent = document.getElementById('ordersContent');
+            ordersContent.innerHTML = `
+                <div class="error">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <strong>Error:</strong> ${message}
+                </div>
+            `;
+        }
+
+        function viewOrderDetails(orderId) {
+            window.location.href = `/tailor-interface/${orderId}`;
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return '-';
+            try {
+                const date = new Date(dateStr);
+                return date.toLocaleDateString('en-IN', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric'
+                });
+            } catch (e) {
+                return dateStr;
+            }
+        }
+
+        // Debounce function for search input
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Auto-refresh every 30 seconds
+        setInterval(loadOrders, 30000);

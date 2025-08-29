@@ -73,7 +73,11 @@ class GSheetsSettings(BaseSettings):
     MOCK_SHEETS: bool = Field(False, env='MOCK_SHEETS')
 
 
-settings = GSheetsSettings()
+settings = GSheetsSettings(
+    GOOGLE_SHEETS_ID=os.getenv('GOOGLE_SHEETS_ID'),
+    GOOGLE_SERVICE_ACCOUNT_FILE=os.getenv('GOOGLE_SERVICE_ACCOUNT_FILE', 'service-account.json'),
+    MOCK_SHEETS=os.getenv('MOCK_SHEETS', '').lower() in ('1', 'true', 'yes')
+)
 
 class GoogleSheetsService:
     def __init__(self):

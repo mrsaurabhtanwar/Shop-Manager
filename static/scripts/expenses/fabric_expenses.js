@@ -1,4 +1,7 @@
-/// Calculate total price automatically 
+// Import Google Apps Script URL from config
+import { EXPENSES_SCRIPT_URL } from './expenses.config.js';
+
+// Calculate total price automatically 
 const quantityInput=document.getElementById('quantity');
 const pricePerMeterInput=document.getElementById('pricePerMeter');
 const totalPriceInput=document.getElementById('totalPrice');
@@ -43,7 +46,7 @@ document.getElementById('fabricForm').addEventListener('submit', function(e) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 30000);
 
-    fetch('https://script.google.com/macros/s/AKfycbxT5VTEBWxliIxm3P9LgtaNgKjiucgGa75jyAIExtHGRKTlUMspaCrbg5d4QdIdmtOY/exec', {
+    fetch(EXPENSES_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors', // Google Apps Script often requires no-cors; response will be opaque
         headers: { 'Content-Type': 'text/plain;charset=UTF-8' },

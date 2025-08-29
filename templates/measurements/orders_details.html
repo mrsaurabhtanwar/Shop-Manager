@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details - Tailor Interface</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .back-btn {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            color: #475569;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .back-btn:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 28px;
+        }
+
+        .status-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .status-dropdown {
+            padding: 12px 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+            cursor: pointer;
+            min-width: 150px;
+        }
+
+        .update-btn {
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .update-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .update-btn:disabled {
+            background: #d1d5db;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .customer-info {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .info-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-value {
+            font-size: 18px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .measurements-container {
+            display: grid;
+            gap: 20px;
+        }
+
+        .measurement-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .measurement-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .measurement-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        .shirt-icon {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        }
+
+        .pants-icon {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .others-icon {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        .measurement-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .measurements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .measurement-item {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .measurement-name {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .measurement-value {
+            font-size: 20px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .no-measurements {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            background: #f8fafc;
+            border-radius: 10px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .error {
+            background: #fee2e2;
+            color: #dc2626;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .success-message {
+            background: #dcfce7;
+            color: #16a34a;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .order-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .status-selector {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .measurements-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <a href="/mesurments-interface" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Orders
+                </a>
+                <h1 id="orderTitle">Loading...</h1>
+            </div>
+            
+            <div class="status-selector">
+                <select id="statusSelect" class="status-dropdown">
+                    <option value="Pending">Pending</option>
+                    <option value="In Process">In Process</option>
+                    <option value="Ready">Ready</option>
+                    <option value="Delivered">Delivered</option>
+                </select>
+                <button id="updateBtn" class="update-btn" onclick="updateStatus()">
+                    <i class="fas fa-save"></i> Update Status
+                </button>
+            </div>
+        </div>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-message">
+            <i class="fas fa-check-circle"></i>
+            Status updated successfully!
+        </div>
+
+        <!-- Customer Information -->
+        <div class="customer-info" id="customerInfo">
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin fa-2x"></i>
+                <p>Loading customer information...</p>
+            </div>
+        </div>
+
+        <!-- Measurements -->
+        <div class="measurements-container" id="measurementsContainer">
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin fa-2x"></i>
+                <p>Loading measurements...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const orderId = window.location.pathname.split('/').pop();
+        let currentOrder = null;
+        let currentMeasurements = null;
+
+        // Load order details when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrderDetails();
+        });
+
+        async function loadOrderDetails() {
+            try {
+                // Load basic order info and measurements
+                await Promise.all([
+                    loadCustomerInfo(),
+                    loadMeasurements()
+                ]);
+
+            } catch (error) {
+                console.error('Error loading order details:', error);
+                showError('Failed to load order details');
+            }
+        }
+
+        async function loadCustomerInfo() {
+            try {
+                // Get order from the orders list API
+                const response = await fetch(`/api/orders?search=${orderId}`);
+                const data = await response.json();
+
+                if (data.success && data.orders.length > 0) {
+                    currentOrder = data.orders.find(order => order.order_id === orderId);
+                    if (currentOrder) {
+                        renderCustomerInfo(currentOrder);
+                        // Set current status in dropdown
+                        document.getElementById('statusSelect').value = currentOrder.delivery_status;
+                    }
+                }
+
+            } catch (error) {
+                console.error('Error loading customer info:', error);
+            }
+        }
+
+        async function loadMeasurements() {
+            try {
+                const response = await fetch(`/api/orders/${orderId}/measurements`);
+                const data = await response.json();
+
+                if (data.success) {
+                    currentMeasurements = data.measurements;
+                    renderMeasurements(data.measurements);
+                } else {
+                    showError('Failed to load measurements');
+                }
+
+            } catch (error) {
+                console.error('Error loading measurements:', error);
+                showError('Network error occurred while loading measurements');
+            }
+        }
+
+        function renderCustomerInfo(order) {
+            const customerInfo = document.getElementById('customerInfo');
+            const orderTitle = document.getElementById('orderTitle');
+
+            orderTitle.textContent = `#${order.order_id}`;
+
+            customerInfo.innerHTML = `
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Customer Name</span>
+                        <span class="info-value">${order.customer_name}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Contact</span>
+                        <span class="info-value">${order.contact_info || '-'}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Address</span>
+                        <span class="info-value">${order.address}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Garment Types</span>
+                        <span class="info-value">${order.garment_types}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Order Date</span>
+                        <span class="info-value">${formatDate(order.order_date)}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Delivery Date</span>
+                        <span class="info-value">${formatDate(order.delivery_date)}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Price</span>
+                        <span class="info-value">₹${order.price}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Payment Status</span>
+                        <span class="info-value">${order.payment_status}</span>
+                    </div>
+                </div>
+                ${order.notes ? `
+                    <div class="info-item" style="margin-top: 20px;">
+                        <span class="info-label">Notes</span>
+                        <span class="info-value">${order.notes}</span>
+                    </div>
+                ` : ''}
+            `;
+        }
+
+        function renderMeasurements(measurements) {
+            const container = document.getElementById('measurementsContainer');
+            let html = '';
+
+            // Render Shirt Measurements
+            if (measurements.shirt) {
+                html += renderMeasurementCard('shirt', 'Shirt Measurements', measurements.shirt, {
+                    'Chest': measurements.shirt.chest,
+                    'Shoulder': measurements.shirt.shoulder,
+                    'Sleeve Length': measurements.shirt.sleeve_length,
+                    'Shirt Length': measurements.shirt.shirt_length,
+                    'Neck': measurements.shirt.neck,
+                    'Bicep': measurements.shirt.bicep,
+                    'Bajoo': measurements.shirt.bajoo,
+                    'Quantity': measurements.shirt.quantity,
+                    'Fabric (meters)': measurements.shirt.fabric_meters
+                });
+            }
+
+            // Render Pants Measurements
+            if (measurements.pants) {
+                html += renderMeasurementCard('pants', 'Pants Measurements', measurements.pants, {
+                    'Waist': measurements.pants.waist,
+                    'Hip': measurements.pants.hip,
+                    'Inseam': measurements.pants.inseam,
+                    'Outseam': measurements.pants.outseam,
+                    'Thigh': measurements.pants.thigh,
+                    'Knee': measurements.pants.knee,
+                    'Bottom': measurements.pants.bottom,
+                    'Quantity': measurements.pants.quantity,
+                    'Fabric (meters)': measurements.pants.fabric_meters
+                });
+            }
+
+            // Render Others Measurements
+            if (measurements.others) {
+                html += renderMeasurementCard('others', 'Other Measurements', measurements.others, {
+                    'Quantity': measurements.others.quantity,
+                    'Fabric (meters)': measurements.others.fabric_meters
+                });
+            }
+
+            if (html === '') {
+                html = `
+                    <div class="measurement-card">
+                        <div class="no-measurements">
+                            <i class="fas fa-ruler fa-2x"></i>
+                            <h3>No measurements found</h3>
+                            <p>No measurement data available for this order</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html;
+        }
+
+        function renderMeasurementCard(type, title, data, measurements) {
+            const iconClass = type === 'shirt' ? 'fas fa-tshirt shirt-icon' : 
+                             type === 'pants' ? 'fas fa-socks pants-icon' : 
+                             'fas fa-cut others-icon';
+
+            const measurementsHtml = Object.entries(measurements)
+                .filter(([key, value]) => value && value !== 0)
+                .map(([key, value]) => `
+                    <div class="measurement-item">
+                        <div class="measurement-name">${key}</div>
+                        <div class="measurement-value">${value}${key.includes('Quantity') ? '' : key.includes('Fabric') ? '' : '"'}</div>
+                    </div>
+                `).join('');
+
+            return `
+                <div class="measurement-card">
+                    <div class="measurement-header">
+                        <div class="measurement-icon ${type}-icon">
+                            <i class="${iconClass}"></i>
+                        </div>
+                        <div class="measurement-title">${title}</div>
+                    </div>
+                    
+                    <div class="measurements-grid">
+                        ${measurementsHtml}
+                    </div>
+                    
+                    ${data.notes ? `
+                        <div class="info-item">
+                            <span class="info-label">Notes</span>
+                            <span class="info-value">${data.notes}</span>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        async function updateStatus() {
+            const newStatus = document.getElementById('statusSelect').value;
+            const updateBtn = document.getElementById('updateBtn');
+            
+            // Disable button during update
+            updateBtn.disabled = true;
+            updateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Updating...';
+
+            try {
+                const response = await fetch(`/api/orders/${orderId}/status`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        status: newStatus
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showSuccessMessage('Status updated successfully!');
+                    // Update current order status
+                    if (currentOrder) {
+                        currentOrder.delivery_status = newStatus;
+                    }
+                } else {
+                    showError(data.message || 'Failed to update status');
+                }
+
+            } catch (error) {
+                console.error('Error updating status:', error);
+                showError('Network error occurred while updating status');
+            } finally {
+                // Re-enable button
+                updateBtn.disabled = false;
+                updateBtn.innerHTML = '<i class="fas fa-save"></i> Update Status';
+            }
+        }
+
+        function showSuccessMessage(message) {
+            const successDiv = document.getElementById('successMessage');
+            successDiv.style.display = 'block';
+            setTimeout(() => {
+                successDiv.style.display = 'none';
+            }, 3000);
+        }
+
+        function showError(message) {
+            // You can implement a proper error display here
+            alert('Error: ' + message);
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return '-';
+            try {
+                const date = new Date(dateStr);
+                return date.toLocaleDateString('en-IN', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric'
+                });
+            } catch (e) {
+                return dateStr;
+            }
+        }
+    </script>
+</body>
+</html>

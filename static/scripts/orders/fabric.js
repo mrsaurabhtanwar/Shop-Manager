@@ -1,25 +1,16 @@
-// Fabric Orders Management - JavaScript
-// Author: Assistant
-// Date: 2025
+import { GOOGLE_SCRIPT_URL } from './fabric.config.example.js';
 
-// TODO: Replace with your Google Apps Script Web App URL
-// You get this URL after deploying your Apps Script as a web app
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyjSO7ZIe0-GR5hRmsVWznWptRgfhouGen_6HM4ZODcerywXAvrym9usyrpFd429dzK/exec';
-
-// Global variables
 let fabricItemCounter = 0;
 
-// Brand names array
 const brandNames = [
-    '', 
-    'Siyaram', 'Vimal', 'Mafatlal', 'Cadini', 'Gwalior', 'Jai karni Gwalior',  'Other'
+    '',
+    'Siyaram', 'Vimal', 'Mafatlal', 'Cadini', 'Gwalior', 'Jai karni Gwalior', 'Other'
 ];
 
-// Initialize the form when page loads
 document.addEventListener('DOMContentLoaded', function() {
     initializeForm();
     setupEventListeners();
-    loadDataFromURL(); // Load data from URL parameters if coming from fabric_tailor
+    loadDataFromURL();
 });
 
 /**
@@ -66,24 +57,26 @@ function loadDataFromURL() {
     }
 }
 
-/**
- * Display flash message to user
- */
-function displayFlashMessage(message, type = 'info') {
-    const container = document.getElementById('flash-messages');
+function showMessage(message, type = 'info') {
+    const existingMessages = document.querySelectorAll('.alert');
+    existingMessages.forEach(msg => msg.remove());
+    
     const messageDiv = document.createElement('div');
     messageDiv.className = `alert alert-${type}`;
     messageDiv.textContent = message;
     
-    container.innerHTML = '';
-    container.appendChild(messageDiv);
+    const container = document.querySelector('.container') || document.getElementById('flash-messages');
+    container.insertBefore(messageDiv, container.firstChild);
     
-    // Auto-hide after 5 seconds
     setTimeout(() => {
-        if (container.contains(messageDiv)) {
-            container.removeChild(messageDiv);
+        if (messageDiv.parentNode) {
+            messageDiv.style.opacity = '0';
+            messageDiv.style.transform = 'translateY(-10px)';
+            setTimeout(() => messageDiv.remove(), 300);
         }
-    }, 5000);
+    }, 7000);
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 /**
@@ -516,82 +509,10 @@ function validateForm() {
     return true;
 }
 
-/**
- * Format currency display
- */
-function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-IN', {
-        style: 'currency',
-        currency: 'INR'
-    }).format(amount);
-}
-
-/**
- * Get current timestamp
- */
-function getCurrentTimestamp() {
-    return new Date().toLocaleString('en-IN', {
-        timeZone: 'Asia/Kolkata',
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-    });
-}
-
-/**
- * Auto-save form data to localStorage (optional feature)
- */
-function autoSaveForm() {
-    const formData = {
-        customer_name: document.getElementById('customer_name').value,
-        contact_number: document.getElementById('contact_number').value,
-        customer_type: document.getElementById('customer_type').value,
-        payment_status: document.getElementById('payment_status').value,
-        session: document.getElementById('session').value,
-        note: document.getElementById('note').value
-    };
-    
-    localStorage.setItem('fabricOrderDraft', JSON.stringify(formData));
-}
-
-/**
- * Load auto-saved form data (optional feature)
- */
-function loadAutoSavedForm() {
-    const savedData = localStorage.getItem('fabricOrderDraft');
-    if (savedData) {
-        try {
-            const formData = JSON.parse(savedData);
-            Object.keys(formData).forEach(key => {
-                const element = document.getElementById(key);
-                if (element && formData[key]) {
-                    element.value = formData[key];
-                }
-            });
-            showMessage('Auto-saved data loaded.', 'info');
-        } catch (error) {
-            console.error('Error loading auto-saved data:', error);
-        }
-    }
-}
-
-/**
- * Clear auto-saved data
- */
-function clearAutoSavedData() {
-    localStorage.removeItem('fabricOrderDraft');
-}
-
-// Optional: Auto-save form data every 30 seconds
-setInterval(() => {
-    const customerName = document.getElementById('customer_name').value.trim();
-    if (customerName) {
-        autoSaveForm();
-    }
-}, 30000);
+const INR = new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'INR'
+});
 
 // Add keyboard shortcuts
 document.addEventListener('keydown', function(e) {

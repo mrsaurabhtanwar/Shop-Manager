@@ -227,7 +227,7 @@ media/
 
 # Session files
 flask_session/
-# Google Sheets credentials and config
+# Sensitive files and credentials
 service-account.json
 google_account_service.json
 *service-account*.json
@@ -235,8 +235,40 @@ google_account_service.json
 *google_account*.json
 *service_account*.json
 google_sheets_*.js
-google_config.py
-google_url.txt
+credentials.json
+client_secret*.json
+
+# Configuration files with sensitive data
+**/config.js
+!**/config.example.js
+*.config.js
+!*.config.example.js
+config.local.*
+.env
+.env.*
+!.env.example
+*mcp_server.py
+
+# Local development files
+*.local
+local_settings.py
+*.local.py
+local_config.py
+
+# Build and runtime artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+logs/
+*.log
+build/
+dist/
+.coverage
+coverage/
+.pytest_cache/
+.mypy_cache/
 
 # Environment variables
 .env

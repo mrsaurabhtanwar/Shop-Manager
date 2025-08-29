@@ -61,6 +61,7 @@
       <a href="{{ url_for('orders') }}" role="menuitem"><i class="fas fa-shopping-cart"></i> Orders</a>
       <a href="{{ url_for('workers') }}" role="menuitem"><i class="fas fa-users"></i> Workers</a>
       <a href="{{ url_for('expenses') }}" role="menuitem"><i class="fas fa-wallet"></i> Expenses</a>
+  <a href="{{ url_for('mesurments_interface') }}" role="menuitem"><i class="fas fa-cut"></i> Tailor Interface</a>
       <hr class="menu-divider">
       <a href="#" role="menuitem" onclick="refreshDashboard(); return false;"><i class="fas fa-sync-alt"></i> Refresh Data</a>
       <a href="#" role="menuitem" onclick="openSetup(); return false;"><i class="fas fa-cog"></i> Setup API</a>
@@ -138,6 +139,14 @@
             <div class="mini-title">Expenses</div>
             <div class="mini-value" id="expensesCardCount">₹0</div>
             <div class="mini-sub">Track expenses</div>
+          </a>
+        </div>
+        <div class="col-12 col-md-4">
+          <a class="mini-card d-block text-decoration-none" href="{{ url_for('mesurments_interface') }}">
+            <div class="mini-icon"><i class="fas fa-cut"></i></div>
+            <div class="mini-title">Tailor Interface</div>
+            <div class="mini-value">&nbsp;</div>
+            <div class="mini-sub">Manage tailoring orders & measurements</div>
           </a>
         </div>
       </div>
